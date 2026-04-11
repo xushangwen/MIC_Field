@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIC Field · 品牌全案设计报价</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F4F2ED;
+  --bg2: #ECEAE3;
+  --bg3: #E3E1D9;
+  --surface: #FFFFFF;
+  --border: rgba(0,0,0,0.08);
+  --border-mid: rgba(0,0,0,0.12);
+  --text-1: #1A1916;
+  --text-2: #5A584F;
+  --text-3: #9A9890;
+  --accent: #D85A30;
+  --accent-bg: #FAECE7;
+  --accent-dk: #712B13;
+  --p1: #7F77DD; --p1-bg: #EEEDFE; --p1-dk: #3C3489;
+  --p2: #1D9E75; --p2-bg: #E1F5EE; --p2-dk: #085041;
+  --p3: #D85A30; --p3-bg: #FAECE7; --p3-dk: #712B13;
+  --p4: #378ADD; --p4-bg: #E6F1FB; --p4-dk: #0C447C;
+  --p5: #BA7517; --p5-bg: #FAEEDA; --p5-dk: #633806;
+  --green: #1D9E75; --green-bg: #E1F5EE; --green-dk: #085041;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── LAYOUT ── */
+.page { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* ── HEADER ── */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-mid);
+}
+.brand-name {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--text-3);
+  margin-bottom: 10px;
+  font-family: var(--mono);
+}
+.doc-title {
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--text-1);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.doc-title strong { font-weight: 500; }
+.doc-sub { font-size: 13px; color: var(--text-3); margin-top: 8px; }
+.price-block { text-align: right; }
+.price-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.06em; font-family: var(--mono); margin-bottom: 4px; }
+.price-main { font-size: 38px; font-weight: 300; color: var(--text-1); letter-spacing: -0.03em; line-height: 1; }
+.price-sub { font-size: 12px; color: var(--green); margin-top: 6px; font-weight: 500; }
+
+/* ── OVERVIEW STRIP ── */
+.overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.ov-item {
+  background: var(--surface);
+  padding: 16px 18px;
+}
+.ov-label { font-size: 10px; color: var(--text-3); letter-spacing: 0.08em; font-family: var(--mono); margin-bottom: 4px; }
+.ov-val { font-size: 14px; color: var(--text-1); font-weight: 500; }
+.ov-val.accent { color: var(--green); }
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-2);
+  font-family: var(--font);
+  margin-bottom: 16px;
+  padding-left: 10px;
+  border-left: 2px solid var(--accent);
+}
+
+/* ── PHASE CARDS ── */
+.phases { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
+
+.phase-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.phase-card.core { border-color: var(--p3); }
+.phase-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+.phase-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+.phase-header:hover .phase-name { color: var(--accent); }
+
+.phase-num {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 500;
+  font-family: var(--mono);
+  flex-shrink: 0;
+}
+.p1-num { background: var(--p1-bg); color: var(--p1-dk); }
+.p2-num { background: var(--p2-bg); color: var(--p2-dk); }
+.p3-num { background: var(--p3-bg); color: var(--p3-dk); }
+.p4-num { background: var(--p4-bg); color: var(--p4-dk); }
+.p5-num { background: var(--p5-bg); color: var(--p5-dk); }
+
+.phase-titles { }
+.phase-name { font-size: 14px; font-weight: 500; color: var(--text-1); transition: color 0.15s; }
+.phase-en { font-size: 11px; color: var(--text-3); font-family: var(--mono); margin-top: 2px; }
+
+.core-badge {
+  font-size: 9px; font-weight: 500;
+  background: var(--p3-bg); color: var(--p3-dk);
+  padding: 2px 7px; border-radius: 3px;
+  vertical-align: middle; margin-left: 8px;
+  font-family: var(--mono);
+}
+
+.phase-days {
+  font-size: 11px; color: var(--text-3);
+  background: var(--bg2); padding: 4px 10px;
+  border-radius: 4px; font-family: var(--mono);
+  white-space: nowrap;
+}
+
+.phase-fee {
+  font-size: 15px; font-weight: 500;
+  color: var(--text-1); white-space: nowrap;
+  min-width: 64px; text-align: right;
+}
+.phase-fee.gift { color: var(--green); }
+
+.phase-chevron {
+  color: var(--text-3);
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.phase-card.open .phase-chevron { transform: rotate(90deg); }
+
+/* ── PHASE BODY ── */
+.phase-body {
+  display: none;
+  border-top: 1px solid var(--border);
+}
+.phase-card.open .phase-body { display: block; }
+
+.charged-items { }
+.ci-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--bg2);
+  align-items: start;
+}
+.ci-row:last-child { border-bottom: none; }
+.ci-title { font-size: 13px; font-weight: 500; color: var(--text-1); margin-bottom: 3px; }
+.ci-desc { font-size: 12px; color: var(--text-2); line-height: 1.55; }
+.ci-price {
+  font-size: 13px; font-weight: 500; color: var(--text-1);
+  white-space: nowrap; font-family: var(--mono); padding-top: 1px;
+}
+
+/* ── GIFT BLOCK ── */
+.gift-block {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 16px 20px;
+}
+.gift-hd {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.gift-title-txt { font-size: 11px; color: var(--text-3); font-family: var(--mono); letter-spacing: 0.05em; }
+.gift-badge {
+  font-size: 10px; font-weight: 500;
+  background: var(--green-bg); color: var(--green-dk);
+  padding: 3px 9px; border-radius: 4px; font-family: var(--mono);
+}
+.gr-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.gr-row:last-child { border-bottom: none; padding-bottom: 0; }
+.gr-name { font-size: 13px; color: var(--text-1); font-weight: 500; margin-bottom: 2px; }
+.gr-note { font-size: 11px; color: var(--text-3); }
+.gr-right { text-align: right; }
+.gr-orig { font-size: 11px; color: var(--text-3); text-decoration: line-through; font-family: var(--mono); }
+.gr-free { font-size: 12px; font-weight: 500; color: var(--green); font-family: var(--mono); }
+.gift-total-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--border-mid);
+}
+.gift-total-label { font-size: 11px; color: var(--text-3); font-family: var(--mono); }
+.gift-total-val { font-size: 13px; font-weight: 500; color: var(--green); font-family: var(--mono); }
+
+/* ── SUMMARY ── */
+.summary-section { margin-bottom: 40px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sum-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.sum-label { font-size: 10px; color: var(--text-3); font-family: var(--mono); letter-spacing: 0.06em; margin-bottom: 6px; }
+.sum-val { font-size: 26px; font-weight: 300; color: var(--text-1); letter-spacing: -0.02em; }
+.sum-val.green { color: var(--green); }
+.sum-note { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+
+.total-bar {
+  background: var(--text-1);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  display: flex; justify-content: space-between; align-items: center;
+  color: white;
+}
+.total-left-label { font-size: 11px; color: rgba(255,255,255,0.5); font-family: var(--mono); margin-bottom: 4px; }
+.total-left-val { font-size: 28px; font-weight: 300; letter-spacing: -0.02em; }
+.total-right { text-align: right; }
+.total-right-note { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 2px; font-family: var(--mono); }
+.total-right-val { font-size: 14px; color: #6EDDB8; font-weight: 500; font-family: var(--mono); }
+
+/* ── FEE DISTRIBUTION ── */
+.dist-section { margin-bottom: 40px; }
+.dist-rows { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.dist-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 80px;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--bg2);
+}
+.dist-row:last-child { border-bottom: none; }
+.dist-label { font-size: 12px; color: var(--text-2); }
+.dist-label span { color: var(--text-3); font-size: 11px; font-family: var(--mono); }
+.bar-wrap { height: 6px; background: var(--bg2); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 3px; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); width: 0; }
+.dist-fee { font-size: 12px; font-weight: 500; text-align: right; font-family: var(--mono); }
+.dist-fee.gift { color: var(--green); }
+
+/* ── PAYMENT ── */
+.payment-section { margin-bottom: 40px; }
+.payment-grid { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: center; }
+.pay-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-align: center;
+}
+.pay-phase { font-size: 10px; color: var(--text-3); font-family: var(--mono); letter-spacing: 0.06em; margin-bottom: 8px; }
+.pay-pct { font-size: 36px; font-weight: 300; color: var(--text-1); letter-spacing: -0.03em; line-height: 1; }
+.pay-amt { font-size: 14px; color: var(--text-2); margin-top: 4px; font-weight: 500; font-family: var(--mono); }
+.pay-when { font-size: 11px; color: var(--text-3); margin-top: 8px; line-height: 1.5; }
+.pay-arrow { text-align: center; font-size: 18px; color: var(--text-3); }
+
+/* ── ADD-ONS ── */
+.addons-section { margin-bottom: 40px; }
+.addons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.addon-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  transition: border-color 0.15s;
+}
+.addon-item:hover { border-color: var(--border-mid); }
+.addon-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
+.addon-name { font-size: 13px; font-weight: 500; color: var(--text-1); }
+.addon-price { font-size: 12px; color: var(--text-2); white-space: nowrap; font-family: var(--mono); }
+.addon-desc { font-size: 11px; color: var(--text-3); line-height: 1.5; }
+
+/* ── TERMS ── */
+.terms-section { }
+.terms-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+.term-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bg2);
+  font-size: 12px;
+}
+.term-row:last-child { border-bottom: none; padding-bottom: 0; }
+.term-key { color: var(--text-3); font-family: var(--mono); padding-top: 1px; }
+.term-val { color: var(--text-2); line-height: 1.6; }
+
+/* ── FOOTER ── */
+.doc-footer {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-brand { font-size: 11px; color: var(--text-3); font-family: var(--mono); }
+.footer-conf { font-size: 11px; color: var(--text-3); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.header { animation: fadeUp 0.5s ease both; }
+.overview { animation: fadeUp 0.5s 0.08s ease both; }
+.phases { animation: fadeUp 0.5s 0.14s ease both; }
+
+/* ── PRINT ── */
+@media print {
+  body { background: white; }
+  .phase-body { display: block !important; }
+  .phase-chevron { display: none; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .header { grid-template-columns: 1fr; }
+  .price-block { text-align: left; }
+  .overview { grid-template-columns: 1fr 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .payment-grid { grid-template-columns: 1fr; }
+  .pay-arrow { transform: rotate(90deg); }
+  .addons-grid { grid-template-columns: 1fr; }
+  .phase-header { grid-template-columns: auto 1fr auto auto; }
+  .phase-days { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="brand-name">MIC FIELD · BRAND IDENTITY PROJECT</div>
+      <h1 class="doc-title"><strong>品牌全案</strong>设计报价单</h1>
+      <div class="doc-sub">户外运动平台 · 标识系统与视觉规范 · 2025</div>
+    </div>
+    <div class="price-block">
+      <div class="price-label">PROJECT TOTAL</div>
+      <div class="price-main">¥15,000</div>
+      <div class="price-sub">含全部赠送项，综合价值 ≈ ¥28,500</div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="overview">
+    <div class="ov-item">
+      <div class="ov-label">品牌架构</div>
+      <div class="ov-val">6套品牌标识</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-label">业务方向</div>
+      <div class="ov-val">骑行 · 滑雪 · 徒步</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-label">交付周期</div>
+      <div class="ov-val">约 6–7 周</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-label">付款方式</div>
+      <div class="ov-val accent">50% + 50%</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-label">赠送价值</div>
+      <div class="ov-val accent">≈ ¥13,500</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-label">修改轮次</div>
+      <div class="ov-val">母品牌3轮 子品牌2轮</div>
+    </div>
+  </div>
+
+  <!-- PHASES -->
+  <div class="section-label">五阶段工作内容</div>
+  <div class="phases">
+
+    <!-- PHASE 01 -->
+    <div class="phase-card" data-phase="1">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num p1-num">01</div>
+        <div class="phase-titles">
+          <div class="phase-name">品牌诊断与战略定位</div>
+          <div class="phase-en">Brand Strategy & Discovery</div>
+        </div>
+        <div class="phase-days">5–7 个工作日</div>
+        <div class="phase-fee gift">赠送</div>
+        <div class="phase-chevron">▶</div>
+      </div>
+      <div class="phase-body">
+        <div class="charged-items">
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">品牌架构梳理文档</div>
+              <div class="ci-desc">MIC Field 六层品牌关系图，母品牌与各子品牌定位区隔说明，输出为可执行参考文件</div>
+            </div>
+            <div class="ci-price" style="color:var(--text-3)">—</div>
+          </div>
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">品牌关键词与语言调性</div>
+              <div class="ci-desc">Motion / Identity / Connection 三维展开，对外传播语方向 × 2，可直接用于社媒文案与招商材料</div>
+            </div>
+            <div class="ci-price" style="color:var(--text-3)">—</div>
+          </div>
+        </div>
+        <div class="gift-block">
+          <div class="gift-hd">
+            <span class="gift-title-txt">随项目赠送</span>
+            <span class="gift-badge">参考价值 ≈ ¥3,000</span>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">对标品牌竞品调研报告</div>
+              <div class="gr-note">国内外户外/骑行品牌图谱，3–5个品牌视觉与策略分析，附参考图集</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥2,000</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">品牌定位一页纸文档</div>
+              <div class="gr-note">核心受众 / 差异化主张 / 品牌人格，适合内部对齐与对外招商</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥1,000</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gift-total-row">
+            <span class="gift-total-label">赠送项合计参考价值</span>
+            <span class="gift-total-val">≈ ¥3,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 02 -->
+    <div class="phase-card" data-phase="2">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num p2-num">02</div>
+        <div class="phase-titles">
+          <div class="phase-name">视觉基因与设计语言</div>
+          <div class="phase-en">Visual DNA & Design Language</div>
+        </div>
+        <div class="phase-days">4–6 个工作日</div>
+        <div class="phase-fee">¥2,000</div>
+        <div class="phase-chevron">▶</div>
+      </div>
+      <div class="phase-body">
+        <div class="charged-items">
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">情绪板 Moodboard · 方向 A</div>
+              <div class="ci-desc">锁定整体视觉气质，作为 Logo 设计与配色的前置基准，含参考图集与气质关键词标注</div>
+            </div>
+            <div class="ci-price">¥1,200</div>
+          </div>
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">主色板 + 字体选型规范</div>
+              <div class="ci-desc">品牌主色 · 辅助色 · 中英文字体组合，输出含 CMYK / RGB / HEX 色值的可执行规范文件</div>
+            </div>
+            <div class="ci-price">¥800</div>
+          </div>
+        </div>
+        <div class="gift-block">
+          <div class="gift-hd">
+            <span class="gift-title-txt">额外赠送</span>
+            <span class="gift-badge">参考价值 ≈ ¥1,500</span>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">方向 B · 第二 Moodboard 参考板</div>
+              <div class="gr-note">供客户对比感知，帮助更快锁定气质方向，此项通常单独收费</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥1,500</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gift-total-row">
+            <span class="gift-total-label">赠送项合计参考价值</span>
+            <span class="gift-total-val">≈ ¥1,500</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 03 CORE -->
+    <div class="phase-card core" data-phase="3">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num p3-num">03</div>
+        <div class="phase-titles">
+          <div class="phase-name">标识系统设计 <span class="core-badge">核心</span></div>
+          <div class="phase-en">Logo & Identity System</div>
+        </div>
+        <div class="phase-days">15–20 个工作日</div>
+        <div class="phase-fee">¥10,000</div>
+        <div class="phase-chevron">▶</div>
+      </div>
+      <div class="phase-body">
+        <div class="charged-items">
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">MIC Field · 母品牌 Logo 系统</div>
+              <div class="ci-desc">草图发散 → 提案 × 3方向 → 客户选定 → 深化完稿<br>横排版 / 竖排版 / 独立图形版，彩色 / 黑白 / 反白 全套，含修改说明文档</div>
+            </div>
+            <div class="ci-price">¥5,500</div>
+          </div>
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">MIC Base · 装备店品牌 Logo</div>
+              <div class="ci-desc">与母品牌同源延展，体现实体门店与装备零售属性，提案 × 2 → 完稿，含简化版（适配标贴 / 工牌场景）</div>
+            </div>
+            <div class="ci-price">¥1,800</div>
+          </div>
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">MIC Club · 服务品牌 Logo</div>
+              <div class="ci-desc">社群感、活动感，区别于零售属性，与母品牌形成视觉家族，提案 × 2 → 完稿</div>
+            </div>
+            <div class="ci-price">¥1,500</div>
+          </div>
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">MIC Cycling · 骑行子品牌 Logo</div>
+              <div class="ci-desc">当前主营方向，重点打磨，提案 × 2 → 深化 → 完稿，需有独立运动场景辨识度，与母品牌系统呼应</div>
+            </div>
+            <div class="ci-price">¥1,200</div>
+          </div>
+        </div>
+        <div class="gift-block">
+          <div class="gift-hd">
+            <span class="gift-title-txt">系列完整性赠送</span>
+            <span class="gift-badge">参考价值 ≈ ¥4,000</span>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">MIC Snow · 滑雪子品牌 Logo</div>
+              <div class="gr-note">做完骑行系列顺势延展，保持运动三件套视觉统一，含 1 轮修改</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥2,000</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">MIC Trek · 徒步子品牌 Logo</div>
+              <div class="gr-note">三大运动品牌一次做完整，后续业务扩张无需补做，含 1 轮修改</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥2,000</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gift-total-row">
+            <span class="gift-total-label">赠送项合计参考价值</span>
+            <span class="gift-total-val">≈ ¥4,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 04 -->
+    <div class="phase-card" data-phase="4">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num p4-num">04</div>
+        <div class="phase-titles">
+          <div class="phase-name">品牌规范手册</div>
+          <div class="phase-en">Brand Guidelines</div>
+        </div>
+        <div class="phase-days">5–7 个工作日</div>
+        <div class="phase-fee">¥2,000</div>
+        <div class="phase-chevron">▶</div>
+      </div>
+      <div class="phase-body">
+        <div class="charged-items">
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">Logo 使用规范文档</div>
+              <div class="ci-desc">安全距离 / 最小尺寸 / 禁止用法 / 各版本适用场景说明，可直接交付印刷供应商执行</div>
+            </div>
+            <div class="ci-price">¥1,200</div>
+          </div>
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">色彩 + 字体 + 图形元素规范</div>
+              <div class="ci-desc">色值（CMYK / RGB / HEX）· 字体层级规范 · 基础设计语言说明，输出为精装 PDF</div>
+            </div>
+            <div class="ci-price">¥800</div>
+          </div>
+        </div>
+        <div class="gift-block">
+          <div class="gift-hd">
+            <span class="gift-title-txt">额外赠送</span>
+            <span class="gift-badge">参考价值 ≈ ¥2,000</span>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">Logo 全格式源文件打包</div>
+              <div class="gr-note">AI · PDF · SVG · PNG透明底/白底 · JPG，分辨率与使用场景全覆盖</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥500</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">六套子品牌使用关系说明</div>
+              <div class="gr-note">品牌矩阵搭配逻辑，覆盖主要使用场景，内部同步与外部传达均适用</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥1,500</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gift-total-row">
+            <span class="gift-total-label">赠送项合计参考价值</span>
+            <span class="gift-total-val">≈ ¥2,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 05 -->
+    <div class="phase-card" data-phase="5">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num p5-num">05</div>
+        <div class="phase-titles">
+          <div class="phase-name">品牌应用落地</div>
+          <div class="phase-en">Brand Applications</div>
+        </div>
+        <div class="phase-days">5–7 个工作日</div>
+        <div class="phase-fee">¥1,000</div>
+        <div class="phase-chevron">▶</div>
+      </div>
+      <div class="phase-body">
+        <div class="charged-items">
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">名片 + 工牌设计</div>
+              <div class="ci-desc">基础办公物料，提供可直接送印的源文件与印前规范说明</div>
+            </div>
+            <div class="ci-price">¥600</div>
+          </div>
+          <div class="ci-row">
+            <div>
+              <div class="ci-title">社交媒体头像 / 封面模板 × 1款</div>
+              <div class="ci-desc">适配小红书 / 微信公众号，可编辑源文件交付，客户可自行替换内容</div>
+            </div>
+            <div class="ci-price">¥400</div>
+          </div>
+        </div>
+        <div class="gift-block">
+          <div class="gift-hd">
+            <span class="gift-title-txt">额外赠送</span>
+            <span class="gift-badge">参考价值 ≈ ¥3,000</span>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">MIC Base 门头 / 店招效果图 × 1款</div>
+              <div class="gr-note">实体门店视觉呈现效果图，供沟通与提案使用（非施工图纸）</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥2,000</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gr-row">
+            <div>
+              <div class="gr-name">骑行服 / T恤 Logo 上身效果图 × 1款</div>
+              <div class="gr-note">品牌周边视觉方向预览，帮助客户想象延展可能性</div>
+            </div>
+            <div class="gr-right">
+              <div class="gr-orig">¥1,000</div>
+              <div class="gr-free">免费赠送</div>
+            </div>
+          </div>
+          <div class="gift-total-row">
+            <span class="gift-total-label">赠送项合计参考价值</span>
+            <span class="gift-total-val">≈ ¥3,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FEE DISTRIBUTION -->
+  <div class="dist-section">
+    <div class="section-label">费用分布</div>
+    <div class="dist-rows">
+      <div class="dist-row">
+        <div class="dist-label">01 <span>品牌战略</span></div>
+        <div class="bar-wrap"><div class="bar-fill" style="background:var(--p1);width:0" data-w="0"></div></div>
+        <div class="dist-fee gift">赠送</div>
+      </div>
+      <div class="dist-row">
+        <div class="dist-label">02 <span>视觉基因</span></div>
+        <div class="bar-wrap"><div class="bar-fill" style="background:var(--p2)" data-w="13.3"></div></div>
+        <div class="dist-fee">¥2,000</div>
+      </div>
+      <div class="dist-row" style="background:var(--p3-bg)">
+        <div class="dist-label">03 <span>标识系统</span></div>
+        <div class="bar-wrap" style="background:rgba(216,90,48,0.12)"><div class="bar-fill" style="background:var(--p3)" data-w="66.7"></div></div>
+        <div class="dist-fee" style="color:var(--p3-dk);font-weight:600">¥10,000</div>
+      </div>
+      <div class="dist-row">
+        <div class="dist-label">04 <span>品牌规范</span></div>
+        <div class="bar-wrap"><div class="bar-fill" style="background:var(--p4)" data-w="13.3"></div></div>
+        <div class="dist-fee">¥2,000</div>
+      </div>
+      <div class="dist-row">
+        <div class="dist-label">05 <span>应用落地</span></div>
+        <div class="bar-wrap"><div class="bar-fill" style="background:var(--p5)" data-w="6.7"></div></div>
+        <div class="dist-fee">¥1,000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-section">
+    <div class="section-label">费用汇总</div>
+    <div class="summary-grid">
+      <div class="sum-card">
+        <div class="sum-label">设计服务实收</div>
+        <div class="sum-val">¥15,000</div>
+        <div class="sum-note">五阶段全部内容</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-label">赠送项参考价值</div>
+        <div class="sum-val green">≈ ¥13,500</div>
+        <div class="sum-note">市场参考报价合计</div>
+      </div>
+    </div>
+    <div class="total-bar">
+      <div>
+        <div class="total-left-label">项目综合价值（含全部赠送）</div>
+        <div class="total-left-val">≈ ¥28,500</div>
+      </div>
+      <div class="total-right">
+        <div class="total-right-note">实收 ¥15,000，相当于</div>
+        <div class="total-right-val">约 5.3 折</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="payment-section">
+    <div class="section-label">付款安排</div>
+    <div class="payment-grid">
+      <div class="pay-card">
+        <div class="pay-phase">第一期 · 启动款</div>
+        <div class="pay-pct">50%</div>
+        <div class="pay-amt">¥7,500</div>
+        <div class="pay-when">合同签订当日<br>项目正式启动</div>
+      </div>
+      <div class="pay-arrow">→</div>
+      <div class="pay-card">
+        <div class="pay-phase">第二期 · 尾款</div>
+        <div class="pay-pct">50%</div>
+        <div class="pay-amt">¥7,500</div>
+        <div class="pay-when">全稿确认完成后<br>源文件交付前</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD-ONS -->
+  <div class="addons-section">
+    <div class="section-label">可选增项 · Add-ons</div>
+    <div class="addons-grid">
+      <div class="addon-item">
+        <div class="addon-top">
+          <div class="addon-name">品牌介绍 / 招商手册</div>
+          <div class="addon-price">¥5,000–8,000</div>
+        </div>
+        <div class="addon-desc">PDF精装版，适合融资与对外合作场景使用</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-top">
+          <div class="addon-name">品牌官网设计 + 前端开发</div>
+          <div class="addon-price">¥18,000–30,000</div>
+        </div>
+        <div class="addon-desc">UI设计 + React开发，含品牌故事与产品展示页面</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-top">
+          <div class="addon-name">骑行活动物料系统</div>
+          <div class="addon-price">¥6,000–10,000</div>
+        </div>
+        <div class="addon-desc">活动海报 / 贴纸 / 号码布 / 旗帜等赛事物料全套</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-top">
+          <div class="addon-name">完整品牌规范手册升级</div>
+          <div class="addon-price">¥8,000–12,000</div>
+        </div>
+        <div class="addon-desc">从基础规范扩展为完整品牌书，覆盖全应用场景</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-top">
+          <div class="addon-name">社媒视觉模板系统</div>
+          <div class="addon-price">¥3,000–5,000</div>
+        </div>
+        <div class="addon-desc">小红书 / 微信封面模板 × 5款，含可编辑源文件</div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-top">
+          <div class="addon-name">社媒视觉月度运营支持</div>
+          <div class="addon-price">¥3,000–5,000/月</div>
+        </div>
+        <div class="addon-desc">每月固定出图支持，保持品牌视觉长期一致性</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS -->
+  <div class="terms-section">
+    <div class="section-label">说明与条款</div>
+    <div class="terms-box">
+      <div class="term-row">
+        <div class="term-key">修改轮次</div>
+        <div class="term-val">母品牌 Logo 含 3 轮修改（方向阶段 1 轮 + 深化阶段 2 轮）；MIC Base / Club / Cycling 各含 2 轮；赠送项 Snow / Trek 各含 1 轮。超出按 ¥300 / 次 另计。</div>
+      </div>
+      <div class="term-row">
+        <div class="term-key">不含内容</div>
+        <div class="term-val">印刷执行费用 · 字体商业授权费 · 门店施工图纸 · 品牌战略深度咨询服务。</div>
+      </div>
+      <div class="term-row">
+        <div class="term-key">有效期</div>
+        <div class="term-val">本报价单自出具之日起 30 天内有效，逾期需重新确认。</div>
+      </div>
+      <div class="term-row">
+        <div class="term-key">保密说明</div>
+        <div class="term-val">本文件内容仅供委托方内部参考，请勿对外传播或转发。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-brand">MIC FIELD · Brand Identity 2025</div>
+    <div class="footer-conf">保密文件 · 仅限委托方查阅</div>
+  </div>
+
+</div>
+
+<script>
+function togglePhase(header) {
+  const card = header.parentElement;
+  card.classList.toggle('open');
+}
+
+// Animate bars on load
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+      const w = bar.dataset.w;
+      bar.style.width = w + '%';
+    });
+  }, 400);
+});
+</script>
+</body>
+</html>
