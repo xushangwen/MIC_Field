@@ -16,7 +16,7 @@ section {
 .bg-tl { background: var(--tl); color: #fff; }
 
 /* ── Layout ──────────────────────────────────────────────── */
-.pad  { padding: 88px 112px; }
+.pad  { padding: 48px 88px; }
 .h100 { height: 100%; }
 .col  { display: flex; flex-direction: column; }
 .row  { display: flex; flex-direction: row; }
@@ -52,6 +52,20 @@ section {
   font-family: var(--fn); font-size: 280px; font-weight: 700; line-height: 1;
   opacity: .06; letter-spacing: -.04em;
   position: absolute; right: 80px; top: 60px;
+}
+
+/* ── Page Number ─────────────────────────────────────────── */
+.pg-n {
+  position: absolute;
+  bottom: 28px;
+  right: 40px;
+  font-family: var(--fn);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  opacity: .28;
+  z-index: 10;
+  pointer-events: none;
 }
 
 /* ── Image Placeholder ───────────────────────────────────── */

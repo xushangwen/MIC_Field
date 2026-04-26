@@ -1,40 +1,84 @@
-<section data-anim="brandcard" class="bg-dk" data-label="07 Brand Architecture">
+<section data-anim="default" class="bg-wm" data-label="07 Brand Architecture">
   <div class="h100 col pad">
     <div class="row jsb va" style="margin-bottom:52px;">
       <div class="lbl am">品牌架构</div>
       <div class="xs mu">Brand Architecture</div>
     </div>
     <div class="row g20" style="flex:1;align-items:stretch;">
-      <div class="col fcnt" style="flex:.85;background:rgba(200,104,58,.1);border:1.5px solid rgba(200,104,58,.35);border-radius:8px;padding:48px 32px;text-align:center;gap:16px;">
-        <div class="lbl am">母品牌 · Parent Brand</div>
-        <div class="tt">MIC Field</div>
-        <div class="xs mu mt16">平台 · 价值观 · 未来延展</div>
+
+      <!-- 母品牌卡 -->
+      <div class="col" style="flex:.85;position:relative;border-radius:14px;overflow:hidden;padding:36px 28px;justify-content:flex-end;gap:8px;">
+        <img src="/images/bg-earth-night.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;" alt="">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,20,.85) 0%,rgba(5,8,20,.35) 55%,rgba(5,8,20,.18) 100%);"></div>
+        <i class="ri-earth-line" style="position:relative;z-index:1;font-size:28px;color:var(--am);"></i>
+        <div class="lbl am" style="position:relative;z-index:1;font-size:15px;letter-spacing:.12em;margin-top:4px;">母品牌 · Parent Brand</div>
+        <div style="position:relative;z-index:1;width:32px;height:2px;background:var(--am);margin:8px 0;"></div>
+        <div class="tt" style="position:relative;z-index:1;color:#fff;font-size:44px;">MIC Field</div>
+        <div class="xs" style="position:relative;z-index:1;color:rgba(255,255,255,.42);">平台 · 价值观 · 未来延展</div>
       </div>
-      <div class="col fcnt" style="flex:.22;">
-        <div style="font-size:36px;opacity:.2;">→</div>
-      </div>
-      <div class="col g16" style="flex:2.2;">
-        <div class="row g16" style="flex:1.2;">
-          <div class="col fcnt" style="flex:1;background:rgba(200,104,58,.07);border:1.5px solid rgba(200,104,58,.22);border-radius:8px;padding:36px 24px;text-align:center;gap:12px;">
-            <div class="lbl am">核心业务</div>
-            <div style="font-family:var(--fe);font-size:36px;font-weight:700;">MIC Cycling</div>
-            <div class="xs mu mt16">路线 · 活动 · 社群 · 骑行文化</div>
-          </div>
-          <div class="col fcnt" style="flex:1;background:rgba(200,104,58,.05);border:1.5px solid rgba(200,104,58,.16);border-radius:8px;padding:36px 24px;text-align:center;gap:12px;">
-            <div class="lbl am">实体门店</div>
-            <div style="font-family:var(--fe);font-size:32px;font-weight:700;">MIC Cycling Base</div>
-            <div class="xs mu mt16">装备 · 维修 · 补给 · 空间体验</div>
-          </div>
+
+      <!-- 箭头 -->
+      <div class="col fcnt" style="flex:.22;gap:12px;">
+        <div style="width:1.5px;flex:1;background:linear-gradient(to bottom,transparent,rgba(200,104,58,.5));max-height:48px;"></div>
+        <div style="width:52px;height:52px;border-radius:50%;background:var(--am);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(200,104,58,.12);">
+          <i class="ri-arrow-right-long-line" style="font-size:24px;color:#fff;line-height:1;"></i>
         </div>
+        <div style="width:1.5px;flex:1;background:linear-gradient(to top,transparent,rgba(200,104,58,.5));max-height:48px;"></div>
+      </div>
+
+      <!-- 右侧卡片区 -->
+      <div class="col g16" style="flex:2.2;">
+
+        <!-- 核心业务 -->
+        <div class="row g16" style="flex:1.2;">
+
+          <!-- MIC Cycling -->
+          <div class="col" style="flex:1;position:relative;border-radius:14px;overflow:hidden;padding:28px 24px;justify-content:flex-end;gap:6px;">
+            <img src="/images/card-cycling.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;" alt="">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,20,.82) 0%,rgba(5,8,20,.28) 60%,rgba(5,8,20,.10) 100%);"></div>
+            <div style="position:absolute;top:0;left:0;right:0;height:6px;background:var(--am);"></div>
+            <i class="ri-riding-line" style="position:relative;z-index:1;font-size:28px;color:var(--am);"></i>
+            <div class="lbl am" style="position:relative;z-index:1;font-size:15px;letter-spacing:.12em;margin-top:4px;">核心业务</div>
+            <div style="font-family:var(--fe);font-size:32px;font-weight:700;position:relative;z-index:1;color:#fff;line-height:1.1;margin-top:6px;">MIC Cycling</div>
+            <div class="xs" style="position:relative;z-index:1;color:rgba(255,255,255,.42);margin-top:4px;">路线 · 活动 · 社群 · 骑行文化</div>
+          </div>
+
+          <!-- MIC Cycling Base -->
+          <div class="col" style="flex:1;position:relative;border-radius:14px;overflow:hidden;padding:28px 24px;justify-content:flex-end;gap:6px;">
+            <img src="/images/card-base.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;" alt="">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,20,.82) 0%,rgba(5,8,20,.28) 60%,rgba(5,8,20,.10) 100%);"></div>
+            <div style="position:absolute;top:0;left:0;right:0;height:6px;background:var(--am);"></div>
+            <i class="ri-store-2-line" style="position:relative;z-index:1;font-size:28px;color:var(--am);"></i>
+            <div class="lbl am" style="position:relative;z-index:1;font-size:15px;letter-spacing:.12em;margin-top:4px;">实体门店</div>
+            <div style="font-family:var(--fe);font-size:28px;font-weight:700;position:relative;z-index:1;color:#fff;line-height:1.1;margin-top:6px;">MIC Cycling Base</div>
+            <div class="xs" style="position:relative;z-index:1;color:rgba(255,255,255,.42);margin-top:4px;">装备 · 维修 · 补给 · 空间体验</div>
+          </div>
+
+        </div>
+
+        <!-- 未来延展 -->
         <div class="row g16" style="flex:.72;">
-          <div class="col fcnt" style="flex:1;border:1px dashed rgba(255,255,255,.14);border-radius:8px;padding:22px;text-align:center;gap:10px;">
-            <div class="lbl mu2">未来延展</div>
-            <div style="font-family:var(--fe);font-size:28px;font-weight:600;opacity:.38;">MIC Snow</div>
+
+          <!-- MIC Snow -->
+          <div class="col" style="flex:1;position:relative;border-radius:14px;overflow:hidden;padding:20px 22px;justify-content:flex-end;gap:5px;">
+            <img src="/images/card-snow.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:grayscale(55%) brightness(.75);" alt="">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,20,.78) 0%,rgba(5,8,20,.22) 100%);"></div>
+            <div style="position:absolute;inset:0;border-radius:14px;border:1px dashed rgba(255,255,255,.22);pointer-events:none;"></div>
+            <i class="ri-snowflake-line" style="position:relative;z-index:1;font-size:24px;color:rgba(255,255,255,.45);"></i>
+            <div class="lbl" style="position:relative;z-index:1;color:rgba(255,255,255,.42);font-size:15px;letter-spacing:.12em;margin-top:4px;">未来延展</div>
+            <div style="font-family:var(--fe);font-size:26px;font-weight:600;position:relative;z-index:1;color:rgba(255,255,255,.52);margin-top:4px;">MIC Snow</div>
           </div>
-          <div class="col fcnt" style="flex:1;border:1px dashed rgba(255,255,255,.14);border-radius:8px;padding:22px;text-align:center;gap:10px;">
-            <div class="lbl mu2">未来延展</div>
-            <div style="font-family:var(--fe);font-size:28px;font-weight:600;opacity:.38;">MIC Trek</div>
+
+          <!-- MIC Trek -->
+          <div class="col" style="flex:1;position:relative;border-radius:14px;overflow:hidden;padding:20px 22px;justify-content:flex-end;gap:5px;">
+            <img src="/images/card-trek.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:grayscale(55%) brightness(.75);" alt="">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,20,.78) 0%,rgba(5,8,20,.22) 100%);"></div>
+            <div style="position:absolute;inset:0;border-radius:14px;border:1px dashed rgba(255,255,255,.22);pointer-events:none;"></div>
+            <i class="ri-footprint-line" style="position:relative;z-index:1;font-size:24px;color:rgba(255,255,255,.45);"></i>
+            <div class="lbl" style="position:relative;z-index:1;color:rgba(255,255,255,.42);font-size:15px;letter-spacing:.12em;margin-top:4px;">未来延展</div>
+            <div style="font-family:var(--fe);font-size:26px;font-weight:600;position:relative;z-index:1;color:rgba(255,255,255,.52);margin-top:4px;">MIC Trek</div>
           </div>
+
         </div>
       </div>
     </div>

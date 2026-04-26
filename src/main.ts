@@ -2,6 +2,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { initAnimations } from './animations/index'
 
+import 'remixicon/fonts/remixicon.css'
 import './styles/tokens.css'
 import './styles/typography.css'
 import './styles/layout.css'
@@ -25,6 +26,15 @@ const deck = document.querySelector('deck-stage')
 if (!deck) throw new Error('<deck-stage> element not found in DOM')
 
 deck.innerHTML = slides.join('\n')
+
+// ── Inject page numbers ───────────────────────────────────────────────────────
+deck.querySelectorAll('section').forEach((section, i) => {
+  if (i === 0) return
+  const pn = document.createElement('div')
+  pn.className = 'pg-n'
+  pn.textContent = String(i + 1).padStart(2, '0')
+  section.appendChild(pn)
+})
 
 // ── Boot animations after slides are in DOM ───────────────────────────────────
 // Use rAF so slotchange has fired and _slides is populated before we animate.

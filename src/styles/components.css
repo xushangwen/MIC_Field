@@ -11,9 +11,9 @@
 /* ── Insight Block ───────────────────────────────────────── */
 .insight {
   padding: 24px 28px;
-  border-left: 3px solid var(--am);
-  background: rgba(200,104,58,.08);
-  border-radius: 0 4px 4px 0;
+  border: 1px solid rgba(200,104,58,.28);
+  background: rgba(200,104,58,.07);
+  border-radius: 6px;
 }
 
 /* ── Research Row ────────────────────────────────────────── */
