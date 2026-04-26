@@ -1,0 +1,32 @@
+/* ── MIC Field Design Tokens ─────────────────────────────── */
+:root {
+  /* Color — Dark Backgrounds */
+  --dk:  #0B0C10;   /* primary dark bg */
+  --mid: #171A1F;   /* mid dark bg */
+
+  /* Color — Light Backgrounds */
+  --wm:  #F4F0E8;   /* warm white bg */
+  --st:  #E2DDD4;   /* stone bg */
+
+  /* Color — Brand */
+  --am:  #C8683A;   /* amber brand (primary) */
+  --am2: #E28A5A;   /* amber light */
+  --tl:  #1E7085;   /* teal accent */
+
+  /* Color — Text */
+  --tlt: #EBE6DC;   /* text on dark */
+  --td:  #1A1815;   /* text on light */
+  --ml:  #52504A;   /* muted label */
+  --md:  #8C8878;   /* muted body */
+
+  /* Typography */
+  --fc: 'IBM Plex Sans SC', sans-serif;   /* chinese body */
+  --fe: 'Plus Jakarta Sans', sans-serif;  /* english display */
+  --fn: 'Space Grotesk', monospace;       /* numbers / mono */
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

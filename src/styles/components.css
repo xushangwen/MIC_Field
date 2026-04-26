@@ -1,0 +1,44 @@
+/* ── Brand Card Layout ───────────────────────────────────── */
+.b-img  { flex: .54; position: relative; overflow: hidden; }
+.b-info {
+  flex: .46;
+  padding: 72px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ── Insight Block ───────────────────────────────────────── */
+.insight {
+  padding: 24px 28px;
+  border-left: 3px solid var(--am);
+  background: rgba(200,104,58,.08);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Research Row ────────────────────────────────────────── */
+.rr      { display: flex; align-items: flex-start; gap: 24px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+.rr.lt   { border-color: rgba(0,0,0,.08); }
+.rbn     { font-family: var(--fe); font-weight: 700; font-size: 30px; min-width: 200px; flex-shrink: 0; }
+
+/* ── Keyword Chip ────────────────────────────────────────── */
+.kw    { border: 1px solid rgba(255,255,255,.22); border-radius: 100px; padding: 10px 28px; font-size: 24px; white-space: nowrap; }
+.kw.hi { border-color: var(--am); color: var(--am); }
+
+/* ── Comparison Table ────────────────────────────────────── */
+.cmp { width: 100%; border-collapse: collapse; }
+.cmp th,
+.cmp td          { padding: 18px 28px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.07); font-size: 24px; line-height: 1.4; }
+.cmp th          { font-size: 24px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; opacity: .4; }
+.cmp td:first-child { font-family: var(--fe); font-weight: 700; font-size: 28px; }
+
+/* ── Checklist ───────────────────────────────────────────── */
+.ck   { display: flex; align-items: flex-start; gap: 24px; padding: 22px 0; border-bottom: 1px solid rgba(0,0,0,.07); font-size: 28px; line-height: 1.45; }
+.ck-b { width: 26px; height: 26px; border: 2px solid var(--am); border-radius: 3px; flex-shrink: 0; margin-top: 4px; }
+
+/* ── Finding Number ──────────────────────────────────────── */
+.fn-n { font-family: var(--fn); font-size: 220px; font-weight: 700; line-height: 1; opacity: .1; letter-spacing: -.04em; }
+
+/* ── Multilingual Column ─────────────────────────────────── */
+.lc             { flex: 1; padding: 0 52px; border-left: 1px solid rgba(255,255,255,.1); }
+.lc:first-child { border-left: none; padding-left: 0; }
