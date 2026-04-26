@@ -5,3 +5,4 @@ dist/
 *.jpg
 *.png
 /deck-stage.js
+.DS_Store
