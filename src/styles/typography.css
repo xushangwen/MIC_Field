@@ -1,12 +1,12 @@
 /* ── Type Scale ──────────────────────────────────────────── */
-.dp  { font-family: var(--fe); font-size: 116px; font-weight: 800; line-height: .95;  letter-spacing: -.03em; }
-.jb  { font-family: var(--fe); font-size: 88px;  font-weight: 800; line-height: 1.02; letter-spacing: -.025em; }
-.tt  { font-family: var(--fe); font-size: 64px;  font-weight: 700; line-height: 1.1;  letter-spacing: -.01em; }
-.sb  { font-size: 44px; font-weight: 600; line-height: 1.2; }
-.bd  { font-size: 32px; font-weight: 400; line-height: 1.65; }
-.sm  { font-size: 28px; font-weight: 400; line-height: 1.5; }
-.xs  { font-size: 24px; font-weight: 300; line-height: 1.45; }
-.lbl { font-size: 24px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
+.dp  { font-family: var(--fe); font-size: 100px; font-weight: 700; line-height: .95;  letter-spacing: -.03em; }
+.jb  { font-family: var(--fe); font-size: 76px;  font-weight: 700; line-height: 1.02; letter-spacing: -.025em; }
+.tt  { font-family: var(--fe); font-size: 56px;  font-weight: 600; line-height: 1.1;  letter-spacing: -.01em; }
+.sb  { font-size: 38px; font-weight: 500; line-height: 1.2; }
+.bd  { font-size: 28px; font-weight: 400; line-height: 1.65; }
+.sm  { font-size: 24px; font-weight: 400; line-height: 1.5; }
+.xs  { font-size: 20px; font-weight: 300; line-height: 1.45; }
+.lbl { font-size: 20px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .n   { font-family: var(--fn); }
 
 /* ── Color Utilities ─────────────────────────────────────── */

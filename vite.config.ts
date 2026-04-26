@@ -8,7 +8,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         proposal: './proposal.html',
-        pricing: './index.html',
       },
     },
   },

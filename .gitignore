@@ -4,4 +4,4 @@ dist/
 .playwright-mcp/
 *.jpg
 *.png
-deck-stage.js
+/deck-stage.js

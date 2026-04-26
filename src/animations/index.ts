@@ -36,8 +36,8 @@ function fromBelow(
   tl: gsap.core.Timeline,
   els: NodeListOf<Element> | Element[],
   timeOffset: string | number = '-=0.3',
-  dist = 22,
-  dur = 0.55,
+  dist = 12,
+  dur = 0.45,
 ): void {
   const arr = Array.from(els)
   if (!arr.length) return
@@ -45,7 +45,7 @@ function fromBelow(
     opacity: 0,
     y: dist,
     duration: dur,
-    stagger: 0.1,
+    stagger: 0.07,
     ease: 'power2.out',
   }, timeOffset)
 }
@@ -62,11 +62,11 @@ const presets: Record<string, (tl: gsap.core.Timeline, slide: Slide) => void> = 
     const subs   = slide.querySelectorAll('.sb, .sm')
     const footer = slide.querySelector('.row.jsb')
 
-    if (label)      tl.from(label,  { opacity: 0, y: 10, duration: 0.6, ease: 'power2.out' }, 0.2)
-    if (title)      tl.from(title,  { opacity: 0, y: 32, duration: 0.9, ease: 'power3.out' }, 0.5)
-    if (rule)       tl.from(rule,   { scaleX: 0, duration: 0.4, transformOrigin: 'left center' }, 0.85)
-    if (subs.length) fromBelow(tl, subs, 0.9, 16, 0.5)
-    if (footer)     tl.from(footer, { opacity: 0, duration: 0.5 }, '-=0.2')
+    if (label)       tl.from(label,  { opacity: 0, y: 6,  duration: 0.5, ease: 'power2.out' }, 0.2)
+    if (title)       tl.from(title,  { opacity: 0, y: 16, duration: 0.7, ease: 'power2.out' }, 0.45)
+    if (rule)        tl.from(rule,   { scaleX: 0, duration: 0.35, transformOrigin: 'left center' }, 0.75)
+    if (subs.length)  fromBelow(tl, subs, 0.8, 10, 0.4)
+    if (footer)      tl.from(footer, { opacity: 0, duration: 0.4 }, '-=0.15')
   },
 
   chapter(tl, slide) {
@@ -77,19 +77,19 @@ const presets: Record<string, (tl: gsap.core.Timeline, slide: Slide) => void> = 
     const rule  = slide.querySelector('.rule')
     const sub   = slide.querySelector('.sb, .sm')
 
-    if (num)   tl.from(num,   { opacity: 0, x: 60, duration: 1,   ease: 'power3.out' }, 0)
-    if (label) tl.from(label, { opacity: 0, y: 10, duration: 0.5 }, 0.35)
-    if (title) tl.from(title, { opacity: 0, y: 28, duration: 0.7, ease: 'power2.out' }, 0.55)
-    if (rule)  tl.from(rule,  { scaleX: 0, duration: 0.4, transformOrigin: 'left' }, 0.85)
-    if (sub)   tl.from(sub,   { opacity: 0, y: 14, duration: 0.5 }, 1.05)
+    if (num)   tl.from(num,   { opacity: 0, x: 32, duration: 0.8, ease: 'power2.out' }, 0)
+    if (label) tl.from(label, { opacity: 0, y: 6,  duration: 0.4 }, 0.3)
+    if (title) tl.from(title, { opacity: 0, y: 14, duration: 0.55, ease: 'power2.out' }, 0.5)
+    if (rule)  tl.from(rule,  { scaleX: 0, duration: 0.35, transformOrigin: 'left' }, 0.75)
+    if (sub)   tl.from(sub,   { opacity: 0, y: 8,  duration: 0.4 }, 0.95)
   },
 
   finding(tl, slide) {
     const num     = slide.querySelector('.fn-n')
     const content = slide.querySelectorAll('.lbl, .dp, .bd, .sm')
 
-    if (num) tl.from(num, { opacity: 0, scale: 0.75, duration: 1, ease: 'power3.out' }, 0)
-    fromBelow(tl, content, 0.4, 24, 0.65)
+    if (num) tl.from(num, { opacity: 0, scale: 0.88, duration: 0.8, ease: 'power2.out' }, 0)
+    fromBelow(tl, content, 0.35, 14, 0.5)
   },
 
   statement(tl, slide) {
@@ -99,20 +99,20 @@ const presets: Record<string, (tl: gsap.core.Timeline, slide: Slide) => void> = 
     const rule     = slide.querySelector('.rule')
     const subs     = slide.querySelectorAll('.bd, .sm, .xs')
 
-    if (label)      tl.from(label,    { opacity: 0, y: 10, duration: 0.5 }, 0.15)
-    if (headline)   tl.from(headline, { opacity: 0, y: 36, duration: 0.9, ease: 'power3.out' }, 0.35)
-    if (rule)       tl.from(rule,     { scaleX: 0, duration: 0.4, transformOrigin: 'center' }, 0.8)
-    if (subs.length) fromBelow(tl, subs, 0.75, 16, 0.5)
+    if (label)       tl.from(label,    { opacity: 0, y: 6,  duration: 0.4 }, 0.15)
+    if (headline)    tl.from(headline, { opacity: 0, y: 18, duration: 0.7, ease: 'power2.out' }, 0.3)
+    if (rule)        tl.from(rule,     { scaleX: 0, duration: 0.35, transformOrigin: 'center' }, 0.72)
+    if (subs.length)  fromBelow(tl, subs, 0.65, 10, 0.4)
   },
 
   brandcard(tl, slide) {
     const imgCol  = slide.querySelector('.b-img')
     const infoCol = slide.querySelector('.b-info')
 
-    if (imgCol)  tl.from(imgCol, { opacity: 0, x: -24, duration: 0.8, ease: 'power2.out' }, 0)
+    if (imgCol)  tl.from(imgCol, { opacity: 0, x: -14, duration: 0.65, ease: 'power2.out' }, 0)
     if (infoCol) {
       const kids = Array.from(infoCol.children)
-      tl.from(kids, { opacity: 0, y: 20, duration: 0.55, stagger: 0.14, ease: 'power2.out' }, 0.3)
+      tl.from(kids, { opacity: 0, y: 12, duration: 0.45, stagger: 0.09, ease: 'power2.out' }, 0.25)
     }
   },
 
@@ -125,9 +125,9 @@ const presets: Record<string, (tl: gsap.core.Timeline, slide: Slide) => void> = 
     if (cells.length) {
       tl.from(cells, {
         opacity: 0,
-        scale: 0.95,
-        duration: 0.45,
-        stagger: { each: 0.06, from: 'random' },
+        scale: 0.98,
+        duration: 0.4,
+        stagger: { each: 0.04, from: 'random' },
         ease: 'power2.out',
       }, 0)
     }
