@@ -1,0 +1,381 @@
+<style>
+  @font-face {
+    font-family: 'TTNormsPro';
+    src: url('/fonts/pinarello/TTNormsPro-DemiBold.woff2') format('woff2');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'TTNormsPro';
+    src: url('/fonts/pinarello/TTNormsPro-Regular.woff2') format('woff2');
+    font-weight: 400;
+  }
+
+  .pnv-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 52px 88px 56px;
+  }
+  .pnv-header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+  }
+  .pnv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .pnv-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+  }
+  .pnv-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 28px;
+  }
+  .pnv-section {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+  }
+  .pnv-page-num {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.2);
+    letter-spacing: .08em;
+  }
+  .pnv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .pnv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── Col 1: Color System ── */
+  .pnv-col1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .pnv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .pnv-swatch {
+    flex: 1;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .pnv-swatch-top {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .pnv-swatch-name {
+    font-family: var(--fn);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .pnv-swatch-hex {
+    font-family: var(--fn);
+    font-size: 12px;
+    opacity: .6;
+    letter-spacing: .06em;
+  }
+  .pnv-swatch-divider {
+    height: 1px;
+    background: currentColor;
+    opacity: .15;
+    margin: 8px 0;
+  }
+  .pnv-swatch-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pnv-swatch-role {
+    font-family: var(--fn);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .55;
+  }
+  .pnv-swatch-desc {
+    font-family: var(--fn);
+    font-size: 11px;
+    opacity: .4;
+  }
+  .pnv-color-summary {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+  }
+
+  /* ── Col 2: Typography & Logo ── */
+  .pnv-col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+  }
+  .pnv-card {
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    padding: 18px 20px;
+    overflow: hidden;
+  }
+  .pnv-logo-card {
+    flex-shrink: 0;
+  }
+  .pnv-card-tag {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-bottom: 14px;
+  }
+  .pnv-logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    opacity: .9;
+    margin-bottom: 12px;
+  }
+  .pnv-card-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .pnv-font-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .pnv-specimen {
+    font-family: 'TTNormsPro', var(--fe);
+    font-size: 68px;
+    font-weight: 600;
+    line-height: 1.0;
+    color: white;
+    letter-spacing: -.01em;
+    flex: 1;
+  }
+  .pnv-specimen-sub {
+    font-family: 'TTNormsPro', var(--fe);
+    font-size: 26px;
+    font-weight: 400;
+    color: rgba(255,255,255,.45);
+    margin-top: 4px;
+  }
+  .pnv-specimen-body {
+    font-family: 'TTNormsPro', var(--fe);
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,.4);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    line-height: 1.6;
+  }
+  .pnv-col2-note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    flex-shrink: 0;
+  }
+
+  /* ── Col 3: Photography ── */
+  .pnv-col3 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .pnv-photos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .pnv-photo {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .pnv-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pnv-photo:first-child img {
+    object-position: center top;
+  }
+  .pnv-photo:last-child img {
+    object-position: center center;
+  }
+  .pnv-photo-note {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    line-height: 1.5;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="17e Pinarello — Visual Identity">
+  <div class="pnv-page">
+    <div class="pnv-header">
+      <div class="pnv-header-left">
+        <span class="pnv-brand">Pinarello</span>
+        <span class="pnv-slash">/</span>
+        <span class="pnv-section">视觉体系解析</span>
+      </div>
+      <span class="pnv-page-num">视觉体系解析 · 02 / 03</span>
+    </div>
+
+    <div class="pnv-grid">
+
+      <!-- Col 1: Color System -->
+      <div class="pnv-col1">
+        <div class="pnv-col-label">Color System</div>
+        <div class="pnv-colors">
+          <div class="pnv-swatch" style="background:#000000;border:1px solid rgba(255,255,255,.1);color:white;">
+            <div class="pnv-swatch-top">
+              <div class="pnv-swatch-name">Racing Black</div>
+              <div class="pnv-swatch-hex">HEX 000000 · RGB 0 0 0</div>
+            </div>
+            <div class="pnv-swatch-divider"></div>
+            <div class="pnv-swatch-bottom">
+              <div class="pnv-swatch-role">Primary</div>
+              <div class="pnv-swatch-desc">主品牌色，硬核竞技与极致克制</div>
+            </div>
+          </div>
+          <div class="pnv-swatch" style="background:#FFFFFF;color:#111;">
+            <div class="pnv-swatch-top">
+              <div class="pnv-swatch-name" style="color:rgba(0,0,0,.85);">Pure White</div>
+              <div class="pnv-swatch-hex" style="color:rgba(0,0,0,.5);">HEX FFFFFF · RGB 255 255 255</div>
+            </div>
+            <div class="pnv-swatch-divider" style="background:rgba(0,0,0,.15);opacity:1;"></div>
+            <div class="pnv-swatch-bottom">
+              <div class="pnv-swatch-role" style="color:rgba(0,0,0,.5);">Primary</div>
+              <div class="pnv-swatch-desc" style="color:rgba(0,0,0,.4);">高对比底色，让碳纤维质感成为焦点</div>
+            </div>
+          </div>
+          <div class="pnv-swatch" style="background:#e4002b;color:white;">
+            <div class="pnv-swatch-top">
+              <div class="pnv-swatch-name">Vuelta Red</div>
+              <div class="pnv-swatch-hex">HEX E4002B · RGB 228 0 43</div>
+            </div>
+            <div class="pnv-swatch-divider"></div>
+            <div class="pnv-swatch-bottom">
+              <div class="pnv-swatch-role">Accent · 环西</div>
+              <div class="pnv-swatch-desc">环西赛事标志色，竞技基因的烈焰</div>
+            </div>
+          </div>
+          <div class="pnv-swatch" style="background:#cc527c;color:white;">
+            <div class="pnv-swatch-top">
+              <div class="pnv-swatch-name">Giro Pink</div>
+              <div class="pnv-swatch-hex">HEX CC527C · RGB 204 82 124</div>
+            </div>
+            <div class="pnv-swatch-divider"></div>
+            <div class="pnv-swatch-bottom">
+              <div class="pnv-swatch-role">Accent · 环意</div>
+              <div class="pnv-swatch-desc">环意大利粉衫色，典雅与激情并存</div>
+            </div>
+          </div>
+          <div class="pnv-swatch" style="background:#ffc72c;color:#111;">
+            <div class="pnv-swatch-top">
+              <div class="pnv-swatch-name" style="color:rgba(0,0,0,.85);">Maillot Jaune</div>
+              <div class="pnv-swatch-hex" style="color:rgba(0,0,0,.5);">HEX FFC72C · RGB 255 199 44</div>
+            </div>
+            <div class="pnv-swatch-divider" style="background:rgba(0,0,0,.15);opacity:1;"></div>
+            <div class="pnv-swatch-bottom">
+              <div class="pnv-swatch-role" style="color:rgba(0,0,0,.5);">Accent · 环法</div>
+              <div class="pnv-swatch-desc" style="color:rgba(0,0,0,.4);">Tour de France 黄衫，大满贯荣耀象征</div>
+            </div>
+          </div>
+        </div>
+        <div class="pnv-color-summary">
+          黑白主色以极简克制为基底；三大环赛辅色（红/粉/黄）是赛道统治力的视觉密码——克制中每一次点缀都是冠军记忆的唤醒。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="pnv-col2">
+        <div class="pnv-col-label">Typography & Logo</div>
+        <div class="pnv-card pnv-logo-card">
+          <div class="pnv-card-tag">Wordmark + Emblem · Custom Geometric Sans</div>
+          <img src="/images/logos/pinarello-white.svg" class="pnv-logo-img" alt="Pinarello">
+          <div class="pnv-card-desc">无衬线大写字标搭配顶部徽章——字体结构硬朗精密，传递速度感与专业性，徽章延续意大利骑行家族的工匠传承</div>
+        </div>
+        <div class="pnv-card pnv-font-card">
+          <div class="pnv-card-tag">Primary Typeface · TT Norms Pro</div>
+          <div class="pnv-specimen">DOGMA</div>
+          <div class="pnv-specimen-sub">TT Norms Pro Regular</div>
+          <div class="pnv-specimen-body">Born in Treviso. Built for the Tour. Engineered to win every Grand Tour since 1988.</div>
+        </div>
+        <div class="pnv-col2-note">几何无衬线字体体系以极高阅读效率传递科技感，让品牌在速度与精密之间找到完美平衡。</div>
+      </div>
+
+      <!-- Col 3: Photography Style -->
+      <div class="pnv-col3">
+        <div class="pnv-col-label">Photography Style</div>
+        <div class="pnv-photos">
+          <div class="pnv-photo">
+            <img src="/images/pinarello/pinarello-dogma.jpg" alt="Pinarello Dogma F">
+          </div>
+          <div class="pnv-photo">
+            <img src="/images/pinarello/pinarello-supercharged.jpg" alt="Pinarello Action">
+          </div>
+        </div>
+        <div class="pnv-photo-note">高对比度运动纪实与极简棚拍并行——碳纤维线条、速度模糊与肌肉张力构成视觉核心，产品即战场上的武器。</div>
+      </div>
+
+    </div>
+  </div>
+</section>

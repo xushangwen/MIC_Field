@@ -1,0 +1,71 @@
+<style>
+  .pi-wrap {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  .pi-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .pi-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11,12,16,.92) 0%, rgba(11,12,16,.38) 48%, transparent 100%);
+  }
+  .pi-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 64px 88px;
+    gap: 20px;
+  }
+  .pi-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--am);
+  }
+  .pi-logo {
+    height: 60px;
+    width: auto;
+  }
+  .pi-name {
+    font-family: var(--fe);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    letter-spacing: -.02em;
+  }
+  .pi-cn {
+    font-family: var(--fc);
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,.45);
+    letter-spacing: .08em;
+    margin-top: -8px;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="21c5 PNS — Brand Intro">
+  <div class="pi-wrap">
+    <div class="pi-bg">
+      <img src="/images/pns/pns-brand-5.jpg" alt="Pas Normal Studios">
+    </div>
+    <div class="pi-overlay"></div>
+    <div class="pi-content">
+      <div class="pi-label">骑行文化品牌 · Layer 04</div>
+      <img src="/images/logos/pasnormal-white.svg" class="pi-logo" alt="Pas Normal Studios">
+      <div class="pi-name">Pas Normal Studios</div>
+      <div class="pi-cn">帕斯诺玛工作室</div>
+    </div>
+  </div>
+</section>

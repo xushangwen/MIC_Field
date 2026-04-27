@@ -1,0 +1,25 @@
+<style>
+  .ti-wrap { position: relative; height: 100%; overflow: hidden; }
+  .ti-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .ti-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,12,16,.92) 0%, rgba(11,12,16,.38) 48%, transparent 100%); }
+  .ti-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 64px 88px; gap: 20px; }
+  .ti-label { font-family: var(--fn); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: var(--am); }
+  .ti-logo { height: 60px; width: auto; filter: brightness(0) invert(1); opacity: .9; }
+  .ti-name { font-family: var(--fe); font-size: 88px; font-weight: 700; line-height: 1; color: white; letter-spacing: -.02em; }
+  .ti-cn { font-family: var(--fc); font-size: 28px; font-weight: 400; color: rgba(255,255,255,.45); letter-spacing: .08em; margin-top: -8px; }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="15g Trek — Brand Intro">
+  <div class="ti-wrap">
+    <div class="ti-bg">
+      <img src="/images/trek/trek-hero.png" alt="Trek">
+    </div>
+    <div class="ti-overlay"></div>
+    <div class="ti-content">
+      <div class="ti-label">整车装备品牌 · Layer 01</div>
+      <img src="/images/logos/trek-white.svg" class="ti-logo" alt="Trek">
+      <div class="ti-name">Trek</div>
+      <div class="ti-cn">崔克</div>
+    </div>
+  </div>
+</section>

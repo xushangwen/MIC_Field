@@ -1,0 +1,432 @@
+<style>
+  @font-face {
+    font-family: 'RaphaSans';
+    src: url('/fonts/rapha/raphaSans_653f485d.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'RaphaSerifHead';
+    src: url('/fonts/rapha/raphaSerifHead_7406069a.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .rpv-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 88px 56px;
+  }
+  .rpv-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+  .rpv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .rpv-header-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+  }
+  .rpv-header-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 24px;
+  }
+  .rpv-header-label {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .rpv-header-page {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.2);
+  }
+
+  .rpv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .rpv-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .rpv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+
+  /* ── Color Cards ── */
+  .rpv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .rpv-cc {
+    flex: 1;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .rpv-cc--black {
+    background: #000000;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+  .rpv-cc--pink { background: #EB1C6A; }
+  .rpv-cc--white { background: #FFFFFF; }
+
+  .rpv-cc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .rpv-cc-name {
+    font-family: var(--fn);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.95);
+  }
+  .rpv-cc-hex {
+    font-family: var(--fn);
+    font-size: 15px;
+    letter-spacing: .05em;
+    color: rgba(255,255,255,.8);
+  }
+  .rpv-cc-rgb {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.6);
+  }
+  .rpv-cc-name--dk { color: rgba(0,0,0,.85); }
+  .rpv-cc-hex--dk  { color: rgba(0,0,0,.65); }
+  .rpv-cc-rgb--dk  { color: rgba(0,0,0,.5); }
+
+  .rpv-cc-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 12px;
+  }
+  .rpv-cc-bottom--dk { border-top-color: rgba(0,0,0,.15); }
+  .rpv-cc-role {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+  .rpv-cc-role--dk { color: rgba(0,0,0,.5); }
+  .rpv-cc-desc {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.35);
+  }
+  .rpv-cc-desc--dk { color: rgba(0,0,0,.4); }
+
+  .rpv-color-summary {
+    flex-shrink: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+    letter-spacing: .02em;
+  }
+
+  /* ── Typography ── */
+  .rpv-type-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+  }
+  .rpv-logo-block {
+    padding: 18px 20px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rpv-logo-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .rpv-logo-img {
+    height: 160px;
+    width: auto;
+    display: block;
+    align-self: flex-start;
+    opacity: .9;
+  }
+  .rpv-logo-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .rpv-type-specimen {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 20px 22px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .rpv-type-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 12px;
+  }
+  .rpv-type-sample-serif {
+    font-family: 'RaphaSerifHead', serif;
+    font-size: 72px;
+    line-height: 1.05;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 12px;
+  }
+  .rpv-type-sample-serif--sub {
+    font-size: 28px;
+    opacity: .45;
+  }
+  .rpv-type-sample-serif-body {
+    font-family: 'RaphaSerifHead', serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .rpv-type-sample-sans {
+    font-family: 'RaphaSans', sans-serif;
+    font-size: 52px;
+    line-height: 1.0;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 12px;
+  }
+  .rpv-type-sample-sans-sm {
+    font-family: 'RaphaSans', sans-serif;
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    line-height: 2;
+  }
+  .rpv-type-sample-sans-body {
+    font-family: 'RaphaSans', sans-serif;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.4);
+    line-height: 1.65;
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .rpv-type-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* ── Photography ── */
+  .rpv-photo-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .rpv-photo-placeholder {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .rpv-photo-placeholder img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .rpv-photo-placeholder:first-child img {
+    object-position: center top;
+  }
+  .rpv-photo-placeholder:nth-child(2) img {
+    object-position: center center;
+  }
+  .rpv-photo-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="20b Rapha — Visual DNA">
+  <div class="rpv-page">
+    <div class="rpv-header">
+      <div class="rpv-header-left">
+        <div class="rpv-header-brand">Rapha</div>
+        <div class="rpv-header-slash">/</div>
+        <div class="rpv-header-label">Visual Identity System</div>
+      </div>
+      <div class="rpv-header-page">视觉体系解析 · 02 / 03</div>
+    </div>
+
+    <div class="rpv-grid">
+
+      <!-- Col 1: Color Cards -->
+      <div class="rpv-col">
+        <div class="rpv-col-label">Color System</div>
+        <div class="rpv-colors">
+
+          <div class="rpv-cc rpv-cc--black">
+            <div class="rpv-cc-top">
+              <div class="rpv-cc-name">Black</div>
+              <div class="rpv-cc-hex">HEX 000000</div>
+              <div class="rpv-cc-rgb">RGB 0  0  0</div>
+            </div>
+            <div class="rpv-cc-bottom">
+              <div class="rpv-cc-role">Primary · Monochrome Base</div>
+              <div class="rpv-cc-desc">奢侈品与高端出版物美学的基底色</div>
+            </div>
+          </div>
+
+          <div class="rpv-cc rpv-cc--pink">
+            <div class="rpv-cc-top">
+              <div class="rpv-cc-name">Hi-Vis Pink</div>
+              <div class="rpv-cc-hex">HEX EB1C6A</div>
+              <div class="rpv-cc-rgb">RGB 235  28  106</div>
+            </div>
+            <div class="rpv-cc-bottom">
+              <div class="rpv-cc-role">Accent · Signal Color</div>
+              <div class="rpv-cc-desc">Giro d'Italia 领骑衫 · 黑白中的视觉跳跃点</div>
+            </div>
+          </div>
+
+          <div class="rpv-cc rpv-cc--white">
+            <div class="rpv-cc-top">
+              <div class="rpv-cc-name rpv-cc-name--dk">White</div>
+              <div class="rpv-cc-hex rpv-cc-hex--dk">HEX FFFFFF</div>
+              <div class="rpv-cc-rgb rpv-cc-rgb--dk">RGB 255  255  255</div>
+            </div>
+            <div class="rpv-cc-bottom rpv-cc-bottom--dk">
+              <div class="rpv-cc-role rpv-cc-role--dk">Ground · Negative Space</div>
+              <div class="rpv-cc-desc rpv-cc-desc--dk">大面积留白制造高端出版物式呼吸感</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="rpv-color-summary">
+          黑白单色美学（Monochrome Aesthetics）奠定永不过时的高级基调；Hi-Vis Pink 灵感源自 Giro d'Italia 领骑衫，以公路安全的功能色身份意外成为品牌最具辨识度的视觉符号。三色系统在早期充斥荧光色与巨型 Logo 的市场中完成降维打击——Rapha 用奢侈品与高端出版物的视觉语言，将色彩克制本身转化为文化溢价。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="rpv-col">
+        <div class="rpv-col-label">Typography & Logo</div>
+        <div class="rpv-type-block">
+          <div class="rpv-logo-block">
+            <div class="rpv-logo-style">Wordmark · Custom Serif</div>
+            <img src="/images/logos/rapha-white.svg" class="rpv-logo-img" alt="Rapha">
+            <div class="rpv-logo-desc">定制衬线字标 · 复古与现代交织 · "老钱风" 高级感</div>
+          </div>
+          <div class="rpv-type-specimen">
+            <div class="rpv-type-style">Rapha Serif Head · 叙事 / 传承</div>
+            <div class="rpv-type-sample-serif">Kings of Pain</div>
+            <div class="rpv-type-sample-serif rpv-type-sample-serif--sub">Suffering & Glory</div>
+            <div class="rpv-type-sample-serif-body">
+              The toughest riders, the most gruelling conditions — beauty found in endurance.
+            </div>
+          </div>
+          <div class="rpv-type-specimen">
+            <div class="rpv-type-style">Rapha Sans · 性能 / 科技</div>
+            <div class="rpv-type-sample-sans">PRO TEAM</div>
+            <div class="rpv-type-sample-sans-sm">Pro Team · Brevet · Core Collection</div>
+            <div class="rpv-type-sample-sans-body">
+              Engineered for the road. Worn by the world's best.
+            </div>
+          </div>
+          <div class="rpv-type-note">
+            高端出版物式排版，大量负空间——衬线体承载历史传承，无衬线体传递性能科技
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Photography -->
+      <div class="rpv-col">
+        <div class="rpv-col-label">Photography Style</div>
+        <div class="rpv-photo-area">
+          <div class="rpv-photo-placeholder">
+            <img src="/images/rapha/rapha-materials.jpg" alt="Rapha Materials">
+          </div>
+          <div class="rpv-photo-placeholder">
+            <img src="/images/rapha/rapha-climate-goals.jpg" alt="Rapha Climate Goals">
+          </div>
+          <div class="rpv-photo-note">
+            低饱和度 · 胶片颗粒感 · 自然光纪实。摒弃棚拍完美，捕捉骑行者在极端条件下的真实状态
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

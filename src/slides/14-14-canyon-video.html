@@ -1,0 +1,36 @@
+<style>
+  /* ── Canyon Video slide 14 ── */
+  .cv-video {
+    position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .cv-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg,
+      rgba(5,8,20,.75) 0%, rgba(5,8,20,.50) 40%,
+      rgba(5,8,20,.70) 70%, rgba(5,8,20,.94) 100%);
+  }
+  .cv-rule {
+    width:48px; height:1px; background:rgba(255,255,255,.4); margin:16px auto;
+  }
+  .dot-texture {
+    position:absolute; inset:0; pointer-events:none; z-index:1;
+    background-image:radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size:6px 6px;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="14 Canyon Endurace CFR">
+  <video class="cv-video" autoplay muted loop playsinline>
+    <source src="/videos/canyon-endurace-cfr.mp4" type="video/mp4">
+  </video>
+  <div class="cv-overlay"></div>
+  <div class="dot-texture"></div>
+
+  <div class="z1 h100 col fcnt" style="text-align:center;padding-bottom:8%;">
+    <div class="lbl" style="opacity:.65;margin-bottom:28px;">品牌调研 · 第一层</div>
+    <div class="dp" style="font-size:80px;">Cycling Equipment</div>
+    <div class="rule" style="margin:28px auto;"></div>
+    <div class="bd" style="opacity:.75;max-width:800px;">整车与装备品牌如何建立专业感、性能信任与用户归属</div>
+  </div>
+</section>

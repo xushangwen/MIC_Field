@@ -1,15 +1,225 @@
-<section data-anim="chapter" class="bg-dk" data-label="13 Ch04 — Research">
-  <img src="https://images.unsplash.com/photo-1516820612845-a13894592046?auto=format&fit=crop&w=1920&q=85"
-       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;"
-       loading="lazy" alt="Cyclist in triathlon aero position, technical precision">
-  <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,12,16,.90) 36%,rgba(11,12,16,.52) 60%,rgba(11,12,16,.08) 100%);"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,12,16,.65) 0%,transparent 28%);"></div>
-  <div class="z1 h100 col pad jsb">
-    <div class="lbl" style="opacity:.28;letter-spacing:.12em;">Chapter 04</div>
-    <div style="max-width:580px;">
-      <div class="tt" style="font-size:80px;margin-bottom:18px;">Brand Research</div>
-      <div style="font-family:var(--fc);font-size:30px;font-weight:500;line-height:1.3;color:var(--am);">品牌调研</div>
+<style>
+  /* ── Research Overview (slide 13) ── */
+  .rs-grid { flex:1; gap:16px; align-items:stretch; }
+
+  .rs-card {
+    flex:1; position:relative; border-radius:14px; overflow:hidden;
+    padding:28px 24px; justify-content:space-between;
+    border:1px solid rgba(255,255,255,.14);
+  }
+  .rs-card--1 { border-color:rgba(200,104,58,.4); }
+
+  .rs-bg {
+    position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .rs-bg--right { object-position:right center; }
+
+  .rs-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg,
+      rgba(5,8,20,.6) 0%, rgba(5,8,20,.1) 40%,
+      rgba(5,8,20,.55) 65%, rgba(5,8,20,.94) 100%);
+  }
+
+  .rs-blur {
+    position:absolute; top:0; left:0; right:0; pointer-events:none;
+    mask-image:linear-gradient(to bottom,black 0%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,black 0%,transparent 100%);
+  }
+  .rs-blur-1 { height:55%; backdrop-filter:blur(4px);  -webkit-backdrop-filter:blur(4px); }
+  .rs-blur-2 { height:38%; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+  .rs-blur-3 { height:22%; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+
+  .rs-topbar { position:absolute; top:0; left:0; right:0; height:3px; background:var(--am); }
+
+  .rs-body   { position:relative; z-index:1; }
+  .rs-footer { position:relative; z-index:1; }
+
+  .rs-layer-no {
+    font-family:var(--fn); font-size:13px; font-weight:700;
+    letter-spacing:.18em; color:var(--am); margin-bottom:10px; display:block;
+  }
+  .rs-layer-no--dim { color:rgba(255,255,255,.35); }
+
+  .rs-cat {
+    font-size:34px; font-weight:700; color:#fff; line-height:1.2; margin-bottom:12px;
+  }
+  .rs-tagline {
+    font-size:20px; color:rgba(255,255,255,.42); line-height:1.5;
+  }
+
+  .rs-divider { width:28px; height:1px; background:rgba(255,255,255,.22); margin:18px 0; }
+
+  /* 品牌 logo 区域 — 竖向排列 */
+  .rs-logos     { display:flex; flex-direction:column; gap:16px; }
+  .rs-logo-item { display:flex; flex-direction:column; gap:5px; }
+  .rs-logo-name {
+    font-family:var(--fn); font-size:13px; font-weight:600;
+    letter-spacing:.12em; color:rgba(255,255,255,.32); text-transform:uppercase;
+    order:1;
+  }
+  .rs-logo-cn {
+    font-family:var(--fc); font-size:13px; font-weight:500;
+    letter-spacing:.04em; color:rgba(255,255,255,.22); text-transform:none;
+  }
+  .rs-logo-img {
+    order:0;
+    height:60px; width:auto; max-width:220px;
+    object-fit:contain; object-position:left center;
+    filter:brightness(0) invert(1); opacity:.85;
+  }
+  .rs-logo-img--xl  { height:100px; max-width:400px; }
+  .rs-logo-img--sq  { width:130px; height:130px; max-width:130px; }
+  .rs-logo-txt {
+    font-family:var(--fe); font-size:34px; font-weight:700;
+    letter-spacing:.06em; color:rgba(255,255,255,.72);
+    text-transform:uppercase; white-space:nowrap;
+    order:0;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="13 Brand Research Overview">
+  <div class="h100 col pad z1">
+    <div class="row rs-grid">
+
+      <!-- LAYER 01 整车装备 -->
+      <div class="col rs-card rs-card--1">
+        <img class="rs-bg" src="/images/research-layer1-specialized.webp" alt="Specialized">
+        <div class="rs-overlay"></div>
+        <div class="rs-blur rs-blur-1"></div>
+        <div class="rs-blur rs-blur-2"></div>
+        <div class="rs-blur rs-blur-3"></div>
+        <div class="rs-topbar"></div>
+        <div class="rs-body">
+          <span class="rs-layer-no">LAYER 01</span>
+          <div class="rs-cat">整车与<br>装备品牌</div>
+          <div class="rs-tagline">专业性 · 性能信任 · 用户归属</div>
+        </div>
+        <div class="rs-footer">
+          <div class="rs-divider"></div>
+          <div class="rs-logos">
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Specialized <span class="rs-logo-cn">闪电</span></span>
+              <img class="rs-logo-img" src="/images/logos/specialized-wordmark-white.svg" alt="Specialized">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Trek <span class="rs-logo-cn">崔克</span></span>
+              <img class="rs-logo-img" src="/images/logos/trek-white.svg" alt="Trek">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Canyon</span>
+              <img class="rs-logo-img" src="/images/logos/canyon-white.svg" alt="Canyon">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Pinarello <span class="rs-logo-cn">皮纳雷洛</span></span>
+              <img class="rs-logo-img" src="/images/logos/pinarello-white.svg" alt="Pinarello">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Colnago <span class="rs-logo-cn">梅花</span></span>
+              <img class="rs-logo-img" src="/images/logos/colnago-white.svg" alt="Colnago">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAYER 02 骑行文化 -->
+      <div class="col rs-card">
+        <img class="rs-bg" src="/images/research-layer2-rapha.jpg" alt="Rapha cycling">
+        <div class="rs-overlay"></div>
+        <div class="rs-blur rs-blur-1"></div>
+        <div class="rs-blur rs-blur-2"></div>
+        <div class="rs-blur rs-blur-3"></div>
+        <div class="rs-body">
+          <span class="rs-layer-no rs-layer-no--dim">LAYER 02</span>
+          <div class="rs-cat">骑行文化<br>服装品牌</div>
+          <div class="rs-tagline">文化感 · 社群 · 身份认同</div>
+        </div>
+        <div class="rs-footer">
+          <div class="rs-divider"></div>
+          <div class="rs-logos">
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Rapha <span class="rs-logo-cn">拉法</span></span>
+              <img class="rs-logo-img rs-logo-img--xl" src="/images/logos/rapha-white.svg" alt="Rapha">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">MAAP</span>
+              <img class="rs-logo-img" src="/images/logos/maap-white.svg" alt="MAAP">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Pas Normal Studios</span>
+              <img class="rs-logo-img" src="/images/logos/pasnormal-white.svg" alt="Pas Normal Studios">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAYER 03 户外生活方式 -->
+      <div class="col rs-card">
+        <img class="rs-bg" src="/images/research-arcteryx-photo.jpg" alt="Arc'teryx outdoor">
+        <div class="rs-overlay"></div>
+        <div class="rs-blur rs-blur-1"></div>
+        <div class="rs-blur rs-blur-2"></div>
+        <div class="rs-blur rs-blur-3"></div>
+        <div class="rs-body">
+          <span class="rs-layer-no rs-layer-no--dim">LAYER 03</span>
+          <div class="rs-cat">户外运动<br>生活方式</div>
+          <div class="rs-tagline">延展性 · 克制美学 · 日本语境</div>
+        </div>
+        <div class="rs-footer">
+          <div class="rs-divider"></div>
+          <div class="rs-logos">
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Arc'teryx <span class="rs-logo-cn">始祖鸟</span></span>
+              <img class="rs-logo-img rs-logo-img--sq" src="/images/logos/arcteryx-white.svg" alt="Arc'teryx">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Snow Peak <span class="rs-logo-cn">雪峰</span></span>
+              <img class="rs-logo-img" src="/images/logos/snowpeak-white.svg" alt="Snow Peak">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Goldwin</span>
+              <img class="rs-logo-img" src="/images/logos/goldwin-white.svg" alt="Goldwin">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAYER 04 跨领域高级品牌 -->
+      <div class="col rs-card">
+        <img class="rs-bg rs-bg--right" src="/images/research-layer3-polestar4.jpg" alt="Polestar">
+        <div class="rs-overlay"></div>
+        <div class="rs-blur rs-blur-1"></div>
+        <div class="rs-blur rs-blur-2"></div>
+        <div class="rs-blur rs-blur-3"></div>
+        <div class="rs-body">
+          <span class="rs-layer-no rs-layer-no--dim">LAYER 04</span>
+          <div class="rs-cat">跨领域<br>高级品牌</div>
+          <div class="rs-tagline">系统感 · 空间 · 国际语言</div>
+        </div>
+        <div class="rs-footer">
+          <div class="rs-divider"></div>
+          <div class="rs-logos">
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Polestar <span class="rs-logo-cn">极星</span></span>
+              <img class="rs-logo-img" src="/images/logos/polestar-white.svg" alt="Polestar">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Porsche <span class="rs-logo-cn">保时捷</span></span>
+              <img class="rs-logo-img" src="/images/logos/porsche-white.svg" alt="Porsche">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">Aesop <span class="rs-logo-cn">伊索</span></span>
+              <img class="rs-logo-img" src="/images/logos/aesop-white.png" alt="Aesop">
+            </div>
+            <div class="rs-logo-item">
+              <span class="rs-logo-name">MUJI <span class="rs-logo-cn">无印良品</span></span>
+              <img class="rs-logo-img" src="/images/logos/muji.svg" alt="MUJI">
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="sm" style="opacity:.38;white-space:nowrap;">四层参考体系，横向扫描，提炼 MIC 的设计判断。</div>
   </div>
 </section>

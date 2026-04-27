@@ -1,0 +1,381 @@
+<style>
+  .atv-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 88px 56px;
+  }
+  .atv-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+  .atv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .atv-header-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+  }
+  .atv-header-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 24px;
+  }
+  .atv-header-label {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .atv-header-page {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.2);
+  }
+  .atv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .atv-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .atv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+
+  /* Color Cards */
+  .atv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .atv-cc {
+    flex: 1;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .atv-cc--black {
+    background: #000000;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+  .atv-cc--white { background: #FFFFFF; }
+  .atv-cc--accent { background: #C8683A; }
+  .atv-cc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .atv-cc-name {
+    font-family: var(--fn);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.95);
+  }
+  .atv-cc-hex {
+    font-family: var(--fn);
+    font-size: 15px;
+    letter-spacing: .05em;
+    color: rgba(255,255,255,.8);
+  }
+  .atv-cc-rgb {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.6);
+  }
+  .atv-cc-name--dk { color: rgba(0,0,0,.85); }
+  .atv-cc-hex--dk  { color: rgba(0,0,0,.65); }
+  .atv-cc-rgb--dk  { color: rgba(0,0,0,.5); }
+  .atv-cc-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 12px;
+  }
+  .atv-cc-bottom--dk { border-top-color: rgba(0,0,0,.15); }
+  .atv-cc-role {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+  .atv-cc-role--dk { color: rgba(0,0,0,.5); }
+  .atv-cc-desc {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.35);
+  }
+  .atv-cc-desc--dk { color: rgba(0,0,0,.4); }
+  .atv-color-summary {
+    flex-shrink: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+    letter-spacing: .02em;
+  }
+
+  /* Typography */
+  .atv-type-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+  }
+  .atv-logo-block {
+    padding: 18px 20px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .atv-logo-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .atv-logo-img {
+    height: 160px;
+    width: auto;
+    display: block;
+    align-self: flex-start;
+    opacity: .9;
+    filter: brightness(0) invert(1);
+  }
+  .atv-logo-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .atv-type-specimen {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 20px 22px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .atv-type-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 12px;
+  }
+  .atv-type-sample {
+    font-family: var(--fn);
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -.01em;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 10px;
+  }
+  .atv-type-sample-sub {
+    font-family: var(--fn);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+  }
+  .atv-type-body {
+    font-family: var(--fn);
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .atv-type-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* Photography */
+  .atv-photo-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .atv-photo {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .atv-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .atv-photo:first-child img { object-position: center top; }
+  .atv-photo:nth-child(2) img { object-position: center center; }
+  .atv-photo-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="24b Arc'teryx — Visual DNA">
+  <div class="atv-page">
+    <div class="atv-header">
+      <div class="atv-header-left">
+        <div class="atv-header-brand">Arc'teryx</div>
+        <div class="atv-header-slash">/</div>
+        <div class="atv-header-label">Visual Identity System</div>
+      </div>
+      <div class="atv-header-page">视觉体系解析 · 02 / 03</div>
+    </div>
+
+    <div class="atv-grid">
+
+      <!-- Col 1: Color System -->
+      <div class="atv-col">
+        <div class="atv-col-label">Color System</div>
+        <div class="atv-colors">
+
+          <div class="atv-cc atv-cc--black">
+            <div class="atv-cc-top">
+              <div class="atv-cc-name">Black</div>
+              <div class="atv-cc-hex">HEX 000000</div>
+              <div class="atv-cc-rgb">RGB 0  0  0</div>
+            </div>
+            <div class="atv-cc-bottom">
+              <div class="atv-cc-role">Primary · Monochrome Base</div>
+              <div class="atv-cc-desc">视觉系统的绝对主色，传递专业与克制</div>
+            </div>
+          </div>
+
+          <div class="atv-cc atv-cc--white">
+            <div class="atv-cc-top">
+              <div class="atv-cc-name atv-cc-name--dk">White</div>
+              <div class="atv-cc-hex atv-cc-hex--dk">HEX FFFFFF</div>
+              <div class="atv-cc-rgb atv-cc-rgb--dk">RGB 255  255  255</div>
+            </div>
+            <div class="atv-cc-bottom atv-cc-bottom--dk">
+              <div class="atv-cc-role atv-cc-role--dk">Ground · Negative Space</div>
+              <div class="atv-cc-desc atv-cc-desc--dk">极简留白，将舞台完全让给产品本身</div>
+            </div>
+          </div>
+
+          <div class="atv-cc atv-cc--accent">
+            <div class="atv-cc-top">
+              <div class="atv-cc-name">Product Accents</div>
+              <div class="atv-cc-hex">High Saturation</div>
+              <div class="atv-cc-rgb">Red · Blue · Yellow</div>
+            </div>
+            <div class="atv-cc-bottom">
+              <div class="atv-cc-role">Functional · Safety Signal</div>
+              <div class="atv-cc-desc">产品功能性警示配色，UI 层面仍保持黑白克制</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="atv-color-summary">
+          黑白双色构成极简 UI 骨架，将视觉聚焦权完全赋予产品本身；高饱和度功能性配色只出现在产品层——这是一套刻意留白的色彩系统，以克制换取专业感与高端感的最大公约数。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="atv-col">
+        <div class="atv-col-label">Typography & Logo</div>
+        <div class="atv-type-block">
+          <div class="atv-logo-block">
+            <div class="atv-logo-style">Emblem · Fossil Icon Mark</div>
+            <img src="/images/logos/arcteryx-white.svg" class="atv-logo-img" alt="Arc'teryx">
+            <div class="atv-logo-desc">始祖鸟化石骨骼抽象提炼 · 象征进化与突破极限 · 极强辨识度</div>
+          </div>
+          <div class="atv-type-specimen">
+            <div class="atv-type-style">URW DIN Condensed · 性能 / 工业</div>
+            <div class="atv-type-sample">ALPHA</div>
+            <div class="atv-type-sample-sub">SL · FL · AR · LT</div>
+            <div class="atv-type-body">
+              Precision-engineered for the mountain. Every gram justified.
+            </div>
+          </div>
+        </div>
+        <div class="atv-type-note">
+          工业感极强的无衬线体——几何切割利落，传递精准、理性与硬核科技属性；字体本身即是品牌性格的视觉延伸
+        </div>
+      </div>
+
+      <!-- Col 3: Photography Style -->
+      <div class="atv-col">
+        <div class="atv-col-label">Photography Style</div>
+        <div class="atv-photo-area">
+          <div class="atv-photo">
+            <img src="/images/arcteryx/arc-9-portrait-a.png" alt="Arc'teryx photography">
+          </div>
+          <div class="atv-photo">
+            <img src="/images/arcteryx/arc-12-portrait-b.png" alt="Arc'teryx photography">
+          </div>
+          <div class="atv-photo-note">
+            极具张力的高对比度纪实风 + 精准的产品细节棚拍。强调人在极端自然环境中的渺小与力量，产品细节图注重展现面料纹理与压胶接缝的工艺精度
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

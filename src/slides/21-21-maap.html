@@ -1,0 +1,163 @@
+<style>
+  .mp-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .mp-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .mp-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .mp-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .mp-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .mp-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .mp-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .mp-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .mp-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .mp-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 18px;
+  }
+  .mp-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 0 14px;
+    color: white;
+  }
+  .mp-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .mp-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .mp-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .mp-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .mp-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .mp-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .mp-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="21 MAAP — Brand Overview">
+  <div class="mp-layout">
+    <div class="mp-img-panel">
+      <div class="mp-collage">
+        <div class="mp-collage-top">
+          <img src="/images/maap/maap-lifetime-gp.jpg" alt="MAAP Life Time Grand Prix">
+        </div>
+        <div class="mp-collage-bottom">
+          <div class="mp-collage-split">
+            <div class="mp-collage-cell">
+              <img src="/images/maap/maap-mind-over-miles.jpg" alt="MAAP Mind Over Miles">
+            </div>
+            <div class="mp-collage-cell">
+              <img src="/images/maap/maap-worldtour.jpg" alt="MAAP WorldTour Capsule">
+            </div>
+          </div>
+          <div class="mp-collage-cell">
+            <img src="/images/maap/maap-pro-aero.jpg" alt="MAAP Pro Aero">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mp-info">
+      <div class="mp-head">
+        <div class="mp-tier">骑行文化品牌 · Layer 03</div>
+        <img src="/images/logos/maap-white.svg" class="mp-logo" alt="MAAP">
+        <div class="mp-meta">Est. 2015 · Melbourne, Australia · Premium Cycling Apparel</div>
+      </div>
+
+      <div class="mp-tagline">
+        以 WorldTour 级别性能为锚点，<br>将街头前卫美学降维打击进骑行领域——<br>成为新一代骑行文化的视觉风向标
+      </div>
+
+      <div>
+        <div class="mp-divider" style="margin-bottom:24px;"></div>
+        <div class="mp-values">
+          <div class="mp-value">
+            <div class="mp-value-name">Performance</div>
+            <div class="mp-value-desc">WorldTour 职业赛事验证，精英级技术标准</div>
+          </div>
+          <div class="mp-value">
+            <div class="mp-value-name">Aesthetic</div>
+            <div class="mp-value-desc">街头潮流 × 时装视觉语言，打破功能与美学对立</div>
+          </div>
+          <div class="mp-value">
+            <div class="mp-value-name">Inclusivity</div>
+            <div class="mp-value-desc">重塑骑行服视觉语言，吸引新一代骑行者入圈</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

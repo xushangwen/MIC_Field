@@ -1,0 +1,164 @@
+<style>
+  .pn-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .pn-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .pn-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .pn-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .pn-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .pn-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .pn-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .pn-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .pn-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .pn-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 20px;
+  }
+  .pn-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 0 20px;
+    opacity: .9;
+  }
+  .pn-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .pn-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .pn-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pn-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .pn-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .pn-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .pn-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="17d Pinarello — Brand Overview">
+  <div class="pn-layout">
+    <div class="pn-img-panel">
+      <div class="pn-collage">
+        <div class="pn-collage-top">
+          <img src="/images/pinarello/pinarello-apparel.jpg" alt="Pinarello Apparel">
+        </div>
+        <div class="pn-collage-bottom">
+          <div class="pn-collage-split">
+            <div class="pn-collage-cell">
+              <img src="/images/pinarello/pinarello-dogma.jpg" alt="Pinarello Dogma F">
+            </div>
+            <div class="pn-collage-cell">
+              <img src="/images/pinarello/pinarello-urban.jpg" alt="Pinarello Urban">
+            </div>
+          </div>
+          <div class="pn-collage-cell">
+            <img src="/images/pinarello/pinarello-heritage.jpg" alt="Pinarello Heritage">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn-info">
+      <div>
+        <div class="pn-tier">整车品牌 · Layer 01</div>
+        <img src="/images/logos/pinarello-white.svg" class="pn-logo" alt="Pinarello">
+        <div class="pn-meta">Est. 1952 · Treviso, Italy · Grand Tour Racing Excellence</div>
+      </div>
+
+      <div class="pn-tagline">
+        Born to Win——<br>72年意大利赛道传奇，<br>环法历史最多胜品牌，冠军的武器
+      </div>
+
+      <div>
+        <div class="pn-divider" style="margin-bottom:24px;"></div>
+        <div class="pn-values">
+          <div class="pn-value">
+            <div class="pn-value-name">Born to Win</div>
+            <div class="pn-value-desc">不为参与，只为胜利——竞技基因深植品牌血液</div>
+          </div>
+          <div class="pn-value">
+            <div class="pn-value-name">Speed & Craft</div>
+            <div class="pn-value-desc">极致空气动力学与意大利精湛工艺的完美融合</div>
+          </div>
+          <div class="pn-value">
+            <div class="pn-value-name">Legacy</div>
+            <div class="pn-value-desc">大满贯赛事背书，稀缺性是品牌定价的根源</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

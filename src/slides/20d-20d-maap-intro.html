@@ -1,0 +1,71 @@
+<style>
+  .mi-wrap {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  .mi-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .mi-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11,12,16,.92) 0%, rgba(11,12,16,.38) 48%, transparent 100%);
+  }
+  .mi-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 64px 88px;
+    gap: 20px;
+  }
+  .mi-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--am);
+  }
+  .mi-logo {
+    height: 60px;
+    width: auto;
+  }
+  .mi-name {
+    font-family: var(--fe);
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    letter-spacing: -.02em;
+  }
+  .mi-cn {
+    font-family: var(--fc);
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,.45);
+    letter-spacing: .08em;
+    margin-top: -8px;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="20d MAAP — Brand Intro">
+  <div class="mi-wrap">
+    <div class="mi-bg">
+      <img src="/images/maap/maap-lifetime-gp.jpg" alt="MAAP">
+    </div>
+    <div class="mi-overlay"></div>
+    <div class="mi-content">
+      <div class="mi-label">骑行文化品牌 · Layer 03</div>
+      <img src="/images/logos/maap-white.svg" class="mi-logo" alt="MAAP">
+      <div class="mi-name">MAAP</div>
+      <div class="mi-cn">迈普</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,383 @@
+<style>
+  @font-face {
+    font-family: 'NeueHaasGrotesk';
+    src: url('/fonts/goldwin/neue-haas-grotesk-text-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .gwv-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 88px 56px;
+  }
+  .gwv-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+  .gwv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .gwv-header-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+  }
+  .gwv-header-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 24px;
+  }
+  .gwv-header-label {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .gwv-header-page {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.2);
+  }
+  .gwv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .gwv-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .gwv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+
+  /* Color Cards */
+  .gwv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .gwv-cc {
+    flex: 1;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .gwv-cc--black {
+    background: #000000;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+  .gwv-cc--white { background: #FFFFFF; }
+  .gwv-cc--neutral { background: #F5F5F5; }
+  .gwv-cc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .gwv-cc-name {
+    font-family: var(--fn);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.95);
+  }
+  .gwv-cc-hex {
+    font-family: var(--fn);
+    font-size: 15px;
+    letter-spacing: .05em;
+    color: rgba(255,255,255,.8);
+  }
+  .gwv-cc-rgb {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.6);
+  }
+  .gwv-cc-name--dk { color: rgba(0,0,0,.85); }
+  .gwv-cc-hex--dk  { color: rgba(0,0,0,.65); }
+  .gwv-cc-rgb--dk  { color: rgba(0,0,0,.5); }
+  .gwv-cc-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 12px;
+  }
+  .gwv-cc-bottom--dk { border-top-color: rgba(0,0,0,.15); }
+  .gwv-cc-role {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+  .gwv-cc-role--dk { color: rgba(0,0,0,.5); }
+  .gwv-cc-desc {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.35);
+  }
+  .gwv-cc-desc--dk { color: rgba(0,0,0,.4); }
+  .gwv-color-summary {
+    flex-shrink: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+    letter-spacing: .02em;
+  }
+
+  /* Typography */
+  .gwv-type-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+  }
+  .gwv-logo-block {
+    padding: 18px 20px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .gwv-logo-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .gwv-logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    align-self: flex-start;
+    opacity: .9;
+    filter: brightness(0) invert(1);
+  }
+  .gwv-logo-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .gwv-type-specimen {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 20px 22px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .gwv-type-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 12px;
+  }
+  .gwv-type-sample {
+    font-family: 'NeueHaasGrotesk', sans-serif;
+    font-size: 68px;
+    line-height: 1.0;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 10px;
+  }
+  .gwv-type-sample-sub {
+    font-family: 'NeueHaasGrotesk', sans-serif;
+    font-size: 28px;
+    color: rgba(255,255,255,.45);
+  }
+  .gwv-type-body {
+    font-family: 'NeueHaasGrotesk', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .gwv-type-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* Photography */
+  .gwv-photo-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .gwv-photo {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .gwv-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .gwv-photo:first-child img { object-position: center top; }
+  .gwv-photo:nth-child(2) img { object-position: center center; }
+  .gwv-photo-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="25d Goldwin — Visual DNA">
+  <div class="gwv-page">
+    <div class="gwv-header">
+      <div class="gwv-header-left">
+        <div class="gwv-header-brand">Goldwin</div>
+        <div class="gwv-header-slash">/</div>
+        <div class="gwv-header-label">Visual Identity System</div>
+      </div>
+      <div class="gwv-header-page">视觉体系解析 · 02 / 03</div>
+    </div>
+
+    <div class="gwv-grid">
+
+      <!-- Col 1: Color System -->
+      <div class="gwv-col">
+        <div class="gwv-col-label">Color System</div>
+        <div class="gwv-colors">
+
+          <div class="gwv-cc gwv-cc--black">
+            <div class="gwv-cc-top">
+              <div class="gwv-cc-name">Black</div>
+              <div class="gwv-cc-hex">HEX 000000</div>
+              <div class="gwv-cc-rgb">RGB 0  0  0</div>
+            </div>
+            <div class="gwv-cc-bottom">
+              <div class="gwv-cc-role">Primary · Anchoring</div>
+              <div class="gwv-cc-desc">视觉系统的锚色，传递专业与克制的日本美学</div>
+            </div>
+          </div>
+
+          <div class="gwv-cc gwv-cc--white">
+            <div class="gwv-cc-top">
+              <div class="gwv-cc-name gwv-cc-name--dk">White</div>
+              <div class="gwv-cc-hex gwv-cc-hex--dk">HEX FFFFFF</div>
+              <div class="gwv-cc-rgb gwv-cc-rgb--dk">RGB 255  255  255</div>
+            </div>
+            <div class="gwv-cc-bottom gwv-cc-bottom--dk">
+              <div class="gwv-cc-role gwv-cc-role--dk">Ground · Primary BG</div>
+              <div class="gwv-cc-desc gwv-cc-desc--dk">极简留白，让产品剪裁与材质成为视觉主角</div>
+            </div>
+          </div>
+
+          <div class="gwv-cc gwv-cc--neutral">
+            <div class="gwv-cc-top">
+              <div class="gwv-cc-name gwv-cc-name--dk">Neutral 100</div>
+              <div class="gwv-cc-hex gwv-cc-hex--dk">HEX F5F5F5</div>
+              <div class="gwv-cc-rgb gwv-cc-rgb--dk">RGB 245  245  245</div>
+            </div>
+            <div class="gwv-cc-bottom gwv-cc-bottom--dk">
+              <div class="gwv-cc-role gwv-cc-role--dk">Secondary · Subtle Ground</div>
+              <div class="gwv-cc-desc gwv-cc-desc--dk">柔和过渡色，维持系统的纯粹与呼吸感</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="gwv-color-summary">
+          黑白灰三色构成近乎禁欲的视觉系统，以极度克制的色彩语言排除一切干扰，将所有注意力引导至服装的功能性剪裁与材质细节——这是日本设计"以无胜有"哲学的极佳范本。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="gwv-col">
+        <div class="gwv-col-label">Typography & Logo</div>
+        <div class="gwv-type-block">
+          <div class="gwv-logo-block">
+            <div class="gwv-logo-style">Wordmark · Custom Geometric</div>
+            <img src="/images/logos/goldwin-white.svg" class="gwv-logo-img" alt="Goldwin">
+            <div class="gwv-logo-desc">极简几何线条 · 动态三元符号象征速度与自然轮廓 · 日本精工字体定制</div>
+          </div>
+          <div class="gwv-type-specimen">
+            <div class="gwv-type-style">Neue Haas Grotesk Text · 功能 / 现代</div>
+            <div class="gwv-type-sample">Nature</div>
+            <div class="gwv-type-sample-sub">Immerse</div>
+            <div class="gwv-type-body">
+              Feel your body unite with the world. Precision and harmony in motion.
+            </div>
+          </div>
+        </div>
+        <div class="gwv-type-note">
+          克制、现代、强调功能性与易读性的无衬线排版体系——字体本身即诠释了 Goldwin 对"纯粹"的追求
+        </div>
+      </div>
+
+      <!-- Col 3: Photography Style -->
+      <div class="gwv-col">
+        <div class="gwv-col-label">Photography Style</div>
+        <div class="gwv-photo-area">
+          <div class="gwv-photo">
+            <img src="/images/goldwin/gw-10-shorts.jpg" alt="Goldwin product detail">
+          </div>
+          <div class="gwv-photo">
+            <img src="/images/goldwin/gw-12-sustainability.jpg" alt="Goldwin sustainability">
+          </div>
+          <div class="gwv-photo-note">
+            冷峻自然纪实风（雪山、森林、极限户外）与干净利落的棚拍并行。聚焦服装科技感与剪裁精度，人在自然中的渺小与和谐是始终贯穿的视觉叙事
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

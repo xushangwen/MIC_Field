@@ -1,0 +1,162 @@
+<style>
+  .pns-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .pns-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .pns-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .pns-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .pns-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .pns-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .pns-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .pns-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .pns-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .pns-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 18px;
+  }
+  .pns-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 0 14px;
+  }
+  .pns-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .pns-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .pns-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pns-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .pns-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .pns-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .pns-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="21d PNS — Brand Overview">
+  <div class="pns-layout">
+    <div class="pns-img-panel">
+      <div class="pns-collage">
+        <div class="pns-collage-top">
+          <img src="/images/pns/pns-brand-6.jpg" alt="PNS Campaign">
+        </div>
+        <div class="pns-collage-bottom">
+          <div class="pns-collage-split">
+            <div class="pns-collage-cell">
+              <img src="/images/pns/pns-brand-7.jpg" alt="PNS Campaign">
+            </div>
+            <div class="pns-collage-cell">
+              <img src="/images/pns/pns-brand-8.jpg" alt="PNS Campaign">
+            </div>
+          </div>
+          <div class="pns-collage-cell">
+            <img src="/images/pns/pns-brand-9.jpg" alt="PNS Campaign">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pns-info">
+      <div class="pns-head">
+        <div class="pns-tier">骑行文化品牌 · Layer 04</div>
+        <img src="/images/logos/pasnormal-white.svg" class="pns-logo" alt="Pas Normal Studios">
+        <div class="pns-meta">Est. 2013 · Copenhagen, Denmark · Premium Cycling Apparel</div>
+      </div>
+
+      <div class="pns-tagline">
+        斯堪的纳维亚极简美学遇见顶尖运动科技——<br>打破常规，以实用极简主义<br>重新定义现代骑行文化
+      </div>
+
+      <div>
+        <div class="pns-divider" style="margin-bottom:24px;"></div>
+        <div class="pns-values">
+          <div class="pns-value">
+            <div class="pns-value-name">Uncompromising</div>
+            <div class="pns-value-desc">职业车手级手工制作，可持续顶级面料</div>
+          </div>
+          <div class="pns-value">
+            <div class="pns-value-name">Visionary</div>
+            <div class="pns-value-desc">高级时装色彩与版型降维进入骑行领域</div>
+          </div>
+          <div class="pns-value">
+            <div class="pns-value-name">Minimalism</div>
+            <div class="pns-value-desc">去除一切多余装饰，纯粹性能与视觉并重</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

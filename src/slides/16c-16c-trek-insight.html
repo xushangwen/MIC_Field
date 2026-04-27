@@ -1,0 +1,168 @@
+<style>
+  .tki-layout {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    height: 100%;
+  }
+  .tki-left {
+    padding: 52px 48px 52px 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .tki-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .tki-grid {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+  .tki-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  .tki-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .tki-photo-wide {
+    grid-column: 1 / 3;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  .tki-photo-wide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .tki-right {
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tki-block-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 12px;
+  }
+  .tki-headline {
+    font-family: var(--fe);
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .tki-body {
+    font-family: var(--fc);
+    font-size: 20px;
+    color: rgba(255,255,255,.65);
+    line-height: 1.7;
+  }
+  .tki-strategy {
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,.07);
+  }
+  .tki-strategy-body {
+    font-family: var(--fc);
+    font-size: 19px;
+    color: rgba(255,255,255,.5);
+    line-height: 1.65;
+  }
+  .tki-insight-card {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .tki-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 10px;
+  }
+  .tki-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .tki-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.7;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="16c Trek — Photography & Insight">
+  <div class="tki-layout">
+    <div class="tki-left">
+      <div class="tki-left-label">Photography & Culture · 03 / 03</div>
+      <div class="tki-grid">
+        <div class="tki-photo">
+          <img src="/images/trek/trek-campaign.png" alt="Trek Campaign">
+        </div>
+        <div class="tki-photo">
+          <img src="/images/trek/trek-bartape.jpg" alt="Trek Bar Tape">
+        </div>
+        <div class="tki-photo-wide">
+          <img src="/images/trek/trek-maintenance.jpg" alt="Trek Maintenance">
+        </div>
+      </div>
+    </div>
+
+    <div class="tki-right">
+      <div>
+        <div class="tki-block-label">摄影美学</div>
+        <div class="tki-headline">Ride the<br>World</div>
+        <div class="tki-body">
+          充满张力的户外纪实摄影是 Trek 的视觉灵魂——泥土飞扬、骑手真实情绪与壮阔自然环境共同构建「改变世界」的叙事。产品棚拍则以极致打光放大碳纤维纹理，两种调性相辅相成。
+        </div>
+      </div>
+
+      <div class="tki-strategy">
+        <div class="tki-block-label">服务与社群</div>
+        <div class="tki-strategy-body">
+          Trek 将门店从零售终端升级为「骑行信任锚点」——终身车架保修、30天退换、HowTo 内容生态，让用户与品牌建立长达数十年的关系，而非一次性购买。
+        </div>
+      </div>
+
+      <div class="tki-insight-card">
+        <div class="tki-insight-label">对 MIC 的战略洞察</div>
+        <div class="tki-insight-title">门店是信任的<br>物理载体</div>
+        <div class="tki-insight-body">
+          Trek 证明：本地门店网络是品牌最强的信任基础设施。MIC Cycling Base 需要成为用户可依赖的本地锚点——不只是卖场，而是骑行生活的起点与归宿。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,209 @@
+<style>
+  .rpi-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .rpi-left {
+    display: flex;
+    flex-direction: column;
+    padding: 52px 48px 52px 88px;
+    gap: 24px;
+  }
+  .rpi-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .rpi-photo-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .rpi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .rpi-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .rpi-photo--wide {
+    grid-column: 1 / 3;
+  }
+  .rpi-photo-trio {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .rpi-photo-trio .rpi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .rpi-photo-icon {
+    font-size: 18px;
+    color: rgba(255,255,255,.15);
+  }
+  .rpi-photo-tag {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.2);
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .rpi-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .rpi-aesthetic-tag {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 16px;
+  }
+  .rpi-aesthetic-title {
+    font-family: var(--fe);
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+  .rpi-aesthetic-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.65);
+  }
+
+  .rpi-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+
+  .rpi-club-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rpi-club-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .rpi-club-text {
+    font-family: var(--fc);
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.5);
+  }
+
+  .rpi-insight {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .rpi-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 14px;
+  }
+  .rpi-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .rpi-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="20c Rapha — Photography & Insight">
+  <div class="rpi-layout">
+
+    <div class="rpi-left">
+      <div class="rpi-left-label">摄影调性 · "Kings of Pain" Aesthetic</div>
+      <div class="rpi-photo-grid">
+        <div class="rpi-photo">
+          <img src="/images/rapha/rapha-climate-goals.jpg" alt="Rapha Climate Goals">
+        </div>
+        <div class="rpi-photo">
+          <img src="/images/rapha/rapha-cycling-club.jpg" alt="Rapha Cycling Club">
+        </div>
+        <div class="rpi-photo-trio">
+          <div class="rpi-photo">
+            <img src="/images/rapha/rapha-iridescent-suit.jpg" alt="Rapha Iridescent Suit">
+          </div>
+          <div class="rpi-photo">
+            <img src="/images/rapha/rapha-jersey-purple.jpg" alt="Rapha Jersey Purple">
+          </div>
+          <div class="rpi-photo">
+            <img src="/images/rapha/rapha-cyclist-portrait.jpg" alt="Rapha Cyclist Portrait">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rpi-right">
+      <div class="rpi-aesthetic">
+        <div class="rpi-aesthetic-tag">Aesthetic Philosophy</div>
+        <div class="rpi-aesthetic-title">Suffering<br>& Glory</div>
+        <div class="rpi-aesthetic-desc">
+          高对比度纪实风格，低饱和度 + 胶片颗粒感的自然光摄影。摒弃棚拍的完美无瑕，直面骑行者在极端天气与泥泞中的真实状态——痛苦中的优雅，才是 Rapha 美学的核心主张。
+        </div>
+      </div>
+
+      <div class="rpi-divider"></div>
+
+      <div class="rpi-club-block">
+        <div class="rpi-club-label">社群策略 · RCC</div>
+        <div class="rpi-club-text">
+          通过 Rapha Cycling Club 与全球 Clubhouse 实体店，构建具有强排他性与身份认同感的精英文化圈层——穿 Rapha 不只是为了骑得快，更是宣告"我是这个品味阶层的一员"
+        </div>
+      </div>
+
+      <div class="rpi-insight">
+        <div class="rpi-insight-label">对 MIC 的战略启示</div>
+        <div class="rpi-insight-title">品牌的最终资产不是产品，<br>而是文化归属感</div>
+        <div class="rpi-insight-body">
+          Rapha 用奢侈品与高端出版物的视觉语言对骑行装备市场完成"降维打击"。MIC 可借鉴：用克制的美学系统 + 场域文化内容，让品牌成为骑手的精神坐标而非消费标签。
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

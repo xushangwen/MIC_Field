@@ -1,0 +1,107 @@
+<style>
+  .cn-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .cn-img-panel { position: relative; overflow: hidden; }
+  .cn-collage {
+    position: absolute; inset: 0;
+    display: grid; grid-template-rows: 58% 42%; gap: 3px;
+  }
+  .cn-collage-top { position: relative; overflow: hidden; }
+  .cn-collage-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .cn-collage-cell { position: relative; overflow: hidden; }
+  .cn-collage-split { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .cn-collage img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+  }
+  .cn-info {
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .cn-tier {
+    font-family: var(--fn); font-size: 14px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--am); margin-bottom: 18px;
+  }
+  .cn-logo { height: 80px; width: auto; display: block; margin: 0 0 14px; }
+  .cn-meta {
+    font-family: var(--fn); font-size: 15px;
+    color: rgba(255,255,255,.35); letter-spacing: .05em;
+  }
+  .cn-tagline {
+    font-family: var(--fc); font-size: 24px; line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am); padding-left: 20px;
+  }
+  .cn-values { display: flex; flex-direction: column; gap: 20px; }
+  .cn-value {
+    display: grid; grid-template-columns: 130px 1fr;
+    align-items: baseline; gap: 16px;
+  }
+  .cn-value-name {
+    font-family: var(--fn); font-size: 13px; letter-spacing: .18em;
+    text-transform: uppercase; color: rgba(255,255,255,.4);
+  }
+  .cn-value-desc {
+    font-family: var(--fc); font-size: 20px;
+    line-height: 1.5; color: rgba(255,255,255,.72);
+  }
+  .cn-divider { width: 100%; height: 1px; background: rgba(255,255,255,.07); }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="15d Colnago — Brand Overview">
+  <div class="cn-layout">
+    <div class="cn-img-panel">
+      <div class="cn-collage">
+        <div class="cn-collage-top">
+          <img src="/images/colnago/colnago-brand.jpg" alt="Colnago">
+        </div>
+        <div class="cn-collage-bottom">
+          <div class="cn-collage-split">
+            <div class="cn-collage-cell">
+              <img src="/images/colnago/colnago-apparel.png" alt="Colnago Apparel">
+            </div>
+            <div class="cn-collage-cell">
+              <img src="/images/colnago/colnago-heritage.jpg" alt="Colnago Heritage">
+            </div>
+          </div>
+          <div class="cn-collage-cell">
+            <img src="/images/colnago/colnago-allroad.jpg" alt="Colnago Allroad">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cn-info">
+      <div class="cn-head">
+        <div class="cn-tier">整车品牌 · Layer 01</div>
+        <img src="/images/logos/colnago-white.svg" class="cn-logo" alt="Colnago">
+        <div class="cn-meta">Est. 1954 · Cambiago, Italy · Premium Racing Bicycles</div>
+      </div>
+
+      <div class="cn-tagline">
+        传奇赛场的意大利匠心——<br>七十年只为最快的骑行者<br>打造最纯粹的速度
+      </div>
+
+      <div>
+        <div class="cn-divider" style="margin-bottom:24px;"></div>
+        <div class="cn-values">
+          <div class="cn-value">
+            <div class="cn-value-name">Innovation</div>
+            <div class="cn-value-desc">率先引入碳纤维车架，始终走在技术前沿</div>
+          </div>
+          <div class="cn-value">
+            <div class="cn-value-name">Excellence</div>
+            <div class="cn-value-desc">与 Merckx、Pogačar 共创传奇，只为胜利而生</div>
+          </div>
+          <div class="cn-value">
+            <div class="cn-value-name">Heritage</div>
+            <div class="cn-value-desc">70年历史沉淀，传奇、优雅与永恒魅力代代相传</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

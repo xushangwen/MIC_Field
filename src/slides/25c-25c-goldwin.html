@@ -1,0 +1,163 @@
+<style>
+  .gwo-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .gwo-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .gwo-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .gwo-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .gwo-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .gwo-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .gwo-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .gwo-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .gwo-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .gwo-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 18px;
+  }
+  .gwo-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 0 14px;
+    filter: brightness(0) invert(1);
+  }
+  .gwo-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .gwo-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .gwo-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .gwo-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .gwo-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .gwo-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .gwo-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="25c Goldwin — Brand Overview">
+  <div class="gwo-layout">
+    <div class="gwo-img-panel">
+      <div class="gwo-collage">
+        <div class="gwo-collage-top">
+          <img src="/images/goldwin/gw-6-hero2.jpg" alt="Goldwin hero">
+        </div>
+        <div class="gwo-collage-bottom">
+          <div class="gwo-collage-split">
+            <div class="gwo-collage-cell">
+              <img src="/images/goldwin/gw-8-ikuma.jpg" alt="Goldwin athlete Ikuma Horishima">
+            </div>
+            <div class="gwo-collage-cell">
+              <img src="/images/goldwin/gw-4-athletic.jpg" alt="Goldwin athletic category">
+            </div>
+          </div>
+          <div class="gwo-collage-cell">
+            <img src="/images/goldwin/gw-11-stores.jpg" alt="Goldwin store">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gwo-info">
+      <div class="gwo-head">
+        <div class="gwo-tier">户外生活方式品牌 · Layer 03</div>
+        <img src="/images/logos/goldwin-white.svg" class="gwo-logo" alt="Goldwin">
+        <div class="gwo-meta">Est. 1950 · Toyama, Japan · High-Performance Outdoor & Ski Apparel</div>
+      </div>
+
+      <div class="gwo-tagline">
+        连接自然与城市生活的高性能技术服饰，<br>以日本匠心将机能美学推向极致
+      </div>
+
+      <div>
+        <div class="gwo-divider" style="margin-bottom:24px;"></div>
+        <div class="gwo-values">
+          <div class="gwo-value">
+            <div class="gwo-value-name">Natural</div>
+            <div class="gwo-value-desc">从自然中汲取灵感，追求人与环境的和谐共存</div>
+          </div>
+          <div class="gwo-value">
+            <div class="gwo-value-name">Craftsmanship</div>
+            <div class="gwo-value-desc">70年雪地服饰制造经验，极致细节的日本匠心</div>
+          </div>
+          <div class="gwo-value">
+            <div class="gwo-value-name">Circular</div>
+            <div class="gwo-value-desc">致力可持续循环经济，让服装与世界共同演进</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

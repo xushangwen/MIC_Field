@@ -1,0 +1,389 @@
+<style>
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/specialized/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/specialized/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+  }
+
+  .spv-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 52px 88px 56px;
+  }
+  .spv-header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+  }
+  .spv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .spv-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+  }
+  .spv-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 28px;
+  }
+  .spv-section {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+  }
+  .spv-page-num {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.2);
+    letter-spacing: .08em;
+  }
+  .spv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .spv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── Col 1: Color System ── */
+  .spv-col1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .spv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .spv-swatch {
+    flex: 1;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .spv-swatch-top {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .spv-swatch-name {
+    font-family: var(--fn);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .spv-swatch-hex {
+    font-family: var(--fn);
+    font-size: 12px;
+    opacity: .6;
+    letter-spacing: .06em;
+  }
+  .spv-swatch-divider {
+    height: 1px;
+    background: currentColor;
+    opacity: .15;
+    margin: 8px 0;
+  }
+  .spv-swatch-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .spv-swatch-role {
+    font-family: var(--fn);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .55;
+  }
+  .spv-swatch-desc {
+    font-family: var(--fn);
+    font-size: 11px;
+    opacity: .4;
+  }
+  .spv-color-summary {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+  }
+
+  /* ── Col 2: Typography & Logo ── */
+  .spv-col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+  }
+  .spv-card {
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    padding: 18px 20px;
+    overflow: hidden;
+  }
+  .spv-logo-card {
+    flex-shrink: 0;
+  }
+  .spv-card-tag {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-bottom: 14px;
+  }
+  .spv-logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    opacity: .9;
+    margin-bottom: 16px;
+  }
+  .spv-wordmark-img {
+    height: 22px;
+    width: auto;
+    display: block;
+    opacity: .85;
+    margin-bottom: 14px;
+  }
+  .spv-card-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .spv-font-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .spv-specimen {
+    font-family: 'Poppins', var(--fe);
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.0;
+    color: white;
+    letter-spacing: -.02em;
+    flex: 1;
+  }
+  .spv-specimen-sub {
+    font-family: 'Poppins', var(--fe);
+    font-size: 26px;
+    font-weight: 500;
+    color: rgba(255,255,255,.45);
+    margin-top: 4px;
+  }
+  .spv-specimen-body {
+    font-family: 'Poppins', var(--fe);
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,.4);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    line-height: 1.6;
+  }
+  .spv-col2-note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    flex-shrink: 0;
+  }
+
+  /* ── Col 3: Photography ── */
+  .spv-col3 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .spv-photos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .spv-photo {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .spv-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .spv-photo:first-child img {
+    object-position: center top;
+  }
+  .spv-photo:last-child img {
+    object-position: center center;
+  }
+  .spv-photo-note {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    line-height: 1.5;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="15b Specialized — Visual Identity">
+  <div class="spv-page">
+    <div class="spv-header">
+      <div class="spv-header-left">
+        <span class="spv-brand">Specialized</span>
+        <span class="spv-slash">/</span>
+        <span class="spv-section">视觉体系解析</span>
+      </div>
+      <span class="spv-page-num">视觉体系解析 · 02 / 03</span>
+    </div>
+
+    <div class="spv-grid">
+
+      <!-- Col 1: Color System -->
+      <div class="spv-col1">
+        <div class="spv-col-label">Color System</div>
+        <div class="spv-colors">
+          <div class="spv-swatch" style="background:#000000;border:1px solid rgba(255,255,255,.1);color:white;">
+            <div class="spv-swatch-top">
+              <div class="spv-swatch-name">Bold Black</div>
+              <div class="spv-swatch-hex">HEX 000000 · RGB 0 0 0</div>
+            </div>
+            <div class="spv-swatch-divider"></div>
+            <div class="spv-swatch-bottom">
+              <div class="spv-swatch-role">Primary</div>
+              <div class="spv-swatch-desc">主品牌色，代表极致性能与侵略性</div>
+            </div>
+          </div>
+          <div class="spv-swatch" style="background:#FFFFFF;color:#111;">
+            <div class="spv-swatch-top">
+              <div class="spv-swatch-name" style="color:rgba(0,0,0,.85);">Pure White</div>
+              <div class="spv-swatch-hex" style="color:rgba(0,0,0,.5);">HEX FFFFFF · RGB 255 255 255</div>
+            </div>
+            <div class="spv-swatch-divider" style="background:rgba(0,0,0,.15);opacity:1;"></div>
+            <div class="spv-swatch-bottom">
+              <div class="spv-swatch-role" style="color:rgba(0,0,0,.5);">Primary</div>
+              <div class="spv-swatch-desc" style="color:rgba(0,0,0,.4);">高对比底色，强化产品视觉张力</div>
+            </div>
+          </div>
+          <div class="spv-swatch" style="background:#252525;border:1px solid rgba(255,255,255,.1);color:white;">
+            <div class="spv-swatch-top">
+              <div class="spv-swatch-name">Graphite</div>
+              <div class="spv-swatch-hex">HEX 252525 · RGB 37 37 37</div>
+            </div>
+            <div class="spv-swatch-divider"></div>
+            <div class="spv-swatch-bottom">
+              <div class="spv-swatch-role">Secondary</div>
+              <div class="spv-swatch-desc">深灰，用于背景与层次过渡</div>
+            </div>
+          </div>
+          <div class="spv-swatch" style="background:#F4F4F4;color:#111;">
+            <div class="spv-swatch-top">
+              <div class="spv-swatch-name" style="color:rgba(0,0,0,.85);">Pale Gray</div>
+              <div class="spv-swatch-hex" style="color:rgba(0,0,0,.5);">HEX F4F4F4 · RGB 244 244 244</div>
+            </div>
+            <div class="spv-swatch-divider" style="background:rgba(0,0,0,.15);opacity:1;"></div>
+            <div class="spv-swatch-bottom">
+              <div class="spv-swatch-role" style="color:rgba(0,0,0,.5);">Secondary</div>
+              <div class="spv-swatch-desc" style="color:rgba(0,0,0,.4);">浅灰，用于内容背景与辅助区块</div>
+            </div>
+          </div>
+          <div class="spv-swatch" style="background:#1B79F5;color:white;">
+            <div class="spv-swatch-top">
+              <div class="spv-swatch-name">Performance Blue</div>
+              <div class="spv-swatch-hex">HEX 1B79F5 · RGB 27 121 245</div>
+            </div>
+            <div class="spv-swatch-divider"></div>
+            <div class="spv-swatch-bottom">
+              <div class="spv-swatch-role">Accent</div>
+              <div class="spv-swatch-desc">强调科技感与数字互动入口</div>
+            </div>
+          </div>
+        </div>
+        <div class="spv-color-summary">
+          黑白双主色构成极度克制的视觉底座，让产品摄影与运动张力成为绝对主角；蓝色点缀强化数字端科技感。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="spv-col2">
+        <div class="spv-col-label">Typography & Logo</div>
+        <div class="spv-card spv-logo-card">
+          <div class="spv-card-tag">Logomark · S-Form Lightning Bolt + Wordmark</div>
+          <img src="/images/logos/specialized-white.svg" class="spv-logo-img" alt="Specialized Icon">
+          <img src="/images/logos/specialized-wordmark-white.svg" class="spv-wordmark-img" alt="Specialized Wordmark">
+          <div class="spv-card-desc">「S」形闪电图标搭配专属无衬线字标——双标志体系，符号即速度，字标即权威</div>
+        </div>
+        <div class="spv-card spv-font-card">
+          <div class="spv-card-tag">Primary Typeface · Poppins Bold</div>
+          <div class="spv-specimen">S-WORKS</div>
+          <div class="spv-specimen-sub">Poppins Medium</div>
+          <div class="spv-specimen-body">Engineered for riders who refuse to compromise. Every detail matters.</div>
+        </div>
+        <div class="spv-col2-note">几何骨架的无衬线字体系统强化工业精密感，与硬核运动摄影形成完整的「力量美学」叙事。</div>
+      </div>
+
+      <!-- Col 3: Photography Style -->
+      <div class="spv-col3">
+        <div class="spv-col-label">Photography Style</div>
+        <div class="spv-photos">
+          <div class="spv-photo">
+            <img src="/images/specialized/specialized-campaign.webp" alt="Specialized Campaign">
+          </div>
+          <div class="spv-photo">
+            <img src="/images/specialized/specialized-ambush.webp" alt="Specialized Product">
+          </div>
+        </div>
+        <div class="spv-photo-note">高对比度运动纪实为核心——速度感、肌肉线条与极端环境质感构成视觉主轴，让产品在张力中自我诠释。</div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<style>
+  .cai-wrap { position: relative; height: 100%; overflow: hidden; }
+  .cai-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .cai-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,12,16,.92) 0%, rgba(11,12,16,.38) 48%, transparent 100%); }
+  .cai-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 64px 88px; gap: 20px; }
+  .cai-label { font-family: var(--fn); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: var(--am); }
+  .cai-logo { height: 60px; width: auto; }
+  .cai-name { font-family: var(--fe); font-size: 88px; font-weight: 700; line-height: 1; color: white; letter-spacing: -.02em; }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="16d Canyon — Brand Intro">
+  <div class="cai-wrap">
+    <div class="cai-bg">
+      <img src="/images/canyon/canyon-hero.jpg" alt="Canyon">
+    </div>
+    <div class="cai-overlay"></div>
+    <div class="cai-content">
+      <div class="cai-label">整车装备品牌 · Layer 01</div>
+      <img src="/images/logos/canyon-white.svg" class="cai-logo" alt="Canyon">
+      <div class="cai-name">Canyon</div>
+    </div>
+  </div>
+</section>

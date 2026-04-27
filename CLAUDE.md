@@ -19,6 +19,9 @@ Vite + GSAP + deck-stage，61 张幻灯片。`npm run dev` → http://localhost:
 布局类：.pad 48px 88px · .h100 · .col · .row · .fcnt · .va · .jsb
 ```
 
+## 品牌调研幻灯片模板
+每个品牌固定三页（概览 / 视觉体系 / 摄影调性+洞察），完整版式规范见 `src/slides/BRAND_RESEARCH_TEMPLATE.md`。新品牌排版时必须先读此文件。
+
 ## 图片
 用户提供 URL 直接替换。全屏 `w=1920`，内容图 `w=1040`，网格 `w=800`。本地图放 `public/images/`，引用 `/images/filename.webp`。
 

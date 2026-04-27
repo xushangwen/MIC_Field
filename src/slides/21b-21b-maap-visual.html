@@ -1,0 +1,455 @@
+<style>
+  @font-face {
+    font-family: 'TWKEverett';
+    src: url('/fonts/maap/TWKEverett-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'TWKEverett';
+    src: url('/fonts/maap/TWKEverett-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'TWKEverettMono';
+    src: url('/fonts/maap/TWKEverettMono-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .mpv-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 88px 56px;
+  }
+  .mpv-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+  .mpv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .mpv-header-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+  }
+  .mpv-header-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 24px;
+  }
+  .mpv-header-label {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .mpv-header-page {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.2);
+  }
+
+  .mpv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .mpv-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .mpv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+
+  /* ── Color Cards ── */
+  .mpv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .mpv-cc {
+    flex: 1;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .mpv-cc--black {
+    background: #000000;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+  .mpv-cc--white {
+    background: #FFFFFF;
+  }
+  .mpv-cc--gray {
+    background: #F0F0F0;
+  }
+  .mpv-cc--sage {
+    background: #97A985;
+  }
+  .mpv-cc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mpv-cc-name {
+    font-family: var(--fn);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.95);
+  }
+  .mpv-cc-hex {
+    font-family: var(--fn);
+    font-size: 15px;
+    letter-spacing: .05em;
+    color: rgba(255,255,255,.8);
+  }
+  .mpv-cc-rgb {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.6);
+  }
+  .mpv-cc-name--dk { color: rgba(0,0,0,.85); }
+  .mpv-cc-hex--dk  { color: rgba(0,0,0,.65); }
+  .mpv-cc-rgb--dk  { color: rgba(0,0,0,.5); }
+  .mpv-cc-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 12px;
+  }
+  .mpv-cc-bottom--dk { border-top-color: rgba(0,0,0,.15); }
+  .mpv-cc-role {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+  .mpv-cc-role--dk { color: rgba(0,0,0,.5); }
+  .mpv-cc-desc {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.35);
+  }
+  .mpv-cc-desc--dk { color: rgba(0,0,0,.4); }
+  .mpv-color-summary {
+    flex-shrink: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+    letter-spacing: .02em;
+  }
+
+  /* ── Typography ── */
+  .mpv-type-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+  }
+  .mpv-logo-block {
+    padding: 18px 20px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mpv-logo-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .mpv-logo-img {
+    height: 160px;
+    width: auto;
+    display: block;
+    align-self: flex-start;
+    opacity: .9;
+    color: white;
+  }
+  .mpv-logo-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .mpv-type-specimen {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 20px 22px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mpv-type-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 12px;
+  }
+  .mpv-type-sample-everett {
+    font-family: 'TWKEverett', sans-serif;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 1.05;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .mpv-type-sample-everett--sub {
+    font-weight: 400;
+    font-size: 28px;
+    opacity: .45;
+  }
+  .mpv-type-sample-everett-body {
+    font-family: 'TWKEverett', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .mpv-type-sample-mono {
+    font-family: 'TWKEverettMono', monospace;
+    font-size: 60px;
+    line-height: 1.0;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .mpv-type-sample-mono-sm {
+    font-family: 'TWKEverettMono', monospace;
+    font-size: 13px;
+    letter-spacing: .06em;
+    color: rgba(255,255,255,.3);
+    line-height: 1.8;
+  }
+  .mpv-type-sample-mono-body {
+    font-family: 'TWKEverettMono', monospace;
+    font-size: 13px;
+    color: rgba(255,255,255,.4);
+    line-height: 1.65;
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .mpv-type-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* ── Photography ── */
+  .mpv-photo-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .mpv-photo-placeholder {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .mpv-photo-placeholder img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .mpv-photo-placeholder:first-child img {
+    object-position: center top;
+  }
+  .mpv-photo-placeholder:nth-child(2) img {
+    object-position: center center;
+  }
+  .mpv-photo-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="21b MAAP — Visual DNA">
+  <div class="mpv-page">
+    <div class="mpv-header">
+      <div class="mpv-header-left">
+        <div class="mpv-header-brand">MAAP</div>
+        <div class="mpv-header-slash">/</div>
+        <div class="mpv-header-label">Visual Identity System</div>
+      </div>
+      <div class="mpv-header-page">视觉体系解析 · 02 / 03</div>
+    </div>
+
+    <div class="mpv-grid">
+
+      <!-- Col 1: Color Cards -->
+      <div class="mpv-col">
+        <div class="mpv-col-label">Color System</div>
+        <div class="mpv-colors">
+
+          <div class="mpv-cc mpv-cc--black">
+            <div class="mpv-cc-top">
+              <div class="mpv-cc-name">Black</div>
+              <div class="mpv-cc-hex">HEX 000000</div>
+              <div class="mpv-cc-rgb">RGB 0  0  0</div>
+            </div>
+            <div class="mpv-cc-bottom">
+              <div class="mpv-cc-role">Primary · Monochrome Foundation</div>
+              <div class="mpv-cc-desc">极简主义的绝对基底，强调纯粹与力量感</div>
+            </div>
+          </div>
+
+          <div class="mpv-cc mpv-cc--white">
+            <div class="mpv-cc-top">
+              <div class="mpv-cc-name mpv-cc-name--dk">White</div>
+              <div class="mpv-cc-hex mpv-cc-hex--dk">HEX FFFFFF</div>
+              <div class="mpv-cc-rgb mpv-cc-rgb--dk">RGB 255  255  255</div>
+            </div>
+            <div class="mpv-cc-bottom mpv-cc-bottom--dk">
+              <div class="mpv-cc-role mpv-cc-role--dk">Ground · Negative Space</div>
+              <div class="mpv-cc-desc mpv-cc-desc--dk">大面积负空间制造高级呼吸感</div>
+            </div>
+          </div>
+
+          <div class="mpv-cc mpv-cc--gray">
+            <div class="mpv-cc-top">
+              <div class="mpv-cc-name mpv-cc-name--dk">Light Gray</div>
+              <div class="mpv-cc-hex mpv-cc-hex--dk">HEX F0F0F0</div>
+              <div class="mpv-cc-rgb mpv-cc-rgb--dk">RGB 240  240  240</div>
+            </div>
+            <div class="mpv-cc-bottom mpv-cc-bottom--dk">
+              <div class="mpv-cc-role mpv-cc-role--dk">Secondary · Surface</div>
+              <div class="mpv-cc-desc mpv-cc-desc--dk">过渡色阶，柔化黑白对比</div>
+            </div>
+          </div>
+
+          <div class="mpv-cc mpv-cc--sage">
+            <div class="mpv-cc-top">
+              <div class="mpv-cc-name">Sage</div>
+              <div class="mpv-cc-hex">HEX 97A985</div>
+              <div class="mpv-cc-rgb">RGB 151  169  133</div>
+            </div>
+            <div class="mpv-cc-bottom">
+              <div class="mpv-cc-role">Accent · Nature Contrast</div>
+              <div class="mpv-cc-desc">引入自然质感，平衡极简冷峻</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="mpv-color-summary">
+          黑白单色体系（Monochrome System）奠定极简前卫的品牌底色——黑色提供力量与权威，白色制造高级呼吸感，浅灰作为过渡层。Sage 绿从自然地貌汲取灵感，在高对比度的黑白系统中注入有机温度，呼应澳洲户外骑行文化基因。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="mpv-col">
+        <div class="mpv-col-label">Typography & Logo</div>
+        <div class="mpv-type-block">
+          <div class="mpv-logo-block">
+            <div class="mpv-logo-style">Wordmark · Custom Geometric Sans</div>
+            <img src="/images/logos/maap-white.svg" class="mpv-logo-img" alt="MAAP">
+            <div class="mpv-logo-desc">几何无衬线字标 · 强烈视觉张力 · 大比例印花即 Logo</div>
+          </div>
+          <div class="mpv-type-specimen">
+            <div class="mpv-type-style">TWK Everett Medium · 性能 / 叙事</div>
+            <div class="mpv-type-sample-everett">Mind Over Miles</div>
+            <div class="mpv-type-sample-everett mpv-type-sample-everett--sub">Pro Aero · WorldTour</div>
+            <div class="mpv-type-sample-everett-body">
+              Built for the world's best. Worn beyond the finish line.
+            </div>
+          </div>
+          <div class="mpv-type-specimen">
+            <div class="mpv-type-style">TWK Everett Mono · 数据 / 规格</div>
+            <div class="mpv-type-sample-mono">AEON</div>
+            <div class="mpv-type-sample-mono-sm">180g / 95% Recycled Nylon · UPF 50+</div>
+            <div class="mpv-type-sample-mono-body">
+              Precision-engineered for performance in every condition.
+            </div>
+          </div>
+          <div class="mpv-type-note">
+            TWK Everett 兼具科技感与人文细节——Medium 负责品牌叙事与张力，Mono 处理规格数据与细节标注
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Photography -->
+      <div class="mpv-col">
+        <div class="mpv-col-label">Photography Style</div>
+        <div class="mpv-photo-area">
+          <div class="mpv-photo-placeholder">
+            <img src="/images/maap/maap-jersey-core.jpg" alt="MAAP Core Jersey">
+          </div>
+          <div class="mpv-photo-placeholder">
+            <img src="/images/maap/maap-training-van.jpg" alt="MAAP Training Vancouver">
+          </div>
+          <div class="mpv-photo-note">
+            高对比度纪实风 · 硬朗自然光 · 速度感与力量感并重。产品即主角，背景是壮阔地貌或赛事现场——科技装备与极限场景的强烈视觉碰撞
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

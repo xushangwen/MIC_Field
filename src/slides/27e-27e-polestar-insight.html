@@ -1,0 +1,174 @@
+<style>
+  .psi-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .psi-left {
+    display: flex;
+    flex-direction: column;
+    padding: 52px 48px 52px 88px;
+    gap: 24px;
+  }
+  .psi-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .psi-photo-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .psi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .psi-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .psi-photo--wide {
+    grid-column: 1 / 3;
+  }
+
+  .psi-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .psi-aesthetic-tag {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 16px;
+  }
+  .psi-aesthetic-title {
+    font-family: var(--fe);
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 22px;
+  }
+  .psi-aesthetic-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.65);
+  }
+  .psi-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+  .psi-culture-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .psi-culture-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .psi-culture-text {
+    font-family: var(--fc);
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.5);
+  }
+  .psi-insight {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .psi-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 14px;
+  }
+  .psi-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .psi-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="27e Polestar — Photography & Insight">
+  <div class="psi-layout">
+
+    <div class="psi-left">
+      <div class="psi-left-label">摄影调性 · "Pure Geometry" Aesthetic</div>
+      <div class="psi-photo-grid">
+        <div class="psi-photo">
+          <img src="/images/polestar/ps-8-design-team.jpg" alt="Polestar design team">
+        </div>
+        <div class="psi-photo">
+          <img src="/images/polestar/ps-11-community.jpg" alt="Polestar community">
+        </div>
+        <div class="psi-photo psi-photo--wide">
+          <img src="/images/polestar/ps-2-sustainability.avif" alt="Polestar sustainability" style="object-position: center 40%;">
+        </div>
+      </div>
+    </div>
+
+    <div class="psi-right">
+      <div class="psi-aesthetic">
+        <div class="psi-aesthetic-tag">Aesthetic Philosophy</div>
+        <div class="psi-aesthetic-title">Less is<br>More True</div>
+        <div class="psi-aesthetic-desc">
+          高对比度冷色调 + 建筑几何感——Polestar 的图像语言从不喧嚣。以光影雕塑车身线条，用克制的构图替代一切夸张的广告语言，让设计本身开口说话。
+        </div>
+      </div>
+
+      <div class="psi-divider"></div>
+
+      <div class="psi-culture-block">
+        <div class="psi-culture-label">透明度策略 · Radical Transparency</div>
+        <div class="psi-culture-text">
+          Polestar 将供应链碳足迹、材料溯源完全公开——"透明度"本身成为品牌最有力的差异化武器。在同质化的 EV 市场中，诚实是最稀缺的奢侈品
+        </div>
+      </div>
+
+      <div class="psi-insight">
+        <div class="psi-insight-label">对 MIC 的战略启示</div>
+        <div class="psi-insight-title">视觉上的"少"<br>放大内容的"多"</div>
+        <div class="psi-insight-body">
+          Polestar 最核心的启示：极简视觉系统不是风格选择，而是战略决定。MIC 可借鉴：以克制的品牌语言为骑行内容与专业价值观留出呼吸空间，让用户的注意力回归到真正重要的东西
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

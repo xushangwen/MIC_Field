@@ -1,0 +1,376 @@
+<style>
+  @font-face {
+    font-family: 'CanyonVF';
+    src: url('/fonts/canyon/CanyonVF.woff2') format('woff2');
+    font-weight: 100 900;
+  }
+
+  .cnv-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 52px 88px 56px;
+  }
+  .cnv-header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+  }
+  .cnv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .cnv-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+  }
+  .cnv-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 28px;
+  }
+  .cnv-section {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+  }
+  .cnv-page-num {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.2);
+    letter-spacing: .08em;
+  }
+  .cnv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .cnv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── Col 1: Color System ── */
+  .cnv-col1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .cnv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .cnv-swatch {
+    flex: 1;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .cnv-swatch-top {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cnv-swatch-name {
+    font-family: var(--fn);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .cnv-swatch-hex {
+    font-family: var(--fn);
+    font-size: 12px;
+    opacity: .6;
+    letter-spacing: .06em;
+  }
+  .cnv-swatch-divider {
+    height: 1px;
+    background: currentColor;
+    opacity: .15;
+    margin: 8px 0;
+  }
+  .cnv-swatch-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .cnv-swatch-role {
+    font-family: var(--fn);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .55;
+  }
+  .cnv-swatch-desc {
+    font-family: var(--fn);
+    font-size: 11px;
+    opacity: .4;
+  }
+  .cnv-color-summary {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+  }
+
+  /* ── Col 2: Typography & Logo ── */
+  .cnv-col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+  }
+  .cnv-card {
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    padding: 18px 20px;
+    overflow: hidden;
+  }
+  .cnv-logo-card {
+    flex-shrink: 0;
+  }
+  .cnv-card-tag {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-bottom: 14px;
+  }
+  .cnv-logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    opacity: .9;
+    margin-bottom: 12px;
+  }
+  .cnv-card-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .cnv-font-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .cnv-specimen {
+    font-family: 'CanyonVF', var(--fe);
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.0;
+    color: white;
+    letter-spacing: -.01em;
+    flex: 1;
+  }
+  .cnv-specimen-sub {
+    font-family: 'CanyonVF', var(--fe);
+    font-size: 26px;
+    font-weight: 400;
+    color: rgba(255,255,255,.45);
+    margin-top: 4px;
+  }
+  .cnv-specimen-body {
+    font-family: 'CanyonVF', var(--fe);
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,.4);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    line-height: 1.6;
+  }
+  .cnv-col2-note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    flex-shrink: 0;
+  }
+
+  /* ── Col 3: Photography ── */
+  .cnv-col3 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .cnv-photos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .cnv-photo {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .cnv-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cnv-photo:first-child img {
+    object-position: center top;
+  }
+  .cnv-photo:last-child img {
+    object-position: center center;
+  }
+  .cnv-photo-note {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    line-height: 1.5;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="17b Canyon — Visual Identity">
+  <div class="cnv-page">
+    <div class="cnv-header">
+      <div class="cnv-header-left">
+        <span class="cnv-brand">Canyon</span>
+        <span class="cnv-slash">/</span>
+        <span class="cnv-section">视觉体系解析</span>
+      </div>
+      <span class="cnv-page-num">视觉体系解析 · 02 / 03</span>
+    </div>
+
+    <div class="cnv-grid">
+
+      <!-- Col 1: Color System -->
+      <div class="cnv-col1">
+        <div class="cnv-col-label">Color System</div>
+        <div class="cnv-colors">
+          <div class="cnv-swatch" style="background:#000000;border:1px solid rgba(255,255,255,.1);color:white;">
+            <div class="cnv-swatch-top">
+              <div class="cnv-swatch-name">Pitch Black</div>
+              <div class="cnv-swatch-hex">HEX 000000 · RGB 0 0 0</div>
+            </div>
+            <div class="cnv-swatch-divider"></div>
+            <div class="cnv-swatch-bottom">
+              <div class="cnv-swatch-role">Primary</div>
+              <div class="cnv-swatch-desc">主品牌色，代表德国理性与极致克制</div>
+            </div>
+          </div>
+          <div class="cnv-swatch" style="background:#FFFFFF;color:#111;">
+            <div class="cnv-swatch-top">
+              <div class="cnv-swatch-name" style="color:rgba(0,0,0,.85);">Pure White</div>
+              <div class="cnv-swatch-hex" style="color:rgba(0,0,0,.5);">HEX FFFFFF · RGB 255 255 255</div>
+            </div>
+            <div class="cnv-swatch-divider" style="background:rgba(0,0,0,.15);opacity:1;"></div>
+            <div class="cnv-swatch-bottom">
+              <div class="cnv-swatch-role" style="color:rgba(0,0,0,.5);">Primary</div>
+              <div class="cnv-swatch-desc" style="color:rgba(0,0,0,.4);">高对比底色，让产品几何线条成为主角</div>
+            </div>
+          </div>
+          <div class="cnv-swatch" style="background:#222222;border:1px solid rgba(255,255,255,.1);color:white;">
+            <div class="cnv-swatch-top">
+              <div class="cnv-swatch-name">Dark Carbon</div>
+              <div class="cnv-swatch-hex">HEX 222222 · RGB 34 34 34</div>
+            </div>
+            <div class="cnv-swatch-divider"></div>
+            <div class="cnv-swatch-bottom">
+              <div class="cnv-swatch-role">Secondary</div>
+              <div class="cnv-swatch-desc">深灰，用于背景层次与精致过渡</div>
+            </div>
+          </div>
+          <div class="cnv-swatch" style="background:#767676;color:white;">
+            <div class="cnv-swatch-top">
+              <div class="cnv-swatch-name">Mid Grey</div>
+              <div class="cnv-swatch-hex">HEX 767676 · RGB 118 118 118</div>
+            </div>
+            <div class="cnv-swatch-divider"></div>
+            <div class="cnv-swatch-bottom">
+              <div class="cnv-swatch-role">Secondary</div>
+              <div class="cnv-swatch-desc">辅助信息层级，弱化非核心内容</div>
+            </div>
+          </div>
+          <div class="cnv-swatch" style="background:#E20000;color:white;">
+            <div class="cnv-swatch-top">
+              <div class="cnv-swatch-name">Racing Red</div>
+              <div class="cnv-swatch-hex">HEX E20000 · RGB 226 0 0</div>
+            </div>
+            <div class="cnv-swatch-divider"></div>
+            <div class="cnv-swatch-bottom">
+              <div class="cnv-swatch-role">Accent</div>
+              <div class="cnv-swatch-desc">竞技基因点缀，CFR 赛车系列专属强调</div>
+            </div>
+          </div>
+        </div>
+        <div class="cnv-color-summary">
+          黑白双主色构成极度克制的视觉体系——无装饰、无废话，让产品几何与机械美学自我表达；红色点缀仅在赛事基因场景出现，精准传递竞技荷尔蒙。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="cnv-col2">
+        <div class="cnv-col-label">Typography & Logo</div>
+        <div class="cnv-card cnv-logo-card">
+          <div class="cnv-card-tag">Wordmark · Custom Variable Sans</div>
+          <img src="/images/logos/canyon-white.svg" class="cnv-logo-img" alt="Canyon">
+          <div class="cnv-card-desc">硬朗紧凑的无衬线字标——字母结构几何精密，工业感与速度感融为一体，无需图标即能独立成符号</div>
+        </div>
+        <div class="cnv-card cnv-font-card">
+          <div class="cnv-card-tag">Primary Typeface · CanyonVF</div>
+          <div class="cnv-specimen">PURE</div>
+          <div class="cnv-specimen-sub">CanyonVF Regular</div>
+          <div class="cnv-specimen-body">Engineered in Germany. Built for the road, the race, and everything beyond.</div>
+        </div>
+        <div class="cnv-col2-note">定制可变字体 CanyonVF 贯穿全品牌——极高阅读效率与现代科技感，理性之美即品牌人格。</div>
+      </div>
+
+      <!-- Col 3: Photography Style -->
+      <div class="cnv-col3">
+        <div class="cnv-col-label">Photography Style</div>
+        <div class="cnv-photos">
+          <div class="cnv-photo">
+            <img src="/images/canyon/canyon-disruptive.jpg" alt="Canyon Disruptive by Design">
+          </div>
+          <div class="cnv-photo">
+            <img src="/images/canyon/canyon-track.jpg" alt="Canyon Speedmax Track">
+          </div>
+        </div>
+        <div class="cnv-photo-note">极简棚拍与运动纪实双轨并行——产品图聚焦几何线条细节，场景图用张力与速度感传递竞技精神。</div>
+      </div>
+
+    </div>
+  </div>
+</section>

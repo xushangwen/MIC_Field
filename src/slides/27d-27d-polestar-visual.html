@@ -1,0 +1,283 @@
+<style>
+  @font-face {
+    font-family: 'PolestarUnica77';
+    src: url('/fonts/polestar/polestar-unica77.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .psv-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 88px 56px;
+  }
+  .psv-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+  .psv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .psv-header-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+  }
+  .psv-header-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 24px;
+  }
+  .psv-header-label {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .psv-header-page {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.2);
+  }
+  .psv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .psv-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .psv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+
+  /* Color Cards */
+  .psv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .psv-cc {
+    flex: 1;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .psv-cc--black  { background: #000000; border: 1px solid rgba(255,255,255,.1); }
+  .psv-cc--white  { background: #FFFFFF; }
+  .psv-cc--gray   { background: #F2F2F2; }
+  .psv-cc--yellow { background: #E6B711; }
+  .psv-cc-top { display: flex; flex-direction: column; gap: 4px; }
+  .psv-cc-name {
+    font-family: var(--fn); font-size: 17px; font-weight: 700;
+    letter-spacing: .04em; color: rgba(255,255,255,.95);
+  }
+  .psv-cc-hex  { font-family: var(--fn); font-size: 15px; letter-spacing: .05em; color: rgba(255,255,255,.8); }
+  .psv-cc-rgb  { font-family: var(--fn); font-size: 14px; letter-spacing: .03em; color: rgba(255,255,255,.6); }
+  .psv-cc-name--dk { color: rgba(0,0,0,.85); }
+  .psv-cc-hex--dk  { color: rgba(0,0,0,.65); }
+  .psv-cc-rgb--dk  { color: rgba(0,0,0,.5); }
+  .psv-cc-bottom {
+    display: flex; flex-direction: column; gap: 4px;
+    border-top: 1px solid rgba(255,255,255,.15); padding-top: 12px;
+  }
+  .psv-cc-bottom--dk { border-top-color: rgba(0,0,0,.15); }
+  .psv-cc-role { font-family: var(--fn); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .psv-cc-role--dk { color: rgba(0,0,0,.5); }
+  .psv-cc-desc { font-family: var(--fn); font-size: 12px; letter-spacing: .04em; color: rgba(255,255,255,.35); }
+  .psv-cc-desc--dk { color: rgba(0,0,0,.4); }
+  .psv-color-summary {
+    flex-shrink: 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc); font-size: 14px; line-height: 1.7;
+    color: rgba(255,255,255,.38); letter-spacing: .02em;
+  }
+
+  /* Typography */
+  .psv-type-block { display: flex; flex-direction: column; gap: 12px; flex: 1; min-height: 0; }
+  .psv-logo-block {
+    padding: 18px 20px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .psv-logo-style {
+    font-family: var(--fn); font-size: 12px; letter-spacing: .18em;
+    text-transform: uppercase; color: rgba(255,255,255,.3);
+  }
+  .psv-logo-img {
+    height: 120px; width: auto; display: block; align-self: flex-start; opacity: .9;
+  }
+  .psv-logo-desc {
+    font-family: var(--fn); font-size: 13px; letter-spacing: .03em;
+    color: rgba(255,255,255,.35); line-height: 1.5;
+  }
+  .psv-type-specimen {
+    flex: 1; min-height: 0; overflow: hidden;
+    padding: 20px 22px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .psv-type-style {
+    font-family: var(--fn); font-size: 12px; letter-spacing: .16em;
+    text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 12px;
+  }
+  .psv-type-sample {
+    font-family: 'PolestarUnica77', sans-serif;
+    font-size: 68px; line-height: 1.0;
+    color: rgba(255,255,255,.88); margin-bottom: 10px;
+  }
+  .psv-type-sample-sub {
+    font-family: 'PolestarUnica77', sans-serif;
+    font-size: 28px; color: rgba(255,255,255,.45);
+  }
+  .psv-type-body {
+    font-family: 'PolestarUnica77', sans-serif;
+    font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.07); padding-top: 10px; margin-top: auto;
+  }
+  .psv-type-note {
+    margin-top: auto; font-family: var(--fc); font-size: 17px; line-height: 1.65;
+    color: rgba(255,255,255,.45); padding-top: 14px; border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* Photography */
+  .psv-photo-area { flex: 1; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .psv-photo { flex: 1; border-radius: 8px; position: relative; overflow: hidden; min-height: 60px; }
+  .psv-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .psv-photo:first-child img { object-position: center top; }
+  .psv-photo:nth-child(2) img { object-position: center center; }
+  .psv-photo-note {
+    margin-top: auto; font-family: var(--fc); font-size: 17px; line-height: 1.65;
+    color: rgba(255,255,255,.45); padding-top: 14px; border-top: 1px solid rgba(255,255,255,.06);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="27d Polestar — Visual DNA">
+  <div class="psv-page">
+    <div class="psv-header">
+      <div class="psv-header-left">
+        <div class="psv-header-brand">Polestar</div>
+        <div class="psv-header-slash">/</div>
+        <div class="psv-header-label">Visual Identity System</div>
+      </div>
+      <div class="psv-header-page">视觉体系解析 · 02 / 03</div>
+    </div>
+
+    <div class="psv-grid">
+
+      <!-- Col 1: Color System -->
+      <div class="psv-col">
+        <div class="psv-col-label">Color System</div>
+        <div class="psv-colors">
+
+          <div class="psv-cc psv-cc--black">
+            <div class="psv-cc-top">
+              <div class="psv-cc-name">Black</div>
+              <div class="psv-cc-hex">HEX 000000</div>
+              <div class="psv-cc-rgb">RGB 0  0  0</div>
+            </div>
+            <div class="psv-cc-bottom">
+              <div class="psv-cc-role">Primary · Monochrome Base</div>
+              <div class="psv-cc-desc">禁欲系极简主义的基底，冷峻工业感的视觉锚</div>
+            </div>
+          </div>
+
+          <div class="psv-cc psv-cc--white">
+            <div class="psv-cc-top">
+              <div class="psv-cc-name psv-cc-name--dk">White</div>
+              <div class="psv-cc-hex psv-cc-hex--dk">HEX FFFFFF</div>
+              <div class="psv-cc-rgb psv-cc-rgb--dk">RGB 255  255  255</div>
+            </div>
+            <div class="psv-cc-bottom psv-cc-bottom--dk">
+              <div class="psv-cc-role psv-cc-role--dk">Ground · Clarity</div>
+              <div class="psv-cc-desc psv-cc-desc--dk">斯堪的纳维亚式留白，以空间放大设计本身</div>
+            </div>
+          </div>
+
+          <div class="psv-cc psv-cc--yellow">
+            <div class="psv-cc-top">
+              <div class="psv-cc-name psv-cc-name--dk">Swedish Gold</div>
+              <div class="psv-cc-hex psv-cc-hex--dk">HEX E6B711</div>
+              <div class="psv-cc-rgb psv-cc-rgb--dk">RGB 230  183  17</div>
+            </div>
+            <div class="psv-cc-bottom psv-cc-bottom--dk">
+              <div class="psv-cc-role psv-cc-role--dk">Accent · Performance Signal</div>
+              <div class="psv-cc-desc psv-cc-desc--dk">极小面积点缀，高性能套件专属视觉焦点</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="psv-color-summary">
+          黑白构建"禁欲系"高级感的视觉底座；Swedish Gold 仅作极小面积点缀出现于制动卡钳与性能套件——在极简体系中，越克制的色彩，反而拥有越强的视觉冲击力。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="psv-col">
+        <div class="psv-col-label">Typography & Logo</div>
+        <div class="psv-type-block">
+          <div class="psv-logo-block">
+            <div class="psv-logo-style">Emblem · Geometric Star Mark</div>
+            <img src="/images/logos/polestar-white.svg" class="psv-logo-img" alt="Polestar">
+            <div class="psv-logo-desc">两个对立折线构成极简"星"形 · 无外框 · 锋利精准 · 强烈未来感</div>
+          </div>
+          <div class="psv-type-specimen">
+            <div class="psv-type-style">Polestar Unica77 · 克制 / 工业</div>
+            <div class="psv-type-sample">Pure</div>
+            <div class="psv-type-sample-sub">Progressive</div>
+            <div class="psv-type-body">
+              No compromises. No distractions. Just the essential geometry of speed.
+            </div>
+          </div>
+        </div>
+        <div class="psv-type-note">
+          硬朗几何骨架 + 现代主义克制——Unica77 是字体即声明，信息传达极其高效，与品牌"Pure"价值观完美契合
+        </div>
+      </div>
+
+      <!-- Col 3: Photography Style -->
+      <div class="psv-col">
+        <div class="psv-col-label">Photography Style</div>
+        <div class="psv-photo-area">
+          <div class="psv-photo">
+            <img src="/images/polestar/ps-7-seat.avif" alt="Polestar sustainable seat">
+          </div>
+          <div class="psv-photo">
+            <img src="/images/polestar/ps-3-fabric.jpg" alt="Polestar material detail">
+          </div>
+          <div class="psv-photo-note">
+            高对比度冷色调 + 建筑几何感。棚拍或极简自然/城市环境（雪地、荒野、现代主义建筑），以光影雕塑车身线条——摒弃传统汽车广告的繁杂道具，呈现克制纪实感
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

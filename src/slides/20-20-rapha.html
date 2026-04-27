@@ -1,0 +1,162 @@
+<style>
+  .rp-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .rp-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .rp-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .rp-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .rp-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .rp-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .rp-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .rp-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .rp-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .rp-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 18px;
+  }
+  .rp-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 0 14px;
+  }
+  .rp-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .rp-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .rp-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .rp-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .rp-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .rp-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .rp-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="20 Rapha — Brand Overview">
+  <div class="rp-layout">
+    <div class="rp-img-panel">
+      <div class="rp-collage">
+        <div class="rp-collage-top">
+          <img src="/images/rapha/rapha-layering.jpg" alt="Rapha Layering">
+        </div>
+        <div class="rp-collage-bottom">
+          <div class="rp-collage-split">
+            <div class="rp-collage-cell">
+              <img src="/images/rapha/rapha-bib-shorts.jpg" alt="Rapha Bib Shorts">
+            </div>
+            <div class="rp-collage-cell">
+              <img src="/images/rapha/rapha-jersey-pink.jpg" alt="Rapha Jersey Pink">
+            </div>
+          </div>
+          <div class="rp-collage-cell">
+            <img src="/images/rapha/rapha-usa-cycling.jpg" alt="Rapha USA Cycling">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rp-info">
+      <div class="rp-head">
+        <div class="rp-tier">骑行文化品牌 · Layer 02</div>
+        <img src="/images/logos/rapha-white.svg" class="rp-logo" alt="Rapha">
+        <div class="rp-meta">Est. 2004 · London, UK · Premium Cycling Apparel & Lifestyle</div>
+      </div>
+
+      <div class="rp-tagline">
+        以奢侈品级的审美重塑公路骑行装备，<br>将骑行从运动升维为宗教式的生活方式与精英圈层身份认同
+      </div>
+
+      <div>
+        <div class="rp-divider" style="margin-bottom:24px;"></div>
+        <div class="rp-values">
+          <div class="rp-value">
+            <div class="rp-value-name">Performance</div>
+            <div class="rp-value-desc">执着面料与剪裁细节，提供顶级骑手专属解决方案</div>
+          </div>
+          <div class="rp-value">
+            <div class="rp-value-name">Progress</div>
+            <div class="rp-value-desc">打破传统运动服饰陈规，重塑骑行文化的边界</div>
+          </div>
+          <div class="rp-value">
+            <div class="rp-value-name">Panache</div>
+            <div class="rp-value-desc">致敬公路骑行历史底蕴，颂扬泥泞中的骑士风度</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

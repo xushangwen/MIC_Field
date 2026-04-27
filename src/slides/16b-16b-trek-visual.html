@@ -1,0 +1,404 @@
+<style>
+  @font-face {
+    font-family: 'Avalon';
+    src: url('/fonts/trek/Avalon-Bold.woff2') format('woff2');
+    font-weight: 700;
+  }
+
+  .tkv-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 52px 88px 56px;
+  }
+  .tkv-header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+  }
+  .tkv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .tkv-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+  }
+  .tkv-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 28px;
+  }
+  .tkv-section {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+  }
+  .tkv-page-num {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.2);
+    letter-spacing: .08em;
+  }
+  .tkv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .tkv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── Col 1: Color System ── */
+  .tkv-col1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .tkv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .tkv-swatch {
+    flex: 1;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .tkv-swatch-top {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .tkv-swatch-name {
+    font-family: var(--fn);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .tkv-swatch-hex {
+    font-family: var(--fn);
+    font-size: 12px;
+    opacity: .6;
+    letter-spacing: .06em;
+  }
+  .tkv-swatch-divider {
+    height: 1px;
+    background: currentColor;
+    opacity: .15;
+    margin: 8px 0;
+  }
+  .tkv-swatch-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .tkv-swatch-role {
+    font-family: var(--fn);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .55;
+  }
+  .tkv-swatch-desc {
+    font-family: var(--fn);
+    font-size: 11px;
+    opacity: .4;
+  }
+  .tkv-color-summary {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+  }
+
+  /* ── Col 2: Typography & Logo ── */
+  .tkv-col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+  }
+  .tkv-card {
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    padding: 18px 20px;
+    overflow: hidden;
+  }
+  .tkv-logo-card {
+    flex-shrink: 0;
+  }
+  .tkv-card-tag {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-bottom: 14px;
+  }
+  .tkv-logo-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tkv-logo-row {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tkv-logo-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .tkv-logo-row-label {
+    font-family: var(--fn);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.25);
+  }
+  .tkv-logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: .85;
+    filter: brightness(0) invert(1);
+  }
+  .tkv-logo-img--gold {
+    filter: none;
+    opacity: .9;
+  }
+  .tkv-card-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .tkv-font-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .tkv-specimen {
+    font-family: 'Avalon', var(--fe);
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.0;
+    color: white;
+    letter-spacing: .02em;
+    flex: 1;
+  }
+  .tkv-specimen-sub {
+    font-family: 'Avalon', var(--fe);
+    font-size: 26px;
+    font-weight: 700;
+    color: rgba(255,255,255,.45);
+    margin-top: 4px;
+  }
+  .tkv-specimen-body {
+    font-family: var(--fe);
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,.4);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    line-height: 1.6;
+  }
+  .tkv-col2-note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    flex-shrink: 0;
+  }
+
+  /* ── Col 3: Photography ── */
+  .tkv-col3 {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .tkv-photos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .tkv-photo {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .tkv-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .tkv-photo:first-child img {
+    object-position: center top;
+  }
+  .tkv-photo:last-child img {
+    object-position: center center;
+  }
+  .tkv-photo-note {
+    flex-shrink: 0;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 17px;
+    color: rgba(255,255,255,.45);
+    line-height: 1.5;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="16b Trek — Visual Identity">
+  <div class="tkv-page">
+    <div class="tkv-header">
+      <div class="tkv-header-left">
+        <span class="tkv-brand">Trek</span>
+        <span class="tkv-slash">/</span>
+        <span class="tkv-section">视觉体系解析</span>
+      </div>
+      <span class="tkv-page-num">视觉体系解析 · 02 / 03</span>
+    </div>
+
+    <div class="tkv-grid">
+
+      <!-- Col 1: Color System -->
+      <div class="tkv-col1">
+        <div class="tkv-col-label">Color System</div>
+        <div class="tkv-colors">
+          <div class="tkv-swatch" style="background:#CE1A2B;color:white;">
+            <div class="tkv-swatch-top">
+              <div class="tkv-swatch-name">Trek Red</div>
+              <div class="tkv-swatch-hex">HEX CE1A2B · RGB 206 26 43</div>
+            </div>
+            <div class="tkv-swatch-divider"></div>
+            <div class="tkv-swatch-bottom">
+              <div class="tkv-swatch-role">Primary</div>
+              <div class="tkv-swatch-desc">主品牌色，代表激情、速度与竞技基因</div>
+            </div>
+          </div>
+          <div class="tkv-swatch" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.1);color:white;">
+            <div class="tkv-swatch-top">
+              <div class="tkv-swatch-name">Obsidian</div>
+              <div class="tkv-swatch-hex">HEX 1A1A1A · RGB 26 26 26</div>
+            </div>
+            <div class="tkv-swatch-divider"></div>
+            <div class="tkv-swatch-bottom">
+              <div class="tkv-swatch-role">Primary</div>
+              <div class="tkv-swatch-desc">专业感与高端科技感的视觉基底</div>
+            </div>
+          </div>
+          <div class="tkv-swatch" style="background:#FFFFFF;color:#111;">
+            <div class="tkv-swatch-top">
+              <div class="tkv-swatch-name" style="color:rgba(0,0,0,.85);">Pure White</div>
+              <div class="tkv-swatch-hex" style="color:rgba(0,0,0,.5);">HEX FFFFFF · RGB 255 255 255</div>
+            </div>
+            <div class="tkv-swatch-divider" style="background:rgba(0,0,0,.15);opacity:1;"></div>
+            <div class="tkv-swatch-bottom">
+              <div class="tkv-swatch-role" style="color:rgba(0,0,0,.5);">Secondary</div>
+              <div class="tkv-swatch-desc" style="color:rgba(0,0,0,.4);">高对比底色，强化产品棚拍纯净感</div>
+            </div>
+          </div>
+          <div class="tkv-swatch" style="background:#E8E8E8;color:#111;">
+            <div class="tkv-swatch-top">
+              <div class="tkv-swatch-name" style="color:rgba(0,0,0,.85);">Light Gray</div>
+              <div class="tkv-swatch-hex" style="color:rgba(0,0,0,.5);">HEX E8E8E8 · RGB 232 232 232</div>
+            </div>
+            <div class="tkv-swatch-divider" style="background:rgba(0,0,0,.15);opacity:1;"></div>
+            <div class="tkv-swatch-bottom">
+              <div class="tkv-swatch-role" style="color:rgba(0,0,0,.5);">Secondary</div>
+              <div class="tkv-swatch-desc" style="color:rgba(0,0,0,.4);">界面留白与信息层级划分，保持清爽</div>
+            </div>
+          </div>
+        </div>
+        <div class="tkv-color-summary">
+          红黑白经典三色体系高度克制且充满力量感——红色点燃激情，黑色奠定专业基调，双色组合让「高性能」的品牌宣言无需多言自现。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="tkv-col2">
+        <div class="tkv-col-label">Typography & Logo</div>
+        <div class="tkv-card tkv-logo-card">
+          <div class="tkv-card-tag">Logo System · Multiple Variants</div>
+          <div class="tkv-logo-stack">
+            <div class="tkv-logo-row">
+              <div class="tkv-logo-row-label">Primary Wordmark</div>
+              <img src="/images/logos/trek-wordmark.svg" class="tkv-logo-img" alt="Trek Wordmark">
+            </div>
+            <div class="tkv-logo-row">
+              <div class="tkv-logo-row-label">Trek Travel</div>
+              <img src="/images/logos/trek-travel.svg" class="tkv-logo-img" alt="Trek Travel">
+            </div>
+            <div class="tkv-logo-row">
+              <div class="tkv-logo-row-label">50th Anniversary</div>
+              <img src="/images/logos/trek-50th.svg" class="tkv-logo-img tkv-logo-img--gold" alt="Trek 50th">
+            </div>
+          </div>
+        </div>
+        <div class="tkv-card tkv-font-card">
+          <div class="tkv-card-tag">Primary Typeface · Avalon Bold</div>
+          <div class="tkv-specimen">TREK</div>
+          <div class="tkv-specimen-sub">Avalon Bold</div>
+          <div class="tkv-specimen-body">Built for the ride of your life. Engineered since 1976. Built only what we love.</div>
+        </div>
+        <div class="tkv-col2-note">Avalon Bold 的力量感与无修饰棱角完美支撑「硬核运动」品牌人格，视觉即宣言。</div>
+      </div>
+
+      <!-- Col 3: Photography Style -->
+      <div class="tkv-col3">
+        <div class="tkv-col-label">Photography Style</div>
+        <div class="tkv-photos">
+          <div class="tkv-photo">
+            <img src="/images/trek/trek-gallery.jpg" alt="Trek Gallery">
+          </div>
+          <div class="tkv-photo">
+            <img src="/images/trek/trek-ebike.jpg" alt="Trek E-Bike">
+          </div>
+        </div>
+        <div class="tkv-photo-note">户外纪实张力与纯色棚拍精致感并行——人与自然互动的动感叙事，配合碳纤维质感特写，诠释「极致工程」。</div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,162 @@
+<style>
+  .pso-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .pso-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .pso-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .pso-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .pso-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .pso-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .pso-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .pso-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .pso-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .pso-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 18px;
+  }
+  .pso-logo {
+    height: 120px;
+    width: auto;
+    display: block;
+    margin: 0 0 14px;
+  }
+  .pso-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .pso-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .pso-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pso-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .pso-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .pso-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .pso-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="27c Polestar — Brand Overview">
+  <div class="pso-layout">
+    <div class="pso-img-panel">
+      <div class="pso-collage">
+        <div class="pso-collage-top">
+          <img src="/images/polestar/ps-9-car-front.avif" alt="Polestar 2 front">
+        </div>
+        <div class="pso-collage-bottom">
+          <div class="pso-collage-split">
+            <div class="pso-collage-cell">
+              <img src="/images/polestar/ps-6-interior.avif" alt="Polestar 2 interior">
+            </div>
+            <div class="pso-collage-cell">
+              <img src="/images/polestar/ps-5-akebono.avif" alt="Polestar Akebono brake">
+            </div>
+          </div>
+          <div class="pso-collage-cell">
+            <img src="/images/polestar/ps-12-hq.webp" alt="Polestar HQ Gothenburg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pso-info">
+      <div class="pso-head">
+        <div class="pso-tier">跨领域高级品牌 · Layer 04</div>
+        <img src="/images/logos/polestar-white.svg" class="pso-logo" alt="Polestar">
+        <div class="pso-meta">Est. 2017 · Gothenburg, Sweden · Premium Electric Performance Cars</div>
+      </div>
+
+      <div class="pso-tagline">
+        以斯堪的纳维亚极简主义与极致透明度，<br>重新定义高性能电动出行的先锋美学
+      </div>
+
+      <div>
+        <div class="pso-divider" style="margin-bottom:24px;"></div>
+        <div class="pso-values">
+          <div class="pso-value">
+            <div class="pso-value-name">Pure</div>
+            <div class="pso-value-desc">斯堪的纳维亚极简主义，摒弃一切多余装饰</div>
+          </div>
+          <div class="pso-value">
+            <div class="pso-value-name">Progressive</div>
+            <div class="pso-value-desc">在科技、环保材料与体验上持续突破惯例</div>
+          </div>
+          <div class="pso-value">
+            <div class="pso-value-name">Performance</div>
+            <div class="pso-value-desc">源自赛道基因，精准且可持续的电动驾驶体验</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

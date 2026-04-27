@@ -1,0 +1,174 @@
+<style>
+  .gwi-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .gwi-left {
+    display: flex;
+    flex-direction: column;
+    padding: 52px 48px 52px 88px;
+    gap: 24px;
+  }
+  .gwi-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .gwi-photo-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .gwi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gwi-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .gwi-photo--wide {
+    grid-column: 1 / 3;
+  }
+
+  .gwi-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .gwi-aesthetic-tag {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 16px;
+  }
+  .gwi-aesthetic-title {
+    font-family: var(--fe);
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 22px;
+  }
+  .gwi-aesthetic-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.65);
+  }
+  .gwi-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+  .gwi-culture-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .gwi-culture-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .gwi-culture-text {
+    font-family: var(--fc);
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.5);
+  }
+  .gwi-insight {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .gwi-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 14px;
+  }
+  .gwi-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .gwi-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="25e Goldwin — Photography & Insight">
+  <div class="gwi-layout">
+
+    <div class="gwi-left">
+      <div class="gwi-left-label">摄影调性 · "Immerse in Nature" Aesthetic</div>
+      <div class="gwi-photo-grid">
+        <div class="gwi-photo">
+          <img src="/images/goldwin/gw-1-athletes.jpg" alt="Goldwin athletes">
+        </div>
+        <div class="gwi-photo">
+          <img src="/images/goldwin/gw-9-trail.jpg" alt="Goldwin trail">
+        </div>
+        <div class="gwi-photo gwi-photo--wide">
+          <img src="/images/goldwin/gw-2-brand.jpg" alt="Goldwin brand image" style="object-position: center 30%;">
+        </div>
+      </div>
+    </div>
+
+    <div class="gwi-right">
+      <div class="gwi-aesthetic">
+        <div class="gwi-aesthetic-tag">Aesthetic Philosophy</div>
+        <div class="gwi-aesthetic-title">Nature &<br>Precision</div>
+        <div class="gwi-aesthetic-desc">
+          冷峻的自然纪实与极简的产品棚拍交织并行——Goldwin 的图像语言始终在传达一个命题：高性能科技服饰与自然环境之间，不应存在对立，而是共鸣与融合。
+        </div>
+      </div>
+
+      <div class="gwi-divider"></div>
+
+      <div class="gwi-culture-block">
+        <div class="gwi-culture-label">硬核技术 · 日本语境优势</div>
+        <div class="gwi-culture-text">
+          DESCENTE 同属 Goldwin 集团旗下，70 年雪地服饰制造经验形成的技术壁垒，在精英户外圈层中构建了难以复制的专业信任感——日本用户愿意为每一处可见的技术细节支付溢价
+        </div>
+      </div>
+
+      <div class="gwi-insight">
+        <div class="gwi-insight-label">对 MIC 的战略启示</div>
+        <div class="gwi-insight-title">机能与优雅<br>可以是同一件事</div>
+        <div class="gwi-insight-body">
+          Goldwin 的核心启示：将硬核技术降维应用到极简日常美学，让"功能即优雅"。MIC 可借鉴：以专业装备级的产品逻辑 + 日系克制的视觉表达，赢得都市精英骑手对品质的信任
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,174 @@
+<style>
+  .ati-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .ati-left {
+    display: flex;
+    flex-direction: column;
+    padding: 52px 48px 52px 88px;
+    gap: 24px;
+  }
+  .ati-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .ati-photo-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .ati-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ati-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .ati-photo--wide {
+    grid-column: 1 / 3;
+  }
+
+  .ati-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .ati-aesthetic-tag {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 16px;
+  }
+  .ati-aesthetic-title {
+    font-family: var(--fe);
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 22px;
+  }
+  .ati-aesthetic-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.65);
+  }
+  .ati-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+  .ati-culture-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ati-culture-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .ati-culture-text {
+    font-family: var(--fc);
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.5);
+  }
+  .ati-insight {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .ati-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 14px;
+  }
+  .ati-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .ati-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="24c Arc'teryx — Photography & Insight">
+  <div class="ati-layout">
+
+    <div class="ati-left">
+      <div class="ati-left-label">摄影调性 · "Function As Beauty" Aesthetic</div>
+      <div class="ati-photo-grid">
+        <div class="ati-photo">
+          <img src="/images/arcteryx/arc-5-snowboard.jpg" alt="Arc'teryx snowboarding">
+        </div>
+        <div class="ati-photo">
+          <img src="/images/arcteryx/arc-3-outdoor-walk.jpg" alt="Arc'teryx outdoor">
+        </div>
+        <div class="ati-photo ati-photo--wide">
+          <img src="/images/arcteryx/arc-8-landscape.png" alt="Arc'teryx landscape" style="object-position: center 40%;">
+        </div>
+      </div>
+    </div>
+
+    <div class="ati-right">
+      <div class="ati-aesthetic">
+        <div class="ati-aesthetic-tag">Aesthetic Philosophy</div>
+        <div class="ati-aesthetic-title">Function<br>AS Beauty</div>
+        <div class="ati-aesthetic-desc">
+          高对比度纪实风格与精准产品棚拍并行。强调人在极端自然环境中的渺小与力量感——Arc'teryx 从不刻意营造时尚感，专业本身就是最强的美学声明。
+        </div>
+      </div>
+
+      <div class="ati-divider"></div>
+
+      <div class="ati-culture-block">
+        <div class="ati-culture-label">文化渗透 · Gorpcore & Veilance</div>
+        <div class="ati-culture-text">
+          Veilance 城市线将高山装备美学无缝延伸至都市场景，Gorpcore 文化浪潮使其从专业小众跃升为全球精英阶层的风格符号——未曾追逐时尚，却成为了时尚本身
+        </div>
+      </div>
+
+      <div class="ati-insight">
+        <div class="ati-insight-label">对 MIC 的战略启示</div>
+        <div class="ati-insight-title">专业壁垒是最高效的<br>品牌溢价策略</div>
+        <div class="ati-insight-body">
+          Arc'teryx 的核心启示：用工程师的严苛 + 设计师的克制，让产品本身承载视觉话语权。MIC 可借鉴：极简视觉系统 + 过硬的专业内核，构建无需喧嚣自证的品牌权威
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

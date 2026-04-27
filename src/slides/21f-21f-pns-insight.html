@@ -1,0 +1,193 @@
+<style>
+  .pnsi-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .pnsi-left {
+    display: flex;
+    flex-direction: column;
+    padding: 52px 48px 52px 88px;
+    gap: 24px;
+  }
+  .pnsi-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .pnsi-photo-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .pnsi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pnsi-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .pnsi-photo-trio {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .pnsi-photo-trio .pnsi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pnsi-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .pnsi-aesthetic-tag {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 16px;
+  }
+  .pnsi-aesthetic-title {
+    font-family: var(--fe);
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+  .pnsi-aesthetic-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.65);
+  }
+
+  .pnsi-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+
+  .pnsi-cult-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pnsi-cult-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .pnsi-cult-text {
+    font-family: var(--fc);
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.5);
+  }
+
+  .pnsi-insight {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .pnsi-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 14px;
+  }
+  .pnsi-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .pnsi-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="21f PNS — Photography & Insight">
+  <div class="pnsi-layout">
+
+    <div class="pnsi-left">
+      <div class="pnsi-left-label">摄影调性 · "Utilitarian Minimalism" Aesthetic</div>
+      <div class="pnsi-photo-grid">
+        <div class="pnsi-photo">
+          <img src="/images/pns/pns-brand-5.jpg" alt="PNS Campaign">
+        </div>
+        <div class="pnsi-photo">
+          <img src="/images/pns/pns-brand-3.jpg" alt="PNS Campaign">
+        </div>
+        <div class="pnsi-photo-trio">
+          <div class="pnsi-photo">
+            <img src="/images/pns/pns-brand-4.jpg" alt="PNS Campaign">
+          </div>
+          <div class="pnsi-photo">
+            <img src="/images/pns/pns-brand-5.jpg" alt="PNS Campaign">
+          </div>
+          <div class="pnsi-photo">
+            <img src="/images/pns/pns-brand-3.jpg" alt="PNS Campaign">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pnsi-right">
+      <div class="pnsi-aesthetic">
+        <div class="pnsi-aesthetic-tag">Aesthetic Philosophy</div>
+        <div class="pnsi-aesthetic-title">Cold Light<br>& Silence</div>
+        <div class="pnsi-aesthetic-desc">
+          电影感冷峻纪实风格，色调偏冷沉稳。骑行者在广阔自然与空旷公路中的孤独感与力量感构成视觉主轴——没有欢呼，没有人群，只有纯粹的骑行意志。
+        </div>
+      </div>
+
+      <div class="pnsi-divider"></div>
+
+      <div class="pnsi-cult-block">
+        <div class="pnsi-cult-label">Cult 文化策略</div>
+        <div class="pnsi-cult-text">
+          PNS 拒绝大众营销，刻意用高冷克制的美学语言和严苛的品质标准筛选用户——穿 PNS 是一种宣言，代表对平庸骑行文化的彻底拒绝，形成具有"宗教感"的骑行圈层认同
+        </div>
+      </div>
+
+      <div class="pnsi-insight">
+        <div class="pnsi-insight-label">对 MIC 的战略启示</div>
+        <div class="pnsi-insight-title">克制的美学<br>是最锋利的筛选器</div>
+        <div class="pnsi-insight-body">
+          PNS 的启示在于：品牌不必讨好所有人，高度克制的视觉系统本身就是用户筛选机制。MIC 可借鉴：用精准的美学主张代替泛化的品牌口号，让真正认同 MIC 价值观的骑行者主动靠拢，而非被动触达。
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

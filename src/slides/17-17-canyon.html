@@ -1,0 +1,164 @@
+<style>
+  .cn-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .cn-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .cn-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .cn-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .cn-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .cn-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .cn-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .cn-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .cn-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .cn-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 20px;
+  }
+  .cn-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 0 20px;
+    opacity: .9;
+  }
+  .cn-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .cn-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .cn-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cn-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .cn-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .cn-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .cn-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="17 Canyon — Brand Overview">
+  <div class="cn-layout">
+    <div class="cn-img-panel">
+      <div class="cn-collage">
+        <div class="cn-collage-top">
+          <img src="/images/canyon/canyon-hero.jpg" alt="Canyon Hero">
+        </div>
+        <div class="cn-collage-bottom">
+          <div class="cn-collage-split">
+            <div class="cn-collage-cell">
+              <img src="/images/canyon/canyon-action.jpg" alt="Canyon Action">
+            </div>
+            <div class="cn-collage-cell">
+              <img src="/images/canyon/canyon-racing.jpg" alt="Canyon Factory Racing">
+            </div>
+          </div>
+          <div class="cn-collage-cell">
+            <img src="/images/canyon/canyon-performance.jpg" alt="Canyon Performance">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cn-info">
+      <div>
+        <div class="cn-tier">整车品牌 · Layer 01</div>
+        <img src="/images/logos/canyon-white.svg" class="cn-logo" alt="Canyon">
+        <div class="cn-meta">Est. 1985 · Koblenz, Germany · High-Performance Bicycles</div>
+      </div>
+
+      <div class="cn-tagline">
+        Pure Cycling——<br>以德国精密工程为信仰，<br>直销模式重新定义高性能单车消费体验
+      </div>
+
+      <div>
+        <div class="cn-divider" style="margin-bottom:24px;"></div>
+        <div class="cn-values">
+          <div class="cn-value">
+            <div class="cn-value-name">Performance</div>
+            <div class="cn-value-desc">不妥协的工程设计，赛场验证的极致性能</div>
+          </div>
+          <div class="cn-value">
+            <div class="cn-value-name">Innovation</div>
+            <div class="cn-value-desc">从气动设计到 MyCanyon 定制，持续打破边界</div>
+          </div>
+          <div class="cn-value">
+            <div class="cn-value-name">Direct-to-Consumer</div>
+            <div class="cn-value-desc">开创线上直销先河，去中间商直达骑行社区</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

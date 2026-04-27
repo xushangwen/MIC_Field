@@ -1,0 +1,165 @@
+<style>
+  .tk-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .tk-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .tk-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .tk-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .tk-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .tk-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .tk-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .tk-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .tk-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .tk-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 20px;
+  }
+  .tk-logo {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 0 20px;
+    opacity: .9;
+    filter: brightness(0) invert(1);
+  }
+  .tk-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .tk-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .tk-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .tk-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .tk-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .tk-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .tk-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="16 Trek — Brand Overview">
+  <div class="tk-layout">
+    <div class="tk-img-panel">
+      <div class="tk-collage">
+        <div class="tk-collage-top">
+          <img src="/images/trek/trek-hero.png" alt="Trek World of Trek">
+        </div>
+        <div class="tk-collage-bottom">
+          <div class="tk-collage-split">
+            <div class="tk-collage-cell">
+              <img src="/images/trek/trek-go.jpg" alt="Trek Go">
+            </div>
+            <div class="tk-collage-cell">
+              <img src="/images/trek/trek-story.jpg" alt="Trek Story">
+            </div>
+          </div>
+          <div class="tk-collage-cell">
+            <img src="/images/trek/trek-heritage.jpg" alt="Trek Heritage">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tk-info">
+      <div>
+        <div class="tk-tier">整车品牌 · Layer 01</div>
+        <img src="/images/logos/trek-white.svg" class="tk-logo" alt="Trek">
+        <div class="tk-meta">Est. 1976 · Waterloo, WI · Full-Range Bicycle & Gear</div>
+      </div>
+
+      <div class="tk-tagline">
+        改变世界的方式<br>是让更多人骑上单车——<br>从赛道到日常，Trek 皆备
+      </div>
+
+      <div>
+        <div class="tk-divider" style="margin-bottom:24px;"></div>
+        <div class="tk-values">
+          <div class="tk-value">
+            <div class="tk-value-name">Performance</div>
+            <div class="tk-value-desc">从手工车架起家，终身追求卓越工程与工艺</div>
+          </div>
+          <div class="tk-value">
+            <div class="tk-value-name">Retail Network</div>
+            <div class="tk-value-desc">1700+ 全球授权门店，终身保修与本地服务</div>
+          </div>
+          <div class="tk-value">
+            <div class="tk-value-name">Community</div>
+            <div class="tk-value-desc">Trek Travel、Liv 女性计划，构建骑行生态圈</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,12 @@
-<section data-anim="statement" class="bg-md" data-label="09 Core Concept">
+<section data-anim="statement" class="bg-dk" data-label="09 Core Concept">
+
+  <!-- A: 全屏背景图 -->
+  <img src="/images/bg-core-concept.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;" alt="">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,8,20,.72) 0%,rgba(5,8,20,.42) 38%,rgba(5,8,20,.78) 100%);"></div>
+
+  <!-- 地形线纹理 -->
   <svg class="topo" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-    <g stroke="white" fill="none" opacity=".08">
+    <g stroke="white" fill="none" opacity=".05">
       <path d="M-100,800 Q400,580 900,740 Q1420,900 1940,640" stroke-width="1.5"/>
       <path d="M-100,710 Q400,490 900,650 Q1420,810 1940,550" stroke-width="1.5"/>
       <path d="M-100,620 Q400,400 900,560 Q1420,720 1940,460" stroke-width="1.5"/>
@@ -8,12 +14,28 @@
       <path d="M-100,880 Q400,660 900,820 Q1420,980 1940,720" stroke-width="1.5"/>
     </g>
   </svg>
+
   <div class="z1 h100 col pad jsb">
+
+    <!-- 顶部标签 -->
     <div class="lbl am">母概念 · Core Concept</div>
+
+    <!-- 主内容区：标题 + 英文 + 标签连贯排列 -->
     <div>
-      <div class="dp" style="line-height:1.05;margin-bottom:32px;">人与自然<br>之间的运动场</div>
-      <div class="bd mu" style="font-style:italic;">MIC Field = A Field for Movement, Between People and Nature</div>
+      <div class="dp" style="line-height:1.05;margin-bottom:28px;"><span style="font-weight:300;">人与自然</span><br>之间的运动场</div>
+      <div class="bd mu" style="color:rgba(255,255,255,.6);white-space:nowrap;margin-bottom:36px;">MIC Field = A Field for Movement, Between People and Nature</div>
+      <div style="font-size:13px;letter-spacing:.14em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:16px;">Field 连接</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="padding:9px 20px;border:1px solid rgba(255,255,255,.22);border-radius:100px;font-size:16px;color:rgba(255,255,255,.82);backdrop-filter:blur(4px);">城市</span>
+        <span style="padding:9px 20px;border:1px solid rgba(255,255,255,.22);border-radius:100px;font-size:16px;color:rgba(255,255,255,.82);backdrop-filter:blur(4px);">路线</span>
+        <span style="padding:9px 20px;border:1px solid rgba(255,255,255,.22);border-radius:100px;font-size:16px;color:rgba(255,255,255,.82);backdrop-filter:blur(4px);">风</span>
+        <span style="padding:9px 20px;border:1px solid rgba(255,255,255,.22);border-radius:100px;font-size:16px;color:rgba(255,255,255,.82);backdrop-filter:blur(4px);">坡度</span>
+        <span style="padding:9px 20px;border:1px solid rgba(255,255,255,.22);border-radius:100px;font-size:16px;color:rgba(255,255,255,.82);backdrop-filter:blur(4px);">阳光</span>
+        <span style="padding:9px 20px;border:1px solid var(--am);border-radius:100px;font-size:16px;color:var(--am);backdrop-filter:blur(4px);">装备</span>
+        <span style="padding:9px 20px;border:1px solid var(--am);border-radius:100px;font-size:16px;color:var(--am);backdrop-filter:blur(4px);">社群</span>
+        <span style="padding:9px 20px;border:1px solid var(--am);border-radius:100px;font-size:16px;color:var(--am);backdrop-filter:blur(4px);">身体体验</span>
+      </div>
     </div>
-    <div class="sm mu">「Field」连接城市、路线、风、坡度、阳光、装备、社群和人的身体体验。</div>
+
   </div>
 </section>

@@ -1,0 +1,171 @@
+<style>
+  /* ── Audience Map slide ── */
+  .am-grid       { flex:1; align-items:center; }
+  .am-header     { margin-bottom:32px; }
+  .am-sub        { color:rgba(255,255,255,.38); }
+
+  .am-card {
+    flex:1; position:relative; border-radius:14px; overflow:hidden;
+    padding:28px 22px; justify-content:space-between;
+    border:1px solid rgba(255,255,255,.18);
+    align-self:center; height:86%;
+  }
+  .am-card--featured { align-self:stretch; height:auto; }
+  .am-card--future   { border-style:dashed; border-color:rgba(255,255,255,.22); }
+
+  .am-bg {
+    position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .am-bg--future { filter:grayscale(30%) brightness(.85); }
+
+  .am-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg,
+      rgba(5,8,20,.52) 0%, rgba(5,8,20,.04) 40%,
+      rgba(5,8,20,.5) 65%, rgba(5,8,20,.92) 100%);
+  }
+
+  /* 渐进式模糊 3层 */
+  .am-blur {
+    position:absolute; top:0; left:0; right:0; pointer-events:none;
+    mask-image:linear-gradient(to bottom,black 0%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,black 0%,transparent 100%);
+  }
+  .am-blur-1 { height:55%; backdrop-filter:blur(4px);  -webkit-backdrop-filter:blur(4px); }
+  .am-blur-2 { height:38%; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+  .am-blur-3 { height:22%; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+
+  .am-topbar { position:absolute; top:0; left:0; right:0; height:4px; background:var(--am); }
+
+  .am-body   { position:relative; z-index:1; }
+  .am-footer { position:relative; z-index:1; padding-top:18px; border-top:1px solid rgba(255,255,255,.12); }
+  .am-footer--dim { border-color:rgba(255,255,255,.08); }
+
+  .am-icon      { font-size:26px; color:var(--am); display:block; margin-bottom:14px; }
+  .am-icon--dim { color:rgba(255,255,255,.38); }
+
+  .am-tag       { font-size:13px; letter-spacing:.12em; margin-bottom:10px; }
+  .am-tag--dim  { color:rgba(255,255,255,.32); }
+
+  .am-title     { font-size:24px; font-weight:600; color:#fff; line-height:1.25; margin-bottom:12px; }
+  .am-title--dim{ color:rgba(255,255,255,.45); }
+
+  .am-desc      { font-size:18px; color:rgba(255,255,255,.52); line-height:1.55; }
+  .am-desc--dim { color:rgba(255,255,255,.3); }
+
+  .am-mic-lbl      { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:7px; }
+  .am-mic-lbl--dim { color:rgba(255,255,255,.2); }
+  .am-mic-val      { font-size:14px; color:var(--am); }
+  .am-mic-val--dim { font-size:14px; color:rgba(255,255,255,.28); }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="11 Audience Map">
+  <div class="h100 col pad">
+
+    <div class="row jsb va am-header">
+      <div class="lbl am">人群图谱</div>
+      <div class="xs am-sub">Who We Design For</div>
+    </div>
+
+    <div class="row g16 am-grid">
+
+      <!-- 1 留学生 -->
+      <div class="col am-card">
+        <img class="am-bg" src="/images/aud-1-tokyo.jpg" alt="">
+        <div class="am-overlay"></div>
+        <div class="am-blur am-blur-1"></div>
+        <div class="am-blur am-blur-2"></div>
+        <div class="am-blur am-blur-3"></div>
+        <div class="am-body">
+          <i class="ri-graduation-cap-line am-icon"></i>
+          <div class="lbl am am-tag">留学生群体</div>
+          <div class="am-title">在日中国<br>海外留学生</div>
+          <div class="am-desc">寻找城市探索方式与社群归属，骑行是建立本地生活感的入口。</div>
+        </div>
+        <div class="am-footer">
+          <div class="am-mic-lbl">MIC 切入</div>
+          <div class="am-mic-val">社群活动 · 路线推荐 · 中文沟通</div>
+        </div>
+      </div>
+
+      <!-- 2 本地骑行者（主卡） -->
+      <div class="col am-card am-card--featured">
+        <img class="am-bg" src="/images/aud-2-cycling.jpg" alt="">
+        <div class="am-overlay"></div>
+        <div class="am-blur am-blur-1"></div>
+        <div class="am-blur am-blur-2"></div>
+        <div class="am-blur am-blur-3"></div>
+        <div class="am-topbar"></div>
+        <div class="am-body">
+          <i class="ri-riding-line am-icon"></i>
+          <div class="lbl am am-tag">东京本地</div>
+          <div class="am-title">骑行<br>爱好者</div>
+          <div class="am-desc">认同专业装备与骑行社群文化，选品逻辑与服务标准是信任基础。</div>
+        </div>
+        <div class="am-footer">
+          <div class="am-mic-lbl">MIC 切入</div>
+          <div class="am-mic-val">专业选品 · Fitting · 维修服务</div>
+        </div>
+      </div>
+
+      <!-- 3 来访旅行者 -->
+      <div class="col am-card">
+        <img class="am-bg" src="/images/aud-3-temple.jpg" alt="">
+        <div class="am-overlay"></div>
+        <div class="am-blur am-blur-1"></div>
+        <div class="am-blur am-blur-2"></div>
+        <div class="am-blur am-blur-3"></div>
+        <div class="am-body">
+          <i class="ri-flight-land-line am-icon"></i>
+          <div class="lbl am am-tag">来访旅行者</div>
+          <div class="am-title">来日骑行<br>的国际用户</div>
+          <div class="am-desc">需要路线、装备与补给支持，英文识别和多语言沟通至关重要。</div>
+        </div>
+        <div class="am-footer">
+          <div class="am-mic-lbl">MIC 切入</div>
+          <div class="am-mic-val">东京路线图 · 补给站 · 英文接待</div>
+        </div>
+      </div>
+
+      <!-- 4 定居生活者 -->
+      <div class="col am-card">
+        <img class="am-bg" src="/images/aud-4-fuji.jpg" alt="">
+        <div class="am-overlay"></div>
+        <div class="am-blur am-blur-1"></div>
+        <div class="am-blur am-blur-2"></div>
+        <div class="am-blur am-blur-3"></div>
+        <div class="am-body">
+          <i class="ri-heart-line am-icon"></i>
+          <div class="lbl am am-tag">定居生活者</div>
+          <div class="am-title">追求高审美<br>的在日人群</div>
+          <div class="am-desc">注重装备品质、品牌与生活方式，对 MIC 的整体调性高度敏感。</div>
+        </div>
+        <div class="am-footer">
+          <div class="am-mic-lbl">MIC 切入</div>
+          <div class="am-mic-val">精选装备 · 品牌调性 · 生活方式内容</div>
+        </div>
+      </div>
+
+      <!-- 5 未来户外用户 -->
+      <div class="col am-card am-card--future">
+        <img class="am-bg am-bg--future" src="/images/aud-5-mountain.jpg" alt="">
+        <div class="am-overlay"></div>
+        <div class="am-blur am-blur-1"></div>
+        <div class="am-blur am-blur-2"></div>
+        <div class="am-blur am-blur-3"></div>
+        <div class="am-body">
+          <i class="ri-compass-3-line am-icon am-icon--dim"></i>
+          <div class="lbl am-tag am-tag--dim">未来户外用户</div>
+          <div class="am-title am-title--dim">雪场 · 山地<br>徒步的爱好者</div>
+          <div class="am-desc am-desc--dim">MIC Snow / Trek 的潜在用户，今日品牌基因将决定明日延展的可信度。</div>
+        </div>
+        <div class="am-footer am-footer--dim">
+          <div class="am-mic-lbl am-mic-lbl--dim">MIC 切入</div>
+          <div class="am-mic-val am-mic-val--dim">跨项目活动 · 未来子品牌预热</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

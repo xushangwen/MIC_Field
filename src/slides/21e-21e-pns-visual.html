@@ -1,0 +1,437 @@
+<style>
+  @font-face {
+    font-family: 'Plain';
+    src: url('/fonts/pns/Plain-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Plain';
+    src: url('/fonts/pns/Plain-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Plain';
+    src: url('/fonts/pns/Plain-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .pnsv-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 88px 56px;
+  }
+  .pnsv-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+  .pnsv-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .pnsv-header-brand {
+    font-family: var(--fe);
+    font-size: 34px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+  }
+  .pnsv-header-slash {
+    color: rgba(255,255,255,.2);
+    font-size: 24px;
+  }
+  .pnsv-header-label {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .pnsv-header-page {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.2);
+  }
+
+  .pnsv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .pnsv-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .pnsv-col-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+
+  /* ── Color Cards ── */
+  .pnsv-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .pnsv-cc {
+    flex: 1;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+  }
+  .pnsv-cc--black    { background: #000000; border: 1px solid rgba(255,255,255,.1); }
+  .pnsv-cc--white    { background: #FFFFFF; }
+  .pnsv-cc--petro    { background: #1E3840; }
+  .pnsv-cc--wasabi   { background: #6B7A2B; }
+  .pnsv-cc--offwhite { background: #EDE8DF; }
+
+  .pnsv-cc-top { display: flex; flex-direction: column; gap: 4px; }
+  .pnsv-cc-name {
+    font-family: var(--fn);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.95);
+  }
+  .pnsv-cc-hex {
+    font-family: var(--fn);
+    font-size: 15px;
+    letter-spacing: .05em;
+    color: rgba(255,255,255,.8);
+  }
+  .pnsv-cc-rgb {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.6);
+  }
+  .pnsv-cc-name--dk  { color: rgba(0,0,0,.85); }
+  .pnsv-cc-hex--dk   { color: rgba(0,0,0,.65); }
+  .pnsv-cc-rgb--dk   { color: rgba(0,0,0,.5); }
+  .pnsv-cc-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 12px;
+  }
+  .pnsv-cc-bottom--dk { border-top-color: rgba(0,0,0,.15); }
+  .pnsv-cc-role {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+  .pnsv-cc-role--dk  { color: rgba(0,0,0,.5); }
+  .pnsv-cc-desc {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.35);
+  }
+  .pnsv-cc-desc--dk  { color: rgba(0,0,0,.4); }
+  .pnsv-color-summary {
+    flex-shrink: 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-family: var(--fc);
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.38);
+    letter-spacing: .02em;
+  }
+
+  /* ── Typography ── */
+  .pnsv-type-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+  }
+  .pnsv-logo-block {
+    padding: 18px 20px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pnsv-logo-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .pnsv-logo-img {
+    height: 160px;
+    width: auto;
+    display: block;
+    align-self: flex-start;
+    opacity: .9;
+  }
+  .pnsv-logo-desc {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .03em;
+    color: rgba(255,255,255,.35);
+    line-height: 1.5;
+  }
+  .pnsv-type-specimen {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 20px 22px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pnsv-type-style {
+    font-family: var(--fn);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 12px;
+  }
+  .pnsv-type-sample-regular {
+    font-family: 'Plain', sans-serif;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 1.05;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .pnsv-type-sample-regular--sub {
+    font-size: 28px;
+    opacity: .45;
+  }
+  .pnsv-type-sample-regular-body {
+    font-family: 'Plain', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .pnsv-type-sample-bold {
+    font-family: 'Plain', sans-serif;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1.05;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .pnsv-type-sample-bold--sub {
+    font-weight: 500;
+    font-size: 28px;
+    opacity: .45;
+  }
+  .pnsv-type-sample-bold-body {
+    font-family: 'Plain', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.4);
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .pnsv-type-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* ── Photography ── */
+  .pnsv-photo-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+  .pnsv-photo-placeholder {
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .pnsv-photo-placeholder img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pnsv-photo-placeholder:first-child img { object-position: center top; }
+  .pnsv-photo-placeholder:nth-child(2) img { object-position: center center; }
+  .pnsv-photo-note {
+    margin-top: auto;
+    font-family: var(--fc);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.45);
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="21e PNS — Visual DNA">
+  <div class="pnsv-page">
+    <div class="pnsv-header">
+      <div class="pnsv-header-left">
+        <div class="pnsv-header-brand">Pas Normal Studios</div>
+        <div class="pnsv-header-slash">/</div>
+        <div class="pnsv-header-label">Visual Identity System</div>
+      </div>
+      <div class="pnsv-header-page">视觉体系解析 · 02 / 03</div>
+    </div>
+
+    <div class="pnsv-grid">
+
+      <!-- Col 1: Color Cards -->
+      <div class="pnsv-col">
+        <div class="pnsv-col-label">Color System</div>
+        <div class="pnsv-colors">
+
+          <div class="pnsv-cc pnsv-cc--black">
+            <div class="pnsv-cc-top">
+              <div class="pnsv-cc-name">Black</div>
+              <div class="pnsv-cc-hex">HEX 000000</div>
+              <div class="pnsv-cc-rgb">RGB 0  0  0</div>
+            </div>
+            <div class="pnsv-cc-bottom">
+              <div class="pnsv-cc-role">Primary · Absolute Base</div>
+              <div class="pnsv-cc-desc">北欧极简主义的最终锚点</div>
+            </div>
+          </div>
+
+          <div class="pnsv-cc pnsv-cc--petro">
+            <div class="pnsv-cc-top">
+              <div class="pnsv-cc-name">Petroleum</div>
+              <div class="pnsv-cc-hex">HEX 1E3840</div>
+              <div class="pnsv-cc-rgb">RGB 30  56  64</div>
+            </div>
+            <div class="pnsv-cc-bottom">
+              <div class="pnsv-cc-role">Signature · Deep Teal</div>
+              <div class="pnsv-cc-desc">冷峻深邃，斯堪的纳维亚海域色</div>
+            </div>
+          </div>
+
+          <div class="pnsv-cc pnsv-cc--wasabi">
+            <div class="pnsv-cc-top">
+              <div class="pnsv-cc-name">Wasabi</div>
+              <div class="pnsv-cc-hex">HEX 6B7A2B</div>
+              <div class="pnsv-cc-rgb">RGB 107  122  43</div>
+            </div>
+            <div class="pnsv-cc-bottom">
+              <div class="pnsv-cc-role">Accent · Organic Green</div>
+              <div class="pnsv-cc-desc">低饱和自然系，打破单色冷感</div>
+            </div>
+          </div>
+
+          <div class="pnsv-cc pnsv-cc--offwhite">
+            <div class="pnsv-cc-top">
+              <div class="pnsv-cc-name pnsv-cc-name--dk">Off White</div>
+              <div class="pnsv-cc-hex pnsv-cc-hex--dk">HEX EDE8DF</div>
+              <div class="pnsv-cc-rgb pnsv-cc-rgb--dk">RGB 237  232  223</div>
+            </div>
+            <div class="pnsv-cc-bottom pnsv-cc-bottom--dk">
+              <div class="pnsv-cc-role pnsv-cc-role--dk">Ground · Warm Neutral</div>
+              <div class="pnsv-cc-desc pnsv-cc-desc--dk">温暖底色，避免纯白的冰冷感</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="pnsv-color-summary">
+          以黑白为骨架，Petroleum 深青与 Wasabi 橄榄绿为核心辅助色——均为低饱和度大地自然色系，拒绝荧光与高饱和。色彩本身即是身份筛选器：只有具备高阶审美感知的用户才能读懂这套克制的色彩语法。
+        </div>
+      </div>
+
+      <!-- Col 2: Typography & Logo -->
+      <div class="pnsv-col">
+        <div class="pnsv-col-label">Typography & Logo</div>
+        <div class="pnsv-type-block">
+          <div class="pnsv-logo-block">
+            <div class="pnsv-logo-style">Wordmark · Custom Sans · Plain</div>
+            <img src="/images/logos/pasnormal-white.svg" class="pnsv-logo-img" alt="Pas Normal Studios">
+            <div class="pnsv-logo-desc">几何无衬线字标 · 极度克制 · 工业设计感</div>
+          </div>
+          <div class="pnsv-type-specimen">
+            <div class="pnsv-type-style">Plain Regular · 叙事 / 正文</div>
+            <div class="pnsv-type-sample-regular">Normal</div>
+            <div class="pnsv-type-sample-regular pnsv-type-sample-regular--sub">Pas Normal</div>
+            <div class="pnsv-type-sample-regular-body">
+              Designed without compromise. Made for the road ahead.
+            </div>
+          </div>
+          <div class="pnsv-type-specimen">
+            <div class="pnsv-type-style">Plain Bold · 标题 / 强调</div>
+            <div class="pnsv-type-sample-bold">STUDIO</div>
+            <div class="pnsv-type-sample-bold pnsv-type-sample-bold--sub">Uncompromising</div>
+            <div class="pnsv-type-sample-bold-body">
+              Performance without decoration. Form follows function.
+            </div>
+          </div>
+          <div class="pnsv-type-note">
+            Plain 全系字重统一的几何骨架——Regular 建立呼吸感，Bold 制造视觉锚点，无衬线保证极速阅读
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Photography -->
+      <div class="pnsv-col">
+        <div class="pnsv-col-label">Photography Style</div>
+        <div class="pnsv-photo-area">
+          <div class="pnsv-photo-placeholder">
+            <img src="/images/pns/pns-wasabi.jpg" alt="PNS Wasabi Product">
+          </div>
+          <div class="pnsv-photo-placeholder">
+            <img src="/images/pns/pns-petroleum.jpg" alt="PNS Petroleum Product">
+          </div>
+          <div class="pnsv-photo-note">
+            极度干净的纯色棚拍 · 高对比度 · 面料纹理与剪裁即主角。产品本身的工艺质感替代一切营销噪音
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

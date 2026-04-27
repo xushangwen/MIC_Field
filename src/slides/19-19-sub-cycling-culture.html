@@ -1,0 +1,32 @@
+<style>
+  .cc-video {
+    position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .cc-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg,
+      rgba(5,8,20,.75) 0%, rgba(5,8,20,.50) 40%,
+      rgba(5,8,20,.70) 70%, rgba(5,8,20,.94) 100%);
+  }
+  .dot-texture {
+    position:absolute; inset:0; pointer-events:none; z-index:1;
+    background-image:radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size:6px 6px;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="19 Sub — Cycling Culture">
+  <video class="cc-video" autoplay muted loop playsinline>
+    <source src="/videos/maap.mp4" type="video/mp4">
+  </video>
+  <div class="cc-overlay"></div>
+  <div class="dot-texture"></div>
+
+  <div class="z1 h100 col fcnt" style="text-align:center;padding-bottom:8%;">
+    <div class="lbl" style="opacity:.65;margin-bottom:28px;">品牌调研 · 第二层</div>
+    <div class="dp" style="font-size:80px;">Cycling Culture</div>
+    <div class="rule" style="margin:28px auto;"></div>
+    <div class="bd" style="opacity:.75;max-width:800px;">骑行服装与文化品牌如何将运动转化为身份认同与社群归属</div>
+  </div>
+</section>

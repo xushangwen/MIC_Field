@@ -1,0 +1,25 @@
+<style>
+  .coi-wrap { position: relative; height: 100%; overflow: hidden; }
+  .coi-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .coi-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,12,16,.92) 0%, rgba(11,12,16,.38) 48%, transparent 100%); }
+  .coi-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 64px 88px; gap: 20px; }
+  .coi-label { font-family: var(--fn); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: var(--am); }
+  .coi-logo { height: 60px; width: auto; }
+  .coi-name { font-family: var(--fe); font-size: 88px; font-weight: 700; line-height: 1; color: white; letter-spacing: -.02em; }
+  .coi-cn { font-family: var(--fc); font-size: 28px; font-weight: 400; color: rgba(255,255,255,.45); letter-spacing: .08em; margin-top: -8px; }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="15c5 Colnago — Brand Intro">
+  <div class="coi-wrap">
+    <div class="coi-bg">
+      <img src="/images/colnago/colnago-brand.jpg" alt="Colnago">
+    </div>
+    <div class="coi-overlay"></div>
+    <div class="coi-content">
+      <div class="coi-label">整车装备品牌 · Layer 01</div>
+      <img src="/images/logos/colnago-white.svg" class="coi-logo" alt="Colnago">
+      <div class="coi-name">Colnago</div>
+      <div class="coi-cn">梅花</div>
+    </div>
+  </div>
+</section>

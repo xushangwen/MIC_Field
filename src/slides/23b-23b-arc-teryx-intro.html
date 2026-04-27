@@ -1,0 +1,72 @@
+<style>
+  .at-wrap {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  .at-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .at-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11,12,16,.92) 0%, rgba(11,12,16,.38) 48%, transparent 100%);
+  }
+  .at-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 64px 88px;
+    gap: 20px;
+  }
+  .at-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--am);
+  }
+  .at-logo {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+  .at-name {
+    font-family: var(--fe);
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    letter-spacing: -.02em;
+  }
+  .at-cn {
+    font-family: var(--fc);
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,.45);
+    letter-spacing: .08em;
+    margin-top: -8px;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="23b Arc'teryx — Brand Intro">
+  <div class="at-wrap">
+    <div class="at-bg">
+      <img src="/images/arcteryx/arc-8-landscape.png" alt="Arc'teryx alpine landscape">
+    </div>
+    <div class="at-overlay"></div>
+    <div class="at-content">
+      <div class="at-label">户外生活方式品牌 · Layer 03</div>
+      <img src="/images/logos/arcteryx-white.svg" class="at-logo" alt="Arc'teryx">
+      <div class="at-name">Arc'teryx</div>
+      <div class="at-cn">始祖鸟</div>
+    </div>
+  </div>
+</section>

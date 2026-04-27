@@ -1,0 +1,163 @@
+<style>
+  .ato-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+  }
+  .ato-img-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  .ato-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 58% 42%;
+    gap: 3px;
+  }
+  .ato-collage-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .ato-collage-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .ato-collage-cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .ato-collage-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .ato-collage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .ato-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px 60px 68px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .ato-tier {
+    font-family: var(--fn);
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 18px;
+  }
+  .ato-logo {
+    height: 160px;
+    width: auto;
+    display: block;
+    margin: 0 0 14px;
+    filter: brightness(0) invert(1);
+  }
+  .ato-meta {
+    font-family: var(--fn);
+    font-size: 15px;
+    color: rgba(255,255,255,.35);
+    letter-spacing: .05em;
+  }
+  .ato-tagline {
+    font-family: var(--fc);
+    font-size: 24px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    border-left: 2px solid var(--am);
+    padding-left: 20px;
+  }
+  .ato-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .ato-value {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .ato-value-name {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+  .ato-value-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.72);
+  }
+  .ato-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="24 Arc'teryx — Brand Overview">
+  <div class="ato-layout">
+    <div class="ato-img-panel">
+      <div class="ato-collage">
+        <div class="ato-collage-top">
+          <img src="/images/arcteryx/arc-6-alpine-ski.jpg" alt="Arc'teryx alpine skiing">
+        </div>
+        <div class="ato-collage-bottom">
+          <div class="ato-collage-split">
+            <div class="ato-collage-cell">
+              <img src="/images/arcteryx/arc-11-jacket.jpg" alt="Arc'teryx Beta SL Jacket">
+            </div>
+            <div class="ato-collage-cell">
+              <img src="/images/arcteryx/arc-7-closeup.jpg" alt="Arc'teryx detail closeup">
+            </div>
+          </div>
+          <div class="ato-collage-cell">
+            <img src="/images/arcteryx/arc-4-urban-store.jpg" alt="Arc'teryx urban store">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ato-info">
+      <div class="ato-head">
+        <div class="ato-tier">户外生活方式品牌 · Layer 03</div>
+        <img src="/images/logos/arcteryx-white.svg" class="ato-logo" alt="Arc'teryx">
+        <div class="ato-meta">Est. 1989 · Vancouver, Canada · Premium Alpine Apparel & Equipment</div>
+      </div>
+
+      <div class="ato-tagline">
+        以极致材料工程与山岳级验证，<br>将功能性升华为一种先锋美学语言
+      </div>
+
+      <div>
+        <div class="ato-divider" style="margin-bottom:24px;"></div>
+        <div class="ato-values">
+          <div class="ato-value">
+            <div class="ato-value-name">Evolution</div>
+            <div class="ato-value-desc">不断突破材料、结构与工艺的物理极限</div>
+          </div>
+          <div class="ato-value">
+            <div class="ato-value-name">Minimalism</div>
+            <div class="ato-value-desc">去除一切多余设计，功能即形式</div>
+          </div>
+          <div class="ato-value">
+            <div class="ato-value-name">Mountain-tested</div>
+            <div class="ato-value-desc">所有产品经受真实极端环境的最终验证</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

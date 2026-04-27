@@ -1,0 +1,193 @@
+<style>
+  .mpi-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .mpi-left {
+    display: flex;
+    flex-direction: column;
+    padding: 52px 48px 52px 88px;
+    gap: 24px;
+  }
+  .mpi-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .mpi-photo-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .mpi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mpi-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .mpi-photo-trio {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .mpi-photo-trio .mpi-photo {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mpi-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .mpi-aesthetic-tag {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 16px;
+  }
+  .mpi-aesthetic-title {
+    font-family: var(--fe);
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+  .mpi-aesthetic-desc {
+    font-family: var(--fc);
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.65);
+  }
+
+  .mpi-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+
+  .mpi-strategy-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mpi-strategy-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+  }
+  .mpi-strategy-text {
+    font-family: var(--fc);
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.5);
+  }
+
+  .mpi-insight {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .mpi-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 14px;
+  }
+  .mpi-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .mpi-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.6);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="21c MAAP — Photography & Insight">
+  <div class="mpi-layout">
+
+    <div class="mpi-left">
+      <div class="mpi-left-label">摄影调性 · "Performance & Avant-Garde" Aesthetic</div>
+      <div class="mpi-photo-grid">
+        <div class="mpi-photo">
+          <img src="/images/maap/maap-adl-2025.jpg" alt="MAAP ADL 2025">
+        </div>
+        <div class="mpi-photo">
+          <img src="/images/maap/maap-petr.jpg" alt="MAAP Petr Vakoč">
+        </div>
+        <div class="mpi-photo-trio">
+          <div class="mpi-photo">
+            <img src="/images/maap/maap-shop-altroad.jpg" alt="MAAP Alt Road">
+          </div>
+          <div class="mpi-photo">
+            <img src="/images/maap/maap-shop-training.jpg" alt="MAAP Shop Training">
+          </div>
+          <div class="mpi-photo">
+            <img src="/images/maap/maap-shop-aeon.jpg" alt="MAAP Aeon">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mpi-right">
+      <div class="mpi-aesthetic">
+        <div class="mpi-aesthetic-tag">Aesthetic Philosophy</div>
+        <div class="mpi-aesthetic-title">Performance<br>& Avant-Garde</div>
+        <div class="mpi-aesthetic-desc">
+          高对比度、硬朗自然光的运动纪实风格。产品在壮丽的自然地貌与专业赛事现场中呈现——速度感与力量感构成视觉主轴，前卫平面美学打破传统骑行装备的功能摄影窠臼。
+        </div>
+      </div>
+
+      <div class="mpi-divider"></div>
+
+      <div class="mpi-strategy-block">
+        <div class="mpi-strategy-label">竞技背书策略</div>
+        <div class="mpi-strategy-text">
+          签约 WorldTour 车手（Petr Vakoč 等）与赞助 Life Time Grand Prix 极限挑战赛，在顶级竞技场建立真实可信的性能背书——随后用前卫视觉语言将这种可信度包裹为品牌文化资产
+        </div>
+      </div>
+
+      <div class="mpi-insight">
+        <div class="mpi-insight-label">对 MIC 的战略启示</div>
+        <div class="mpi-insight-title">性能认证 × 美学革命<br>= 新骑行话语权</div>
+        <div class="mpi-insight-body">
+          MAAP 的核心路径：顶级竞技背书建立可信度，前卫美学系统制造溢价。MIC 可借鉴：以专业骑行活动和场地建立技术公信力，同时用不可复制的创意视觉语言，让品牌超越装备标签，成为骑行者的精神身份符号。
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

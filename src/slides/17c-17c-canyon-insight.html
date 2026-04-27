@@ -1,0 +1,168 @@
+<style>
+  .cni-layout {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    height: 100%;
+  }
+  .cni-left {
+    padding: 52px 48px 52px 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .cni-left-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--am);
+    flex-shrink: 0;
+  }
+  .cni-grid {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+  .cni-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  .cni-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .cni-photo-wide {
+    grid-column: 1 / 3;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  .cni-photo-wide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cni-right {
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cni-block-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 12px;
+  }
+  .cni-headline {
+    font-family: var(--fe);
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .cni-body {
+    font-family: var(--fc);
+    font-size: 20px;
+    color: rgba(255,255,255,.65);
+    line-height: 1.7;
+  }
+  .cni-strategy {
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,.07);
+  }
+  .cni-strategy-body {
+    font-family: var(--fc);
+    font-size: 19px;
+    color: rgba(255,255,255,.5);
+    line-height: 1.65;
+  }
+  .cni-insight-card {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px;
+    padding: 26px 28px;
+  }
+  .cni-insight-label {
+    font-family: var(--fn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--am);
+    margin-bottom: 10px;
+  }
+  .cni-insight-title {
+    font-family: var(--fe);
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,.9);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .cni-insight-body {
+    font-family: var(--fc);
+    font-size: 18px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.7;
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="17c Canyon — Photography & Insight">
+  <div class="cni-layout">
+    <div class="cni-left">
+      <div class="cni-left-label">Photography & Culture · 03 / 03</div>
+      <div class="cni-grid">
+        <div class="cni-photo">
+          <img src="/images/canyon/canyon-group.jpg" alt="Canyon Group Rides">
+        </div>
+        <div class="cni-photo">
+          <img src="/images/canyon/canyon-racing.jpg" alt="Canyon Factory Racing">
+        </div>
+        <div class="cni-photo-wide">
+          <img src="/images/canyon/canyon-gravel.jpg" alt="Canyon CFR Gravel">
+        </div>
+      </div>
+    </div>
+
+    <div class="cni-right">
+      <div>
+        <div class="cni-block-label">摄影美学</div>
+        <div class="cni-headline">Pure Speed,<br>No Noise</div>
+        <div class="cni-body">
+          极简克制的棚拍与充满张力的运动纪实并行——产品图聚焦线条细节，场景图用泥土、汗水与速度传递「Pure Cycling」的生命状态。黑白灰主色调从不喧嚣，让骑行本身成为唯一主角。
+        </div>
+      </div>
+
+      <div class="cni-strategy">
+        <div class="cni-block-label">社群与文化</div>
+        <div class="cni-strategy-body">
+          DTC 模式让 Canyon 与骑行社区建立直接连接——从职业车队到群骑文化，品牌不仅卖单车，更输出一种「不妥协」的骑行价值观。MyCanyon 定制化进一步深化用户归属感。
+        </div>
+      </div>
+
+      <div class="cni-insight-card">
+        <div class="cni-insight-label">对 MIC 的战略洞察</div>
+        <div class="cni-insight-title">设计语言是最强的<br>差异化武器</div>
+        <div class="cni-insight-body">
+          Canyon 证明：视觉克制本身就是一种品牌主张。MIC Field 可借鉴其「少即是更多」的底层逻辑——用统一的视觉语言建立信任感，让产品力自然显现，而非依赖装饰堆叠。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

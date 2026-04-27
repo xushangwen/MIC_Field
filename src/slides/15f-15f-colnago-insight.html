@@ -1,0 +1,132 @@
+<style>
+  .cni-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .cni-left {
+    display: flex; flex-direction: column;
+    padding: 52px 48px 52px 88px; gap: 24px;
+  }
+  .cni-left-label {
+    font-family: var(--fn); font-size: 13px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--am); flex-shrink: 0;
+  }
+  .cni-photo-grid {
+    flex: 1; display: grid;
+    grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+    gap: 10px; min-height: 0;
+  }
+  .cni-photo { border-radius: 6px; position: relative; overflow: hidden; }
+  .cni-photo img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+  }
+  .cni-photo-trio {
+    grid-column: 1 / 3;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; min-height: 0;
+  }
+  .cni-photo-trio .cni-photo { border-radius: 6px; position: relative; overflow: hidden; }
+
+  .cni-right {
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 52px 88px 52px 52px;
+    border-left: 1px solid rgba(255,255,255,.05);
+  }
+  .cni-aesthetic-tag {
+    font-family: var(--fn); font-size: 13px; letter-spacing: .2em;
+    text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px;
+  }
+  .cni-aesthetic-title {
+    font-family: var(--fe); font-size: 48px; line-height: 1.1;
+    font-weight: 700; margin-bottom: 22px;
+  }
+  .cni-aesthetic-desc {
+    font-family: var(--fc); font-size: 20px;
+    line-height: 1.7; color: rgba(255,255,255,.65);
+  }
+  .cni-divider { width: 100%; height: 1px; background: rgba(255,255,255,.07); }
+  .cni-heritage-block { display: flex; flex-direction: column; gap: 10px; }
+  .cni-heritage-label {
+    font-family: var(--fn); font-size: 13px; letter-spacing: .18em;
+    text-transform: uppercase; color: rgba(255,255,255,.3);
+  }
+  .cni-heritage-text {
+    font-family: var(--fc); font-size: 19px;
+    line-height: 1.65; color: rgba(255,255,255,.5);
+  }
+  .cni-insight {
+    background: rgba(200,104,58,.08);
+    border: 1px solid rgba(200,104,58,.22);
+    border-radius: 8px; padding: 26px 28px;
+  }
+  .cni-insight-label {
+    font-family: var(--fn); font-size: 13px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--am); margin-bottom: 14px;
+  }
+  .cni-insight-title {
+    font-family: var(--fe); font-size: 24px; font-weight: 700;
+    color: rgba(255,255,255,.9); margin-bottom: 14px; line-height: 1.3;
+  }
+  .cni-insight-body {
+    font-family: var(--fc); font-size: 18px;
+    line-height: 1.7; color: rgba(255,255,255,.6);
+  }
+</style>
+
+<section data-anim="default" class="bg-dk" data-label="15f Colnago — Photography & Insight">
+  <div class="cni-layout">
+
+    <div class="cni-left">
+      <div class="cni-left-label">摄影调性 · "Legend & Craft" Aesthetic</div>
+      <div class="cni-photo-grid">
+        <div class="cni-photo">
+          <img src="/images/colnago/colnago-manifesto.jpg" alt="Colnago Manifesto">
+        </div>
+        <div class="cni-photo">
+          <img src="/images/colnago/colnago-c72.jpg" alt="Colnago C72">
+        </div>
+        <div class="cni-photo-trio">
+          <div class="cni-photo">
+            <img src="/images/colnago/colnago-yellow.jpg" alt="Colnago Yellow">
+          </div>
+          <div class="cni-photo">
+            <img src="/images/colnago/colnago-c68-allroad.jpg" alt="Colnago Allroad">
+          </div>
+          <div class="cni-photo">
+            <img src="/images/colnago/colnago-heritage.jpg" alt="Colnago Heritage">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cni-right">
+      <div class="cni-aesthetic">
+        <div class="cni-aesthetic-tag">Aesthetic Philosophy</div>
+        <div class="cni-aesthetic-title">Legend &<br>Craft</div>
+        <div class="cni-aesthetic-desc">
+          高对比暗调为主轴——深色背景棚拍突出碳纤维纹理与精工细节；赛事纪实则捕捉史诗感荣耀瞬间。产品是艺术品，摄影语言赋予它超越运动器械的收藏价值。
+        </div>
+      </div>
+
+      <div class="cni-divider"></div>
+
+      <div class="cni-heritage-block">
+        <div class="cni-heritage-label">赛场传承策略</div>
+        <div class="cni-heritage-text">
+          Eddy Merckx × 11 座大满贯 · Tadej Pogačar · UCI ProTour 长期合作——冠军背书本身即是最强品牌资产
+        </div>
+      </div>
+
+      <div class="cni-insight">
+        <div class="cni-insight-label">对 MIC 的战略启示</div>
+        <div class="cni-insight-title">传承即信任，<br>历史本身是最强背书</div>
+        <div class="cni-insight-body">
+          Colnago 证明：顶级品牌不需要过度解释，赛场传奇本身就是最有力的品牌宣言。MIC 可借鉴：从第一天起就开始记录「值得传承的时刻」——每一次赛事结果、每一个骑手故事，都是正在积累的品牌资产。
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
