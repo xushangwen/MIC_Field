@@ -7,11 +7,13 @@
 ## 文件命名
 
 ```
-XX0-XX0-{brand}-intro.html    → P0 品牌引导页（全屏大图）
-XX-XX-{brand}.html            → P1 品牌概览
-XXb-XXb-{brand}-visual.html   → P2 视觉体系
-XXc-XXc-{brand}-insight.html  → P3 摄影调性 & 战略洞察
+{NN}-{brand}-intro.html    → P0 品牌引导页（全屏大图）
+{NN}-{brand}.html          → P1 品牌概览
+{NN}-{brand}-visual.html   → P2 视觉体系
+{NN}-{brand}-insight.html  → P3 摄影调性 & 战略洞察
 ```
+
+NN 为该页在整体幻灯片中的顺序页码（两位数，如 `15`、`42`），确保文件名前缀与展示页码一致。
 
 CSS 类前缀每页独立，2–3 字母，避免全局污染。示例：`rp-` / `rpv-` / `rpi-`。
 

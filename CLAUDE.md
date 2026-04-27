@@ -1,11 +1,11 @@
 # MIC Field — Brand Direction Proposal
 
-Vite + GSAP + deck-stage，61 张幻灯片。`npm run dev` → http://localhost:5173/proposal.html
+Vite + GSAP + deck-stage，95 张幻灯片。`npm run dev` → http://localhost:5173/proposal.html
 
 ## 幻灯片
 - 文件：`src/slides/{NN}-{slug}.html`，按文件名排序即为播放顺序
 - 每文件一个 `<section class="bg-dk" data-label="..." data-anim="preset">`
-- 新增无需注册（`import.meta.glob` 自动发现）；插中间用 `17b-` 命名
+- 新增无需注册（`import.meta.glob` 自动发现）；插入已有两页之间用 `{NN}b-{slug}.html` 命名（如 `42b-maap-extra.html`）
 
 **data-anim 预设：** `cover` 封面 · `chapter` 章节 · `finding` 结论数字 · `statement` 陈述 · `brandcard` 品牌左图右文 · `moodgrid` 情绪版 · `default` 通用
 
@@ -25,7 +25,7 @@ Vite + GSAP + deck-stage，61 张幻灯片。`npm run dev` → http://localhost:
 ## 图片
 用户提供 URL 直接替换。全屏 `w=1920`，内容图 `w=1040`，网格 `w=800`。本地图放 `public/images/`，引用 `/images/filename.webp`。
 
-待补品牌图：18 Canyon/Pinarello · 22 MAAP/PNS · 26 Goldwin · 29 Polestar/Porsche · 30 Aesop/Muji · 44/46/48 情绪版
+待补配图：P78/P80/P82 视觉方向情绪板（A/B/C）
 
 ## 动画扩展
 `src/animations/index.ts` → `presets.myPreset = (tl, slide) => {...}` 后在 section 上设 `data-anim="myPreset"`。SVG 描边已内置 `animateTopo(tl, slide)`。
