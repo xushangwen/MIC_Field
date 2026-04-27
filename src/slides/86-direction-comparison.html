@@ -1,0 +1,246 @@
+<section data-anim="default" class="bg-wm" data-label="48 Direction Comparison">
+  <style>
+    .dcp-wrap {
+      height: 100%;
+      padding: 56px 72px 54px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      column-gap: 0;
+      row-gap: 18px;
+      color: var(--td);
+    }
+    .dcp-side {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+    }
+    .dcp-kicker {
+      font-family: var(--fe);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--md);
+    }
+    .dcp-title {
+      margin-top: 28px;
+      font-family: var(--fe);
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.02;
+      color: var(--am);
+      white-space: nowrap;
+    }
+    .dcp-note {
+      display: grid;
+      grid-template-columns: 8px 1fr;
+      gap: 18px;
+      align-items: start;
+      color: var(--md);
+      font-size: 26px;
+      line-height: 1.25;
+      grid-column: 1 / -1;
+      white-space: nowrap;
+    }
+    .dcp-note .dot {
+      margin-top: 12px;
+    }
+    .dcp-table-wrap {
+      grid-column: 1;
+      grid-row: 2;
+      align-self: center;
+      justify-self: start;
+      width: 100%;
+      transform: translateY(-24px);
+      padding: 14px 18px 18px;
+      border: 1px solid rgba(42,48,43,.14);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.20)),
+        rgba(244,240,232,.34);
+      box-shadow: 0 22px 60px rgba(42,48,43,.08);
+    }
+    .dcp-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      table-layout: fixed;
+    }
+    .dcp-table th,
+    .dcp-table td {
+      text-align: left;
+      vertical-align: middle;
+    }
+    .dcp-table th {
+      padding: 0 14px 8px;
+      font-family: var(--fe);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: rgba(42,48,43,.46);
+    }
+    .dcp-table td {
+      padding: 21px 14px;
+      font-size: 23px;
+      line-height: 1.32;
+      color: var(--td);
+      background: rgba(255,255,255,.40);
+      border-top: 1px solid rgba(42,48,43,.08);
+      border-bottom: 1px solid rgba(42,48,43,.08);
+    }
+    .dcp-table th:first-child,
+    .dcp-table td:first-child {
+      padding-left: 22px;
+      border-left: 1px solid rgba(42,48,43,.08);
+      border-radius: 8px 0 0 8px;
+    }
+    .dcp-table th:last-child,
+    .dcp-table td:last-child {
+      padding-right: 22px;
+      border-right: 1px solid rgba(42,48,43,.08);
+      border-radius: 0 8px 8px 0;
+    }
+    .dcp-table tbody tr:not(.dcp-rec):hover td {
+      background: rgba(255,255,255,.56);
+    }
+    .dcp-dir {
+      font-family: var(--fe);
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .dcp-core {
+      color: var(--ml);
+    }
+    .dcp-strong {
+      color: var(--am);
+      font-weight: 700;
+    }
+    .dcp-mid {
+      color: var(--ml);
+    }
+    .dcp-low {
+      color: var(--md);
+    }
+    .dcp-table td:nth-child(n+3) {
+      font-family: var(--fe);
+      font-size: 22px;
+      font-weight: 650;
+    }
+    .dcp-table td:nth-child(n+3) span {
+      display: inline-flex;
+      min-width: 54px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(42,48,43,.055);
+    }
+    .dcp-table td:nth-child(n+3) .dcp-strong {
+      background: rgba(200,104,58,.13);
+    }
+    .dcp-table td:nth-child(n+3) .dcp-mid {
+      background: rgba(42,48,43,.06);
+    }
+    .dcp-table td:nth-child(n+3) .dcp-low {
+      background: rgba(42,48,43,.035);
+    }
+    .dcp-rec td {
+      background: rgba(200,104,58,.12);
+      border-color: rgba(200,104,58,.28);
+    }
+    .dcp-rec td:first-child {
+      position: relative;
+      border-left-color: rgba(200,104,58,.42);
+    }
+    .dcp-rec td:first-child::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      bottom: 12px;
+      width: 4px;
+      border-radius: 4px;
+      background: var(--am);
+    }
+    .dcp-rec .dcp-dir,
+    .dcp-rec .dcp-core {
+      font-weight: 800;
+    }
+  </style>
+
+  <div class="dcp-wrap">
+    <div class="dcp-side">
+      <div>
+        <div class="dcp-kicker">Direction Comparison</div>
+        <div class="dcp-title">三个方向对比</div>
+      </div>
+    </div>
+
+    <div class="dcp-table-wrap">
+      <table class="dcp-table">
+        <thead>
+          <tr>
+            <th style="width:22%;">方向</th>
+            <th style="width:22%;">核心主张</th>
+            <th>门店落地</th>
+            <th>社群温度</th>
+            <th>系统延展</th>
+            <th>国际识别</th>
+            <th>执行可行性</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dcp-dir" style="color:var(--tl);">A · Technical Field</td>
+            <td class="dcp-core">专业 · 性能 · 可信赖</td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td><span class="dcp-mid">中等</span></td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td>强</td>
+          </tr>
+          <tr>
+            <td class="dcp-dir" style="color:var(--td);">B · Route Culture</td>
+            <td class="dcp-core">路线 · 文化 · 叙事</td>
+            <td><span class="dcp-mid">中等</span></td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td>强</td>
+            <td>强</td>
+            <td>强</td>
+          </tr>
+          <tr>
+            <td class="dcp-dir" style="color:var(--am);">C · Sunward Motion</td>
+            <td class="dcp-core">精神 · 光线 · 方向感</td>
+            <td><span class="dcp-low">较弱</span></td>
+            <td>强</td>
+            <td><span class="dcp-mid">中等</span></td>
+            <td><span class="dcp-mid">中等</span></td>
+            <td><span class="dcp-low">较难</span></td>
+          </tr>
+          <tr class="dcp-rec">
+            <td class="dcp-dir" style="color:var(--am);">推荐 · A + B 融合</td>
+            <td class="dcp-core">以 C 为精神底色</td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td><span class="dcp-strong">极强</span></td>
+            <td><span class="dcp-strong">可行</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dcp-note">
+      <div class="dot"></div>
+      <div>四个维度同时满足：专业感 · 落地性 · 文化厚度 · 品牌延展性。详见下页推荐方向。</div>
+    </div>
+  </div>
+</section>

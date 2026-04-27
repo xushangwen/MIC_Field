@@ -1,16 +1,111 @@
-<section data-anim="moodgrid" class="bg-dk" data-label="43 Direction A — Mood">
-  <div style="position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;">
-    <div style="background:linear-gradient(135deg,#0d1520 0%,#1a2d45 100%);position:relative;overflow:hidden;"><div class="stripe"></div><div style="position:absolute;bottom:20px;left:20px;font-size:24px;opacity:.3;letter-spacing:.06em;">性能</div></div>
-    <div style="background:linear-gradient(135deg,#101518 0%,#1e7085 100%);position:relative;overflow:hidden;"><div class="stripe"></div><div style="position:absolute;bottom:20px;left:20px;font-size:24px;opacity:.3;letter-spacing:.06em;">精密</div></div>
-    <div style="background:linear-gradient(135deg,#0a0c10 0%,#2a3040 100%);position:relative;overflow:hidden;"><div class="stripe"></div><div style="position:absolute;bottom:20px;left:20px;font-size:24px;opacity:.3;letter-spacing:.06em;">技术</div></div>
-    <div style="background:linear-gradient(135deg,#12181e 0%,#283240 100%);position:relative;overflow:hidden;"><div class="stripe"></div><div style="position:absolute;bottom:20px;left:20px;font-size:24px;opacity:.3;letter-spacing:.06em;">结构</div></div>
-    <div style="background:var(--tl);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-      <div style="font-family:var(--fe);font-size:80px;font-weight:800;opacity:.25;">A</div>
-      <div style="position:absolute;bottom:20px;left:20px;font-size:24px;opacity:.7;letter-spacing:.06em;">Technical Field</div>
+<section data-anim="moodgrid" class="bg-dk" data-label="44 Direction A — Mood">
+  <style>
+    .dam-grid {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .dam-cell {
+      position: relative;
+      overflow: hidden;
+    }
+    .dam-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .dam-cell-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+    }
+    .dam-cell-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      opacity: 0.5;
+      letter-spacing: 0.06em;
+    }
+    .dam-cell-grad-1 { background: linear-gradient(135deg, #0d1520 0%, #1a2d45 100%); }
+    .dam-cell-grad-2 { background: linear-gradient(135deg, #101518 0%, #1e7085 100%); }
+    .dam-cell-grad-3 { background: linear-gradient(135deg, #0a0c10 0%, #2a3040 100%); }
+    .dam-cell-grad-4 { background: linear-gradient(135deg, #12181e 0%, #283240 100%); }
+    .dam-cell-tl {
+      background: var(--tl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dam-cell-tl-letter {
+      font-family: var(--fe);
+      font-size: 180px;
+      font-weight: 800;
+      opacity: 0.25;
+    }
+    .dam-cell-tl-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      opacity: 0.7;
+      letter-spacing: 0.06em;
+    }
+    .dam-direction-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--fe);
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .dam-stripe { /* placeholder for stripe decoration */ }
+    .dam-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(11,12,16,.9) 0%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 0 80px 36px;
+    }
+  </style>
+
+  <div class="dam-grid">
+    <div class="dam-cell">
+      <img src="/images/direction-a-mood-road.jpg" alt="公路骑行">
+      <div class="dam-cell-overlay"></div>
+      <div class="dam-cell-label">性能</div>
     </div>
-    <div style="background:linear-gradient(135deg,#0c0e12 0%,#1c2028 100%);position:relative;overflow:hidden;"><div class="stripe"></div><div style="position:absolute;bottom:20px;left:20px;font-size:24px;opacity:.3;letter-spacing:.06em;">风阻</div></div>
+    <div class="dam-cell">
+      <img src="/images/direction-a-mood-workshop.jpg" alt="维修工坊">
+      <div class="dam-cell-overlay"></div>
+      <div class="dam-cell-label">精密</div>
+    </div>
+    <div class="dam-cell">
+      <img src="/images/direction-a-mood-trail.jpg" alt="越野骑行">
+      <div class="dam-cell-overlay"></div>
+      <div class="dam-cell-label">技术</div>
+    </div>
+    <div class="dam-cell">
+      <img src="/images/direction-a-mood-frame.jpg" alt="碳纤维车架">
+      <div class="dam-cell-overlay"></div>
+      <div class="dam-cell-label" style="color:rgba(0,0,0,0.45);">结构</div>
+    </div>
+    <div class="dam-cell dam-cell-tl">
+      <div class="dam-cell-tl-letter">A</div>
+    </div>
+    <div class="dam-cell dam-cell-grad-3 dam-direction-label">
+      Technical Field
+    </div>
   </div>
-  <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(11,12,16,.9) 0%,transparent 100%);display:flex;align-items:flex-end;padding:0 80px 36px;">
-    <div class="lbl mu">Direction A · Technical Field · 配图区域 · 待填充</div>
-  </div>
+
 </section>

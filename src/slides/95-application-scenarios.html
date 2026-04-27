@@ -1,0 +1,214 @@
+<section data-anim="default" class="bg-wm" data-label="57 Application Scenarios">
+  <style>
+    .as-page {
+      height: 100%;
+      padding: 48px 88px;
+      display: flex;
+      flex-direction: column;
+    }
+    .as-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .as-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      min-height: 0;
+    }
+    .as-col {
+      display: grid;
+      gap: 16px;
+      min-height: 0;
+    }
+    .as-col-a,
+    .as-col-c {
+      grid-template-rows: 1fr .8fr;
+    }
+    .as-col-b,
+    .as-col-d {
+      grid-template-rows: .8fr 1fr;
+    }
+    .as-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      isolation: isolate;
+      background: #0B0C10;
+      color: white;
+    }
+    .as-card-lg {
+      padding: 32px 28px;
+    }
+    .as-dark {
+      background: #0B0C10;
+      color: white;
+    }
+    .as-dark-soft {
+      background: #0B0C10;
+    }
+    .as-light {
+      background: #0B0C10;
+      color: white;
+    }
+    .as-amber {
+      background: #0B0C10;
+      color: white;
+    }
+    .as-teal {
+      background: #0B0C10;
+      color: white;
+    }
+    .as-img,
+    .as-img-secondary {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: var(--as-img-opacity, .86);
+      z-index: -2;
+    }
+    .as-img-secondary {
+      left: auto;
+      width: 52%;
+      opacity: var(--as-img-secondary-opacity, .62);
+    }
+    .as-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,var(--as-mask,.48));
+      pointer-events: none;
+      z-index: -1;
+    }
+    .as-light::after {
+      background: rgba(0,0,0,var(--as-mask,.46));
+    }
+    .as-amber::after,
+    .as-teal::after {
+      background: rgba(0,0,0,var(--as-mask,.50));
+    }
+    .as-dark-soft::after {
+      background: rgba(0,0,0,var(--as-mask,.54));
+    }
+    .as-dark-soft .as-img {
+      opacity: var(--as-img-opacity, .82);
+    }
+    .as-exterior .lbl,
+    .as-exterior .xs {
+      color: white;
+    }
+    .as-exterior .sb {
+      color: white;
+    }
+    .as-gear::after {
+      background: rgba(0,0,0,var(--as-mask,.52));
+    }
+    .as-gear .lbl,
+    .as-gear .xs {
+      color: white;
+    }
+    .as-gear .sb {
+      color: white;
+    }
+    .as-copy {
+      position: relative;
+      z-index: 1;
+    }
+    .as-card .lbl {
+      margin-bottom: 0;
+      color: white;
+      opacity: var(--as-label-opacity, .66);
+    }
+    .as-card .sb {
+      color: white;
+      opacity: var(--as-title-opacity, .96);
+    }
+    .as-light .sm,
+    .as-light .xs {
+      color: white;
+    }
+    .as-card .sm,
+    .as-card .xs {
+      color: white;
+      opacity: var(--as-body-opacity, .72);
+    }
+    .as-card .sm,
+    .as-card .xs {
+      max-width: 88%;
+    }
+  </style>
+
+  <div class="as-page">
+    <div class="as-head">
+      <div class="lbl am">应用场景预览</div>
+      <div class="xs" style="color:var(--md);">Brand Touch Points</div>
+    </div>
+
+    <div class="as-grid">
+      <div class="as-col as-col-a">
+        <div class="as-card as-card-lg as-dark as-dark-soft as-exterior" style="--as-mask:.46;--as-img-opacity:.84;--as-label-opacity:.68;--as-title-opacity:.98;--as-body-opacity:.70;">
+          <img class="as-img" src="/images/95p/exterior.webp" alt="">
+          <div class="as-copy lbl am">外部空间</div>
+          <div class="as-copy sb" style="font-size:34px;line-height:1.2;">门店外观<br>空间识别</div>
+          <div class="as-copy xs mu">外立面 · 品牌主识别 · 空间嵌入</div>
+        </div>
+        <div class="as-card as-light" style="--as-mask:.54;--as-img-opacity:.82;--as-label-opacity:.64;--as-body-opacity:.78;">
+          <img class="as-img" src="/images/95p/jersey.webp" alt="">
+          <div class="as-copy lbl am">骑行服</div>
+          <div class="as-copy sm">移动中的品牌广告</div>
+        </div>
+      </div>
+
+      <div class="as-col as-col-b">
+        <div class="as-card as-light" style="--as-mask:.42;--as-img-opacity:.88;--as-label-opacity:.70;--as-body-opacity:.82;">
+          <img class="as-img" src="/images/95p/poster.webp" alt="">
+          <div class="as-copy lbl am">活动海报</div>
+          <div class="as-copy sm">路线 · 集结 · 社群事件</div>
+        </div>
+        <div class="as-card as-card-lg as-amber" style="--as-mask:.58;--as-img-opacity:.80;--as-label-opacity:.60;--as-title-opacity:.96;--as-body-opacity:.66;">
+          <img class="as-img" src="/images/95p/bottle.webp" alt="">
+          <div class="as-copy lbl" style="opacity:.7;">周边物料</div>
+          <div class="as-copy sb" style="font-size:34px;line-height:1.2;">水壶 · 贴纸<br>路线图册</div>
+          <div class="as-copy xs" style="opacity:.7;">低门槛高曝光的品牌携带</div>
+        </div>
+      </div>
+
+      <div class="as-col as-col-c">
+        <div class="as-card as-card-lg as-teal" style="--as-mask:.38;--as-img-opacity:.90;--as-label-opacity:.58;--as-title-opacity:.98;--as-body-opacity:.66;">
+          <img class="as-img" src="/images/95p/social.webp" alt="">
+          <div class="as-copy lbl" style="opacity:.7;">数字内容</div>
+          <div class="as-copy sb" style="font-size:34px;line-height:1.2;">Social Media<br>品牌叙事</div>
+          <div class="as-copy xs" style="opacity:.7;">Instagram · 小红书 · 持续发声</div>
+        </div>
+        <div class="as-card as-light" style="--as-mask:.50;--as-img-opacity:.82;--as-img-secondary-opacity:.50;--as-label-opacity:.68;--as-body-opacity:.80;">
+          <img class="as-img" src="/images/95p/route-map.webp" alt="">
+          <div class="as-copy lbl am">东京路线图</div>
+          <div class="as-copy sm">骑行路线可视化</div>
+        </div>
+      </div>
+
+      <div class="as-col as-col-d">
+        <div class="as-card as-light" style="--as-mask:.44;--as-img-opacity:.88;--as-label-opacity:.66;--as-body-opacity:.80;">
+          <img class="as-img" src="/images/95p/frontdesk.webp" alt="">
+          <div class="as-copy lbl am">前台 · 导视</div>
+          <div class="as-copy sm">店内识别系统</div>
+        </div>
+        <div class="as-card as-card-lg as-dark as-dark-soft as-gear" style="--as-mask:.48;--as-img-opacity:.84;--as-label-opacity:.66;--as-title-opacity:.98;--as-body-opacity:.70;">
+          <img class="as-img" src="/images/95p/gear.webp" alt="">
+          <div class="as-copy lbl am">装备包装</div>
+          <div class="as-copy sb" style="font-size:34px;line-height:1.2;">补给 · 服装<br>配件标签</div>
+          <div class="as-copy xs mu">每个细节都是品牌的延伸</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
