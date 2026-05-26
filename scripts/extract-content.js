@@ -35,7 +35,7 @@ function extractLines(html) {
     .replace(/<svg[\s\S]*?<\/svg>/gi, '')
     .replace(/<!--[\s\S]*?-->/g, '')
   // 块级元素边界转换行
-  s = s.replace(/<\/(h1|h2|h3|h4|p|div|li|section|figcaption|span|td|th|tr)>/gi, '\n')
+  s = s.replace(/<\/(h1|h2|h3|h4|p|div|li|section|figcaption|td|th|tr)>/gi, '\n')
   s = s.replace(/<br\s*\/?>/gi, '\n')
   // 去掉剩余标签
   s = s.replace(/<[^>]+>/g, '')

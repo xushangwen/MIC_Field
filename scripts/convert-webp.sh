@@ -15,8 +15,9 @@ while IFS= read -r orig; do
   lossy=1   # 默认有损（可触发体积兜底）
 
   if [ "$realfmt" = "AVIF" ] || [ "$realfmt" = "HEIC" ]; then
-    # cwebp 读不了 AVIF/HEIC，用 magick 转（质量 82）
-    magick "$orig" -quality 82 "$out" 2>/dev/null; magickn=$((magickn+1))
+    # cwebp 读不了 AVIF/HEIC，用 magick 转（质量 82）。cwebp 无法重压这类源，
+    # 故置 lossy=0 跳过体积兜底，避免对解不了的源做无意义的 cwebp 重试。
+    magick "$orig" -quality 82 "$out" 2>/dev/null; magickn=$((magickn+1)); lossy=0
   elif [ "$ext" = "png" ]; then
     opaque=$(magick identify -format '%[opaque]' "$orig" 2>/dev/null | head -1)
     sz=$(stat -f%z "$orig")

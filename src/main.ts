@@ -1,5 +1,3 @@
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { initAnimations } from './animations/index'
 
 import 'remixicon/fonts/remixicon.css'
@@ -7,8 +5,6 @@ import './styles/tokens.css'
 import './styles/typography.css'
 import './styles/layout.css'
 import './styles/components.css'
-
-gsap.registerPlugin(ScrollTrigger)
 
 // ── Assemble slides ───────────────────────────────────────────────────────────
 const slideModules = import.meta.glob<string>('./slides/*.html', {
@@ -294,13 +290,6 @@ function buildThumbnailPanel(deckEl: Element) {
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 requestAnimationFrame(() => {
-  const hashMatch = (location.hash || '').match(/^#(\d+)$/)
-  if (hashMatch) {
-    const targetIndex = parseInt(hashMatch[1], 10) - 1
-    if (targetIndex > 0 && (deck as any).index === 0) {
-      ;(deck as any).goTo(targetIndex)
-    }
-  }
   initAnimations(deck)
   buildThumbnailPanel(deck)
 })

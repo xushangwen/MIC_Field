@@ -8,7 +8,15 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const DIR = 'screenshots'
-const Q = process.env.QUALITY === undefined ? 90 : Number(process.env.QUALITY)
+const rawQ = process.env.QUALITY
+let Q = 90
+if (rawQ !== undefined && rawQ !== '') {
+  Q = Number(rawQ)
+  if (!Number.isInteger(Q) || Q < 0 || Q > 100) {
+    console.error(`QUALITY 必须是 0–100 的整数（0=PNG 无损，1–100=JPEG 质量），收到：${JSON.stringify(rawQ)}`)
+    process.exit(1)
+  }
+}
 const OUT = process.env.OUT_PDF || (Q === 0 ? 'MIC-Field-提案-无损.pdf' : 'MIC-Field-提案.pdf')
 const W = 1920, H = 1080
 
