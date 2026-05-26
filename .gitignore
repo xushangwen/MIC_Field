@@ -6,3 +6,6 @@ dist/
 *.png
 /deck-stage.js
 .DS_Store
+_img_originals/
+screenshots/
+*.pdf

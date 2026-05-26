@@ -37,7 +37,14 @@ deck.querySelectorAll('section').forEach((section, i) => {
 
 // ── Thumbnail panel ───────────────────────────────────────────────────────────
 function buildThumbnailPanel(deckEl: Element) {
-  const sections = Array.from(deckEl.querySelectorAll('section')) as HTMLElement[]
+  // Enumerate the deck's real slides the same way the deck does: it tags each
+  // collected slide with data-deck-slide=<index> (direct children, minus
+  // style/script). Using querySelectorAll('section') instead would also match
+  // any nested <section>, drifting the panel index away from the deck index
+  // and making goTo() jump to the wrong slide.
+  const sections = Array.from(
+    deckEl.querySelectorAll('[data-deck-slide]'),
+  ) as HTMLElement[]
   if (!sections.length) return
 
   const BG_COLOR: Record<string, string> = {
@@ -208,12 +215,21 @@ function buildThumbnailPanel(deckEl: Element) {
     const bg = [...section.classList].find(c => c.startsWith('bg-')) ?? 'bg-dk'
     const bgColor = BG_COLOR[bg] ?? '#0B0C10'
     const textColor = TEXT_COLOR[bg] ?? 'rgba(244,240,232,.7)'
-    const rawLabel = section.getAttribute('data-screen-label') ?? `Slide ${i + 1}`
-    const label = rawLabel.replace(/^\d+\s*/, '').trim()
+    // Read the author's data-label directly (it carries a single legacy id
+    // token like "44b" / "15c5"); strip that one token to get a clean title.
+    // Avoid data-screen-label here — the deck prepends the file index to it,
+    // producing two numbers and a confusing leftover after a single strip.
+    const rawLabel = section.getAttribute('data-label') ?? `Slide ${i + 1}`
+    const label = rawLabel.replace(/^\d+[a-z]?\d*\s+/i, '').trim() || rawLabel
+
+    // The deck's own index for this slide (falls back to the loop position,
+    // which equals it because data-deck-slide is assigned in document order).
+    const deckAttr = section.getAttribute('data-deck-slide')
+    const slideIndex = deckAttr != null ? Number(deckAttr) : i
 
     const item = document.createElement('div')
     item.className = 'sp-item'
-    item.dataset.idx = String(i)
+    item.dataset.idx = String(slideIndex)
 
     const num = document.createElement('div')
     num.className = 'sp-n'
@@ -230,7 +246,7 @@ function buildThumbnailPanel(deckEl: Element) {
 
     thumb.appendChild(lbl)
     item.append(num, thumb)
-    item.addEventListener('click', () => { ;(deckEl as any).goTo(i) })
+    item.addEventListener('click', () => { ;(deckEl as any).goTo(slideIndex) })
     panel.appendChild(item)
   })
 
